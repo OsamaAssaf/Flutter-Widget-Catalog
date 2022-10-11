@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_catalog/views/basics/appbar_view.dart';
+import 'package:flutter_widget_catalog/views/code_view.dart';
 
 import 'package:widget_with_codeview/widget_with_codeview.dart';
+import 'package:page_transition/page_transition.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -26,7 +29,20 @@ class HomeView extends StatelessWidget {
                   ListTile(
                     title: const Text('AppBar'),
                     trailing: const Icon(Icons.arrow_forward_ios),
-                    onTap: (){},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          child: CodeView(
+                            child: AppBarView(),
+                            title: 'AppBar',
+                            sourceFilePath: 'lib/views/basics/appbar_view.dart',
+                            codeLinkPrefix: 'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/lib/views/home_view.dart',
+                          ),
+                          type: PageTransitionType.leftToRight,
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
