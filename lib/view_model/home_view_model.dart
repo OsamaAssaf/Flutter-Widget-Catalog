@@ -17,18 +17,20 @@ import '../views/buttons/floating_action_button_view.dart';
 import '../views/buttons/material_button_view.dart';
 import '../views/buttons/dropdown_button_view.dart';
 import '../views/buttons/popup_menu_button_view.dart';
+import '../views/layouts/center_view.dart';
 
 class HomeViewModel {
-  static const String baseGitHubPath = 'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
-  static const String baseBasicSourceFile = 'lib/views/basics/';
-  static const String baseButtonsSourceFile = 'lib/views/buttons/';
+  static const String gitHubPath = 'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
+  static const String basicSourceFile = 'lib/views/basics/';
+  static const String buttonsSourceFile = 'lib/views/buttons/';
+  static const String layoutsSourceFile = 'lib/views/layouts/';
 
   static Map<String, dynamic> getBasicsMap(Widget child, String title, String fileName) {
     return {
       'child': child,
       'title': title,
-      'sourceFilePath': '$baseBasicSourceFile$fileName',
-      'codeLinkPrefix': baseGitHubPath,
+      'sourceFilePath': '$basicSourceFile$fileName',
+      'codeLinkPrefix': gitHubPath,
     };
   }
 
@@ -48,8 +50,8 @@ class HomeViewModel {
     return {
       'child': child,
       'title': title,
-      'sourceFilePath': '$baseButtonsSourceFile$fileName',
-      'codeLinkPrefix': baseGitHubPath,
+      'sourceFilePath': '$buttonsSourceFile$fileName',
+      'codeLinkPrefix': gitHubPath,
     };
   }
 
@@ -62,6 +64,22 @@ class HomeViewModel {
     getButtonsMap(const MaterialButtonView(), 'Material Button', 'material_button_view.dart'),
     getButtonsMap(const DropdownButtonView(), 'Dropdown Button', 'dropdown_button_view.dart'),
     getButtonsMap(const PopupMenuButtonView(), 'Popup Menu Button', 'popup_menu_button_view.dart'),
+  ];
+
+
+  static Map<String, dynamic> getLayoutsMap(Widget child, String title, String fileName) {
+    return {
+      'child': child,
+      'title': title,
+      'sourceFilePath': '$layoutsSourceFile$fileName',
+      'codeLinkPrefix': gitHubPath,
+    };
+  }
+
+
+  List<Map<String, dynamic>> layoutWidgets = [
+    getButtonsMap(const CenterView(), 'Center', 'center_view.dart'),
+
   ];
 
 
