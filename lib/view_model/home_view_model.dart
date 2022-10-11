@@ -11,6 +11,9 @@ import '../views/basics/flutter_logo_view.dart';
 import '../views/buttons/elevated_button_view.dart';
 import '../views/buttons/text_button_view.dart';
 import '../views/buttons/outlined_button_view.dart';
+import '../views/buttons/icon_button_view.dart';
+import '../views/buttons/floating_action_button_view.dart';
+import '../views/buttons/material_button_view.dart';
 
 class HomeViewModel {
   static const String baseGitHubPath = 'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
@@ -50,6 +53,9 @@ class HomeViewModel {
     getButtonsMap(const ElevatedButtonView(), 'Elevated Button', 'elevated_button_view.dart'),
     getButtonsMap(const TextButtonView(), 'Text Button', 'text_button_view.dart'),
     getButtonsMap(const OutlinedButtonView(), 'Outlined Button', 'outlined_button_view.dart'),
+    getButtonsMap(const IconButtonView(), 'Icon Button', 'icon_button_view.dart'),
+    getButtonsMap(const FloatingActionButtonView(), 'Floating Action Button', 'floating_action_button_view.dart'),
+    getButtonsMap(const MaterialButtonView(), 'Material Button', 'material_button_view.dart'),
   ];
 
 
