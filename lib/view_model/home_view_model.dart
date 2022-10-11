@@ -15,6 +15,7 @@ import '../views/buttons/icon_button_view.dart';
 import '../views/buttons/floating_action_button_view.dart';
 import '../views/buttons/material_button_view.dart';
 import '../views/buttons/dropdown_button_view.dart';
+import '../views/buttons/popup_menu_button_view.dart';
 
 class HomeViewModel {
   static const String baseGitHubPath = 'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
@@ -58,6 +59,7 @@ class HomeViewModel {
     getButtonsMap(const FloatingActionButtonView(), 'Floating Action Button', 'floating_action_button_view.dart'),
     getButtonsMap(const MaterialButtonView(), 'Material Button', 'material_button_view.dart'),
     getButtonsMap(const DropdownButtonView(), 'Dropdown Button', 'dropdown_button_view.dart'),
+    getButtonsMap(const PopupMenuButtonView(), 'Popup Menu Button', 'popup_menu_button_view.dart'),
   ];
 
 
