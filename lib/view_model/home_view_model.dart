@@ -9,6 +9,8 @@ import '../views/basics/icons_view.dart';
 import '../views/basics/images_view.dart';
 import '../views/basics/flutter_logo_view.dart';
 import '../views/buttons/elevated_button_view.dart';
+import '../views/buttons/text_button_view.dart';
+import '../views/buttons/outlined_button_view.dart';
 
 class HomeViewModel {
   static const String baseGitHubPath = 'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
@@ -32,7 +34,7 @@ class HomeViewModel {
     getBasicsMap(const RowView(), 'Row', 'row_view.dart'),
     getBasicsMap(const IconsView(), 'Icons', 'icons_view.dart'),
     getBasicsMap(const ImagesView(), 'Images', 'images_view.dart'),
-    getBasicsMap(const FlutterLogoView(), 'FlutterLogo', 'flutter_logo_view.dart'),
+    getBasicsMap(const FlutterLogoView(), 'Flutter Logo', 'flutter_logo_view.dart'),
   ];
 
   static Map<String, dynamic> getButtonsMap(Widget child, String title, String fileName) {
@@ -45,7 +47,9 @@ class HomeViewModel {
   }
 
   List<Map<String, dynamic>> buttonsWidgets = [
-    getButtonsMap(const ElevatedButtonView(), 'ElevatedButton', 'elevated_button_view.dart'),
+    getButtonsMap(const ElevatedButtonView(), 'Elevated Button', 'elevated_button_view.dart'),
+    getButtonsMap(const TextButtonView(), 'Text Button', 'text_button_view.dart'),
+    getButtonsMap(const OutlinedButtonView(), 'Outlined Button', 'outlined_button_view.dart'),
   ];
 
 

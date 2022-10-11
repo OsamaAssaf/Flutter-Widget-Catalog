@@ -13,7 +13,6 @@ class CodeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(codeLinkPrefix+sourceFilePath);
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
