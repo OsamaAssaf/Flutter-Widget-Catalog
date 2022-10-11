@@ -8,14 +8,30 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter Catalog'),
-      ),
-      body: ListView(
-        children: [
-
-        ],
-      )
-    );
+        appBar: AppBar(
+          title: const Text('Flutter Catalog'),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ListView(
+            children: [
+              ExpansionTile(
+                title: const Text('Basics'),
+                subtitle: const Text(
+                  'Widgets you absolutely need to know before building your first Flutter app.',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                children: [
+                  ListTile(
+                    title: const Text('AppBar'),
+                    trailing: const Icon(Icons.arrow_forward_ios),
+                    onTap: (){},
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ));
   }
 }
