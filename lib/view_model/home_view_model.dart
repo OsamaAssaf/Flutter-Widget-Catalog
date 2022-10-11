@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
+import '../views/basics/scaffold_view.dart';
 import '../views/basics/text_view.dart';
 import '../views/basics/appbar_view.dart';
 import '../views/basics/container_view.dart';
@@ -32,6 +33,7 @@ class HomeViewModel {
   }
 
   List<Map<String, dynamic>> basicsWidgets = [
+    getBasicsMap(const ScaffoldView(), 'Scaffold', 'scaffold_view.dart'),
     getBasicsMap(const TextView(), 'Text', 'text_view.dart'),
     getBasicsMap(const AppBarView(), 'AppBar', 'appbar_view.dart'),
     getBasicsMap(const ContainerView(), 'Container', 'container_view.dart'),
