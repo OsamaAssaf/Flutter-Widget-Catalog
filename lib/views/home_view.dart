@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widget_catalog/views/basics/appbar_view.dart';
-import 'package:flutter_widget_catalog/views/code_view.dart';
 
-import 'package:widget_with_codeview/widget_with_codeview.dart';
 import 'package:page_transition/page_transition.dart';
 
+import 'basics/appbar_view.dart';
+import 'code_view.dart';
+import '../view_model/home_view_model.dart';
+
 class HomeView extends StatelessWidget {
-  const HomeView({Key? key}) : super(key: key);
+   HomeView({Key? key}) : super(key: key);
+
+  final HomeViewModel _viewModel = HomeViewModel();
 
   @override
   Widget build(BuildContext context) {
@@ -25,27 +28,26 @@ class HomeView extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
-                children: [
-                  ListTile(
-                    title: const Text('AppBar'),
-                    trailing: const Icon(Icons.arrow_forward_ios),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        PageTransition(
-                          child: CodeView(
-                            child: AppBarView(),
-                            title: 'AppBar',
-                            sourceFilePath: 'lib/views/basics/appbar_view.dart',
-                            codeLinkPrefix: 'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/lib/views/home_view.dart',
-                          ),
-                          type: PageTransitionType.leftToRight,
+                children: _viewModel.basicsWidgets.map((item) => ListTile(
+                  title:  Text(item['title']),
+                  trailing: const Icon(Icons.arrow_forward_ios,size: 18.0,),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        child: CodeView(
+                          child: item['child'],
+                          title: item['title'],
+                          sourceFilePath: item['sourceFilePath'],
+                          codeLinkPrefix: item['codeLinkPrefix'],
                         ),
-                      );
-                    },
-                  ),
-                ],
+                        type: PageTransitionType.leftToRight,
+                      ),
+                    );
+                  },
+                )).toList(),
               ),
+
             ],
           ),
         ));

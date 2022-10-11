@@ -6,7 +6,16 @@ class AppBarView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        /// You can assign page title using title property
+        title: const Text('Page Title'),
+        actions: [
+          TextButton(
+            onPressed: () {},
+            child:const Text('Press Me'),
+          ),
+        ],
+      ),
     );
   }
 }
