@@ -7,10 +7,16 @@ class ContainerView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: const EdgeInsets.all(10.0),
-        color: Colors.amber[600],
-        width: 120.0,
-        height: 120.0,
+        margin: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
+        decoration: BoxDecoration(
+          color: Colors.amber[600],
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        width: 140.0,
+        height: 140.0,
+        alignment: Alignment.center,
+        child: const Text('Container child'),
       ),
     );
   }
