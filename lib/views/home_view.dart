@@ -47,7 +47,32 @@ class HomeView extends StatelessWidget {
                   },
                 )).toList(),
               ),
-
+              ExpansionTile(
+                title: const Text('Buttons'),
+                subtitle: const Text(
+                  'Clickable widgets.',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                children: _viewModel.buttonsWidgets.map((item) => ListTile(
+                  title:  Text(item['title']),
+                  trailing: const Icon(Icons.arrow_forward_ios,size: 18.0,),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        child: CodeView(
+                          child: item['child'],
+                          title: item['title'],
+                          sourceFilePath: item['sourceFilePath'],
+                          codeLinkPrefix: item['codeLinkPrefix'],
+                        ),
+                        type: PageTransitionType.leftToRight,
+                      ),
+                    );
+                  },
+                )).toList(),
+              ),
             ],
           ),
         ));

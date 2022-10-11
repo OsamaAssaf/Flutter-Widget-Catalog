@@ -8,10 +8,12 @@ import '../views/basics/row_view.dart';
 import '../views/basics/icons_view.dart';
 import '../views/basics/images_view.dart';
 import '../views/basics/flutter_logo_view.dart';
+import '../views/buttons/elevated_button_view.dart';
 
 class HomeViewModel {
   static const String baseGitHubPath = 'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
   static const String baseBasicSourceFile = 'lib/views/basics/';
+  static const String baseButtonsSourceFile = 'lib/views/buttons/';
 
   static Map<String, dynamic> getBasicsMap(Widget child, String title, String fileName) {
     return {
@@ -31,7 +33,19 @@ class HomeViewModel {
     getBasicsMap(const IconsView(), 'Icons', 'icons_view.dart'),
     getBasicsMap(const ImagesView(), 'Images', 'images_view.dart'),
     getBasicsMap(const FlutterLogoView(), 'FlutterLogo', 'flutter_logo_view.dart'),
+  ];
 
+  static Map<String, dynamic> getButtonsMap(Widget child, String title, String fileName) {
+    return {
+      'child': child,
+      'title': title,
+      'sourceFilePath': '$baseButtonsSourceFile$fileName',
+      'codeLinkPrefix': baseGitHubPath,
+    };
+  }
+
+  List<Map<String, dynamic>> buttonsWidgets = [
+    getButtonsMap(const ElevatedButtonView(), 'ElevatedButton', 'elevated_button_view.dart'),
   ];
 
 
