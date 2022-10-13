@@ -66,6 +66,7 @@ flutter:
     - lib/views/basics/
     - lib/views/buttons/
     - lib/views/single_child_layouts/
+    - lib/views/multi_child_layouts/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -32,6 +32,7 @@ class HomeViewModel {
   static const String basicSourceFile = 'lib/views/basics/';
   static const String buttonsSourceFile = 'lib/views/buttons/';
   static const String singleLayoutsSourceFile = 'lib/views/single_child_layouts/';
+  static const String multiLayoutsSourceFile = 'lib/views/multi_child_layouts/';
 
   static Map<String, dynamic> getBasicsMap(Widget child, String title, String fileName) {
     return {
@@ -103,7 +104,7 @@ class HomeViewModel {
     getButtonsMap(const PopupMenuButtonView(), 'Popup Menu Button', 'popup_menu_button_view.dart'),
   ];
 
-  static Map<String, dynamic> getLayoutsMap(Widget child, String title, String fileName) {
+  static Map<String, dynamic> getSingleLayoutsMap(Widget child, String title, String fileName) {
     return {
       'child': child,
       'title': title,
@@ -113,14 +114,29 @@ class HomeViewModel {
   }
 
   List<Map<String, dynamic>> singleLayoutWidgets = [
-    getButtonsMap(const CenterView(), 'Center', 'center_view.dart'),
-    getButtonsMap(const ConstrainedBoxView(), 'Constrained Box', 'constrained_box_view.dart'),
-    getButtonsMap(const AspectRatioView(), 'Aspect Ratio', 'aspect_ratio_view.dart'),
-    getButtonsMap(const FittedBoxView(), 'Fitted Box', 'fitted_box_view.dart'),
-    getButtonsMap(const ExpandedView(), 'Expanded', 'expanded_view.dart'),
-    getButtonsMap(const PaddingView(), 'Padding', 'padding_view.dart'),
-    getButtonsMap(const SizedBoxView(), 'Sized Box', 'sized_box_view.dart'),
-    getButtonsMap(const AlignView(), 'Align', 'align_view.dart'),
-    getButtonsMap(const TransformView(), 'Transform', 'transform_view.dart'),
+    getSingleLayoutsMap(const CenterView(), 'Center', 'center_view.dart'),
+    getSingleLayoutsMap(const ConstrainedBoxView(), 'Constrained Box', 'constrained_box_view.dart'),
+    getSingleLayoutsMap(const AspectRatioView(), 'Aspect Ratio', 'aspect_ratio_view.dart'),
+    getSingleLayoutsMap(const FittedBoxView(), 'Fitted Box', 'fitted_box_view.dart'),
+    getSingleLayoutsMap(const ExpandedView(), 'Expanded', 'expanded_view.dart'),
+    getSingleLayoutsMap(const PaddingView(), 'Padding', 'padding_view.dart'),
+    getSingleLayoutsMap(const SizedBoxView(), 'Sized Box', 'sized_box_view.dart'),
+    getSingleLayoutsMap(const AlignView(), 'Align', 'align_view.dart'),
+    getSingleLayoutsMap(const TransformView(), 'Transform', 'transform_view.dart'),
+  ];
+
+
+  static Map<String, dynamic> getMultiLayoutsMap(Widget child, String title, String fileName) {
+    return {
+      'child': child,
+      'title': title,
+      'sourceFilePath': '$multiLayoutsSourceFile$fileName',
+      'codeLinkPrefix': gitHubPath,
+    };
+  }
+
+  List<Map<String, dynamic>> multiLayoutWidgets = [
+    getSingleLayoutsMap(const CenterView(), 'Center', 'center_view.dart'),
+
   ];
 }
