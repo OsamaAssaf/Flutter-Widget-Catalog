@@ -18,6 +18,7 @@ import '../views/buttons/material_button_view.dart';
 import '../views/buttons/dropdown_button_view.dart';
 import '../views/buttons/popup_menu_button_view.dart';
 import '../views/layouts/center_view.dart';
+import '../views/layouts/constrained_box_view.dart';
 
 class HomeViewModel {
   static const String gitHubPath = 'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
@@ -79,6 +80,7 @@ class HomeViewModel {
 
   List<Map<String, dynamic>> layoutWidgets = [
     getButtonsMap(const CenterView(), 'Center', 'center_view.dart'),
+    getButtonsMap(const ConstrainedBoxView(), 'Constrained Box', 'constrained_box_view.dart'),
 
   ];
 
