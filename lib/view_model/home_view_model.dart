@@ -26,6 +26,13 @@ import '../views/single_child_layouts/padding_view.dart';
 import '../views/single_child_layouts/sized_box_view.dart';
 import '../views/single_child_layouts/align_view.dart';
 import '../views/single_child_layouts/transform_view.dart';
+import '../views/multi_child_layouts/list_view_view.dart';
+import '../views/multi_child_layouts/grid_view_view.dart';
+import '../views/multi_child_layouts/indexed_stack_view.dart';
+import '../views/multi_child_layouts/stack_view.dart';
+import '../views/multi_child_layouts/layout_builder_view.dart';
+import '../views/multi_child_layouts/wrap_view.dart';
+import '../views/multi_child_layouts/table_view.dart';
 
 class HomeViewModel {
   static const String gitHubPath = 'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
@@ -70,6 +77,13 @@ class HomeViewModel {
     'Sized Box',
     'Align',
     'Transform',
+    'List View',
+    'Grid View',
+    'Indexed Stack',
+    'Stack',
+    'Layout Builder',
+    'Wrap',
+    'Table',
   ];
 
   List<Map<String, dynamic>> basicsWidgets = [
@@ -136,7 +150,13 @@ class HomeViewModel {
   }
 
   List<Map<String, dynamic>> multiLayoutWidgets = [
-    getSingleLayoutsMap(const CenterView(), 'Center', 'center_view.dart'),
+    getMultiLayoutsMap(const ListViewView(), 'List View', 'list_view_view.dart'),
+    getMultiLayoutsMap(const GridViewView(), 'Grid View', 'grid_view_view.dart'),
+    getMultiLayoutsMap(const IndexedStackView(), 'Indexed Stack', 'indexed_stack_view.dart'),
+    getMultiLayoutsMap(const StackView(), 'Stack', 'stack_view.dart'),
+    getMultiLayoutsMap(const LayoutBuilderView(), 'Layout Builder', 'layout_builder_view.dart'),
+    getMultiLayoutsMap(const WrapView(), 'Wrap', 'wrap_view.dart'),
+    getMultiLayoutsMap(const TableView(), 'Table', 'table_view.dart'),
 
   ];
 }
