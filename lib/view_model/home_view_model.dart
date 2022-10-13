@@ -19,6 +19,11 @@ import '../views/buttons/dropdown_button_view.dart';
 import '../views/buttons/popup_menu_button_view.dart';
 import '../views/layouts/center_view.dart';
 import '../views/layouts/constrained_box_view.dart';
+import '../views/layouts/aspect_ratio_view.dart';
+import '../views/layouts/fitted_box_view.dart';
+import '../views/layouts/expanded_view.dart';
+import '../views/layouts/padding_view.dart';
+import '../views/layouts/sized_box_view.dart';
 
 class HomeViewModel {
   static const String gitHubPath = 'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
@@ -34,6 +39,21 @@ class HomeViewModel {
       'codeLinkPrefix': gitHubPath,
     };
   }
+
+  List<String> allWidgetsList = [
+    'Scaffold','Text',
+    'AppBar','Container',
+    'Column','Row',
+    'Icons','Images',
+    'Flutter Logo','Elevated Button',
+    'Text Button','Outlined Button',
+    'Icon Button','Floating Action Button',
+    'Material Button','Dropdown Button',
+    'Popup Menu Button','Center',
+    'Constrained Box','Aspect Ratio',
+    'Fitted Box','Expanded',
+    'Padding','Sized Box',
+  ];
 
   List<Map<String, dynamic>> basicsWidgets = [
     getBasicsMap(const ScaffoldView(), 'Scaffold', 'scaffold_view.dart'),
@@ -81,6 +101,11 @@ class HomeViewModel {
   List<Map<String, dynamic>> layoutWidgets = [
     getButtonsMap(const CenterView(), 'Center', 'center_view.dart'),
     getButtonsMap(const ConstrainedBoxView(), 'Constrained Box', 'constrained_box_view.dart'),
+    getButtonsMap(const AspectRatioView(), 'Aspect Ratio', 'aspect_ratio_view.dart'),
+    getButtonsMap(const FittedBoxView(), 'Fitted Box', 'fitted_box_view.dart'),
+    getButtonsMap(const ExpandedView(), 'Expanded', 'expanded_view.dart'),
+    getButtonsMap(const PaddingView(), 'Padding', 'padding_view.dart'),
+    getButtonsMap(const SizedBoxView(), 'Sized Box', 'sized_box_view.dart'),
 
   ];
 
