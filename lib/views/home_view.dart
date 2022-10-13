@@ -84,13 +84,13 @@ class HomeView extends StatelessWidget {
                     .toList(),
               ),
               ExpansionTile(
-                title: const Text('Layout Widgets'),
+                title: const Text('Single-child layout widgets'),
                 subtitle: const Text(
-                  'Arrange other widgets columns, rows, grids, and many other layouts.',
+                  'Arrange other widgets columns, rows, grids, and many other single_child_layouts.',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
-                children: _viewModel.layoutWidgets
+                children: _viewModel.singleLayoutWidgets
                     .map((item) => ListTile(
                   title: Text(item['title']),
                   trailing: const Icon(
