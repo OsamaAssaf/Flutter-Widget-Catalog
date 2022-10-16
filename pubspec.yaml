@@ -74,6 +74,7 @@ flutter:
     - lib/views/routing/
     - lib/views/scrolling/
     - lib/views/painting/
+    - lib/views/animation/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

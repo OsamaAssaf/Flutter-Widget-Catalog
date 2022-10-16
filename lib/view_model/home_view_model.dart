@@ -50,6 +50,20 @@ import '../views/scrolling/refresh_indicator_view.dart';
 import '../views/scrolling/page_view_view.dart';
 import '../views/scrolling/scrollbar_view.dart';
 import '../views/painting/backdrop_filter_view.dart';
+import '../views/painting/clip_oval_view.dart';
+import '../views/painting/clip_rect_view.dart';
+import '../views/painting/decorated_box_view.dart';
+import '../views/painting/fractional_translation_view.dart';
+import '../views/painting/opacity_view.dart';
+import '../views/painting/rotated_box_view.dart';
+import '../views/animation/animated_align_view.dart';
+import '../views/animation/animated_container_view.dart';
+import '../views/animation/animated_cross_fade_view.dart';
+import '../views/animation/animated_default_text_style_view.dart';
+import '../views/animation/animated_list_view.dart';
+import '../views/animation/animated_opacity_view.dart';
+import '../views/animation/animated_physical_model_view.dart';
+import '../views/animation/animated_positioned_view.dart';
 
 class HomeViewModel {
   static const String gitHubPath = 'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
@@ -62,19 +76,27 @@ class HomeViewModel {
   static const String routingSourceFile = 'lib/views/routing/';
   static const String scrollingSourceFile = 'lib/views/scrolling/';
   static const String paintingSourceFile = 'lib/views/painting/';
+  static const String animationSourceFile = 'lib/views/animation/';
 
-  static Map<String, dynamic> getPaintingMap(Widget child, String title, String fileName, String? videoUrl) {
+  static Map<String, dynamic> getAnimationMap(Widget child, String title, String fileName, String? videoUrl) {
     return {
       'child': child,
       'title': title,
-      'sourceFilePath': '$paintingSourceFile$fileName',
+      'sourceFilePath': '$animationSourceFile$fileName',
       'codeLinkPrefix': gitHubPath,
       'videoUrl': videoUrl,
     };
   }
 
-  List<Map<String, dynamic>> paintingWidgets = [
-    getPaintingMap(const BackdropFilterView(), 'Backdrop Filter', 'backdrop_filter_view.dart', 'https://www.youtube.com/watch?v=dYRs7Q1vfYI'),
+  List<Map<String, dynamic>> animationWidgets = [
+    getAnimationMap(const AnimatedAlignView(), 'Animated Align', 'animated_align_view.dart', null),
+    getAnimationMap(const AnimatedContainerView(), 'Animated Container', 'animated_container_view.dart', 'https://www.youtube.com/watch?v=yI-8QHpGIP4'),
+    getAnimationMap(const AnimatedCrossFadeView(), 'Animated Cross Fade', 'animated_cross_fade_view.dart', 'https://www.youtube.com/watch?v=PGK2UUAyE54'),
+    getAnimationMap(const AnimatedDefaultTextStyleView(), 'Animated Default Text Style', 'animated_default_text_style_view.dart', null),
+    getAnimationMap(const AnimatedListView(), 'Animated List', 'animated_list_view.dart', 'https://www.youtube.com/watch?v=ZtfItHwFlZ8'),
+    getAnimationMap(const AnimatedOpacityView(), 'Animated Opacity', 'animated_opacity_view.dart', 'https://www.youtube.com/watch?v=QZAvjqOqiLY'),
+    getAnimationMap(const AnimatedPhysicalModelView(), 'Animated Physical Model', 'animated_physical_model_view.dart', null),
+    getAnimationMap(const AnimatedPositionedView(), 'Animated Positioned', 'animated_positioned_view.dart', 'https://www.youtube.com/watch?v=hC3s2YdtWt8'),
   ];
 
   List<String> allWidgetsList = [
@@ -128,6 +150,20 @@ class HomeViewModel {
     'Page View',
     'Scrollbar',
     'Backdrop Filter',
+    'Clip Oval',
+    'Clip Rect',
+    'Decorated Box',
+    'Fractional Translation',
+    'Opacity',
+    'Rotated Box',
+    'Animated Align',
+    'Animated Container',
+    'Animated Cross Fade',
+    'Animated Default Text Style',
+    'Animated List',
+    'Animated Opacity',
+    'Animated Physical Model',
+    'Animated Positioned',
   ];
 
   static Map<String, dynamic> getBasicsMap(Widget child, String title, String fileName, String? videoUrl) {
@@ -192,7 +228,7 @@ class HomeViewModel {
     getSingleLayoutsMap(const PaddingView(), 'Padding', 'padding_view.dart', null),
     getSingleLayoutsMap(const SizedBoxView(), 'Sized Box', 'sized_box_view.dart', null),
     getSingleLayoutsMap(const AlignView(), 'Align', 'align_view.dart', null),
-    getSingleLayoutsMap(const TransformView(), 'Transform', 'transform_view.dart', null),
+    getSingleLayoutsMap(const TransformView(), 'Transform', 'transform_view.dart', 'https://www.youtube.com/watch?v=9z_YNlRlWfA'),
   ];
 
   static Map<String, dynamic> getMultiLayoutsMap(Widget child, String title, String fileName, String? videoUrl) {
@@ -282,4 +318,25 @@ class HomeViewModel {
     getScrollingMap(const PageViewView(), 'Page View', 'page_view_view.dart', 'https://www.youtube.com/watch?v=J1gE9xvph-A'),
     getScrollingMap(const ScrollbarView(), 'Scrollbar', 'scrollbar_view.dart', 'https://www.youtube.com/watch?v=DbkIQSvwnZc'),
   ];
+
+  static Map<String, dynamic> getPaintingMap(Widget child, String title, String fileName, String? videoUrl) {
+    return {
+      'child': child,
+      'title': title,
+      'sourceFilePath': '$paintingSourceFile$fileName',
+      'codeLinkPrefix': gitHubPath,
+      'videoUrl': videoUrl,
+    };
+  }
+
+  List<Map<String, dynamic>> paintingWidgets = [
+    getPaintingMap(const BackdropFilterView(), 'Backdrop Filter', 'backdrop_filter_view.dart', 'https://www.youtube.com/watch?v=dYRs7Q1vfYI'),
+    getPaintingMap(const ClipOvalView(), 'Clip Oval', 'clip_oval_view.dart', 'https://www.youtube.com/watch?v=vzWWDO6whIM'),
+    getPaintingMap(const ClipRectView(), 'Clip Rect', 'clip_rect_view.dart', null),
+    getPaintingMap(const DecoratedBoxView(), 'Decorated Box', 'decorated_box_view.dart', null),
+    getPaintingMap(const FractionalTranslationView(), 'Fractional Translation', 'fractional_translation_view.dart', null),
+    getPaintingMap(const OpacityView(), 'Opacity', 'opacity_view.dart', 'https://www.youtube.com/watch?v=9hltevOHQBw'),
+    getPaintingMap(const RotatedBoxView(), 'Rotated Box', 'rotated_box_view.dart', 'https://www.youtube.com/watch?v=BFE6_UglLfQ'),
+  ];
+
 }
