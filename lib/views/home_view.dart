@@ -44,6 +44,7 @@ class HomeView extends StatelessWidget {
                                   title: item['title'],
                                   sourceFilePath: item['sourceFilePath'],
                                   codeLinkPrefix: item['codeLinkPrefix'],
+                                  videoUrl: item['videoUrl'],
                                 ),
                                 type: PageTransitionType.leftToRight,
                               ),
@@ -75,6 +76,7 @@ class HomeView extends StatelessWidget {
                                   title: item['title'],
                                   sourceFilePath: item['sourceFilePath'],
                                   codeLinkPrefix: item['codeLinkPrefix'],
+                                  videoUrl: item['videoUrl'],
                                 ),
                                 type: PageTransitionType.leftToRight,
                               ),
@@ -92,26 +94,27 @@ class HomeView extends StatelessWidget {
                 ),
                 children: _viewModel.singleLayoutWidgets
                     .map((item) => ListTile(
-                  title: Text(item['title']),
-                  trailing: const Icon(
-                    Icons.arrow_forward_ios,
-                    size: 18.0,
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      PageTransition(
-                        child: CodeView(
-                          child: item['child'],
-                          title: item['title'],
-                          sourceFilePath: item['sourceFilePath'],
-                          codeLinkPrefix: item['codeLinkPrefix'],
-                        ),
-                        type: PageTransitionType.leftToRight,
-                      ),
-                    );
-                  },
-                ))
+                          title: Text(item['title']),
+                          trailing: const Icon(
+                            Icons.arrow_forward_ios,
+                            size: 18.0,
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                child: CodeView(
+                                  child: item['child'],
+                                  title: item['title'],
+                                  sourceFilePath: item['sourceFilePath'],
+                                  codeLinkPrefix: item['codeLinkPrefix'],
+                                  videoUrl: item['videoUrl'],
+                                ),
+                                type: PageTransitionType.leftToRight,
+                              ),
+                            );
+                          },
+                        ))
                     .toList(),
               ),
               ExpansionTile(
@@ -123,26 +126,27 @@ class HomeView extends StatelessWidget {
                 ),
                 children: _viewModel.multiLayoutWidgets
                     .map((item) => ListTile(
-                  title: Text(item['title']),
-                  trailing: const Icon(
-                    Icons.arrow_forward_ios,
-                    size: 18.0,
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      PageTransition(
-                        child: CodeView(
-                          child: item['child'],
-                          title: item['title'],
-                          sourceFilePath: item['sourceFilePath'],
-                          codeLinkPrefix: item['codeLinkPrefix'],
-                        ),
-                        type: PageTransitionType.leftToRight,
-                      ),
-                    );
-                  },
-                ))
+                          title: Text(item['title']),
+                          trailing: const Icon(
+                            Icons.arrow_forward_ios,
+                            size: 18.0,
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                child: CodeView(
+                                  child: item['child'],
+                                  title: item['title'],
+                                  sourceFilePath: item['sourceFilePath'],
+                                  codeLinkPrefix: item['codeLinkPrefix'],
+                                  videoUrl: item['videoUrl'],
+                                ),
+                                type: PageTransitionType.leftToRight,
+                              ),
+                            );
+                          },
+                        ))
                     .toList(),
               ),
               ExpansionTile(
@@ -154,26 +158,155 @@ class HomeView extends StatelessWidget {
                 ),
                 children: _viewModel.inputsWidgets
                     .map((item) => ListTile(
-                  title: Text(item['title']),
-                  trailing: const Icon(
-                    Icons.arrow_forward_ios,
-                    size: 18.0,
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      PageTransition(
-                        child: CodeView(
-                          child: item['child'],
-                          title: item['title'],
-                          sourceFilePath: item['sourceFilePath'],
-                          codeLinkPrefix: item['codeLinkPrefix'],
-                        ),
-                        type: PageTransitionType.leftToRight,
-                      ),
-                    );
-                  },
-                ))
+                          title: Text(item['title']),
+                          trailing: const Icon(
+                            Icons.arrow_forward_ios,
+                            size: 18.0,
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                child: CodeView(
+                                  child: item['child'],
+                                  title: item['title'],
+                                  sourceFilePath: item['sourceFilePath'],
+                                  codeLinkPrefix: item['codeLinkPrefix'],
+                                  videoUrl: item['videoUrl'],
+                                ),
+                                type: PageTransitionType.leftToRight,
+                              ),
+                            );
+                          },
+                        ))
+                    .toList(),
+              ),
+              ExpansionTile(
+                title: const Text('Touch touch_interactions'),
+                subtitle: const Text(
+                  'Respond to touch events.',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                children: _viewModel.interactionWidgets
+                    .map((item) => ListTile(
+                          title: Text(item['title']),
+                          trailing: const Icon(
+                            Icons.arrow_forward_ios,
+                            size: 18.0,
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                child: CodeView(
+                                  child: item['child'],
+                                  title: item['title'],
+                                  sourceFilePath: item['sourceFilePath'],
+                                  codeLinkPrefix: item['codeLinkPrefix'],
+                                  videoUrl: item['videoUrl'],
+                                ),
+                                type: PageTransitionType.leftToRight,
+                              ),
+                            );
+                          },
+                        ))
+                    .toList(),
+              ),
+              ExpansionTile(
+                title: const Text('Routing'),
+                subtitle: const Text(
+                  'Route users to different views.',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                children: _viewModel.routingWidgets
+                    .map((item) => ListTile(
+                          title: Text(item['title']),
+                          trailing: const Icon(
+                            Icons.arrow_forward_ios,
+                            size: 18.0,
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                child: CodeView(
+                                  child: item['child'],
+                                  title: item['title'],
+                                  sourceFilePath: item['sourceFilePath'],
+                                  codeLinkPrefix: item['codeLinkPrefix'],
+                                  videoUrl: item['videoUrl'],
+                                ),
+                                type: PageTransitionType.leftToRight,
+                              ),
+                            );
+                          },
+                        ))
+                    .toList(),
+              ),
+              ExpansionTile(
+                title: const Text('Scrolling widgets'),
+                subtitle: const Text(
+                  'Scroll multiple widgets as children of the parent.',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                children: _viewModel.scrollingWidgets
+                    .map((item) => ListTile(
+                          title: Text(item['title']),
+                          trailing: const Icon(
+                            Icons.arrow_forward_ios,
+                            size: 18.0,
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                child: CodeView(
+                                  child: item['child'],
+                                  title: item['title'],
+                                  sourceFilePath: item['sourceFilePath'],
+                                  codeLinkPrefix: item['codeLinkPrefix'],
+                                  videoUrl: item['videoUrl'],
+                                ),
+                                type: PageTransitionType.leftToRight,
+                              ),
+                            );
+                          },
+                        ))
+                    .toList(),
+              ),
+              ExpansionTile(
+                title: const Text('Painting and effect widgets'),
+                subtitle: const Text(
+                  'These widgets apply visual effects to the children without changing their layout, size, or position.',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                children: _viewModel.paintingWidgets
+                    .map((item) => ListTile(
+                          title: Text(item['title']),
+                          trailing: const Icon(
+                            Icons.arrow_forward_ios,
+                            size: 18.0,
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              PageTransition(
+                                child: CodeView(
+                                  child: item['child'],
+                                  title: item['title'],
+                                  sourceFilePath: item['sourceFilePath'],
+                                  codeLinkPrefix: item['codeLinkPrefix'],
+                                  videoUrl: item['videoUrl'],
+                                ),
+                                type: PageTransitionType.leftToRight,
+                              ),
+                            );
+                          },
+                        ))
                     .toList(),
               ),
             ],

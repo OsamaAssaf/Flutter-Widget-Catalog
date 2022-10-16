@@ -36,6 +36,20 @@ import '../views/multi_child_layouts/table_view.dart';
 import '../views/inputs/text_field_view.dart';
 import '../views/inputs/auto_complete_view.dart';
 import '../views/inputs/form_view.dart';
+import '../views/inputs/expansion_tile_view.dart';
+import '../views/touch_interactions/dismissible_view.dart';
+import '../views/touch_interactions/draggable_view.dart';
+import '../views/touch_interactions/draggable_scrollable_sheet_view.dart';
+import '../views/touch_interactions/gesture_detector_view.dart';
+import '../views/touch_interactions/ignore_pointer_view.dart';
+import '../views/touch_interactions/interactive_viewer_view.dart';
+import '../views/routing/navigator_view.dart';
+import '../views/routing/hero_view.dart';
+import '../views/scrolling/re_orderable_list_view_view.dart';
+import '../views/scrolling/refresh_indicator_view.dart';
+import '../views/scrolling/page_view_view.dart';
+import '../views/scrolling/scrollbar_view.dart';
+import '../views/painting/backdrop_filter_view.dart';
 
 class HomeViewModel {
   static const String gitHubPath = 'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
@@ -44,22 +58,23 @@ class HomeViewModel {
   static const String singleLayoutsSourceFile = 'lib/views/single_child_layouts/';
   static const String multiLayoutsSourceFile = 'lib/views/multi_child_layouts/';
   static const String inputsSourceFile = 'lib/views/inputs/';
+  static const String interactionsSourceFile = 'lib/views/touch_interactions/';
+  static const String routingSourceFile = 'lib/views/routing/';
+  static const String scrollingSourceFile = 'lib/views/scrolling/';
+  static const String paintingSourceFile = 'lib/views/painting/';
 
-
-
-  static Map<String, dynamic> getInputsMap(Widget child, String title, String fileName) {
+  static Map<String, dynamic> getPaintingMap(Widget child, String title, String fileName, String? videoUrl) {
     return {
       'child': child,
       'title': title,
-      'sourceFilePath': '$inputsSourceFile$fileName',
+      'sourceFilePath': '$paintingSourceFile$fileName',
       'codeLinkPrefix': gitHubPath,
+      'videoUrl': videoUrl,
     };
   }
 
-  List<Map<String, dynamic>> inputsWidgets = [
-    getInputsMap(const TextFieldView(), 'Text Field', 'text_field_view.dart'),
-    getInputsMap(const AutoCompleteView(), 'Auto Complete', 'auto_complete_view.dart'),
-    getInputsMap(const FormView(), 'Form', 'form_view.dart'),
+  List<Map<String, dynamic>> paintingWidgets = [
+    getPaintingMap(const BackdropFilterView(), 'Backdrop Filter', 'backdrop_filter_view.dart', 'https://www.youtube.com/watch?v=dYRs7Q1vfYI'),
   ];
 
   List<String> allWidgetsList = [
@@ -99,91 +114,172 @@ class HomeViewModel {
     'Text Field',
     'Auto Complete',
     'Form',
+    'Expansion Tile',
+    'Dismissible',
+    'Draggable',
+    'Draggable Scrollable Sheet',
+    'Gesture Detector',
+    'Ignore Pointer',
+    'Interactive Viewer',
+    'Navigator',
+    'Hero',
+    'Reorderable List View',
+    'Refresh Indicator',
+    'Page View',
+    'Scrollbar',
+    'Backdrop Filter',
   ];
 
-
-  static Map<String, dynamic> getBasicsMap(Widget child, String title, String fileName) {
+  static Map<String, dynamic> getBasicsMap(Widget child, String title, String fileName, String? videoUrl) {
     return {
       'child': child,
       'title': title,
       'sourceFilePath': '$basicSourceFile$fileName',
       'codeLinkPrefix': gitHubPath,
+      'videoUrl': videoUrl,
     };
   }
 
   List<Map<String, dynamic>> basicsWidgets = [
-    getBasicsMap(const ScaffoldView(), 'Scaffold', 'scaffold_view.dart'),
-    getBasicsMap(const TextView(), 'Text', 'text_view.dart'),
-    getBasicsMap(const AppBarView(), 'AppBar', 'appbar_view.dart'),
-    getBasicsMap(const ContainerView(), 'Container', 'container_view.dart'),
-    getBasicsMap(const ColumnView(), 'Column', 'column_view.dart'),
-    getBasicsMap(const RowView(), 'Row', 'row_view.dart'),
-    getBasicsMap(const IconsView(), 'Icons', 'icons_view.dart'),
-    getBasicsMap(const ImagesView(), 'Images', 'images_view.dart'),
-    getBasicsMap(const FlutterLogoView(), 'Flutter Logo', 'flutter_logo_view.dart'),
+    getBasicsMap(const ScaffoldView(), 'Scaffold', 'scaffold_view.dart', null),
+    getBasicsMap(const TextView(), 'Text', 'text_view.dart', null),
+    getBasicsMap(const AppBarView(), 'AppBar', 'appbar_view.dart', null),
+    getBasicsMap(const ContainerView(), 'Container', 'container_view.dart', null),
+    getBasicsMap(const ColumnView(), 'Column', 'column_view.dart', null),
+    getBasicsMap(const RowView(), 'Row', 'row_view.dart', null),
+    getBasicsMap(const IconsView(), 'Icons', 'icons_view.dart', null),
+    getBasicsMap(const ImagesView(), 'Images', 'images_view.dart', null),
+    getBasicsMap(const FlutterLogoView(), 'Flutter Logo', 'flutter_logo_view.dart', null),
   ];
 
-  static Map<String, dynamic> getButtonsMap(Widget child, String title, String fileName) {
+  static Map<String, dynamic> getButtonsMap(Widget child, String title, String fileName, String? videoUrl) {
     return {
       'child': child,
       'title': title,
       'sourceFilePath': '$buttonsSourceFile$fileName',
       'codeLinkPrefix': gitHubPath,
+      'videoUrl': videoUrl,
     };
   }
 
   List<Map<String, dynamic>> buttonsWidgets = [
-    getButtonsMap(const ElevatedButtonView(), 'Elevated Button', 'elevated_button_view.dart'),
-    getButtonsMap(const TextButtonView(), 'Text Button', 'text_button_view.dart'),
-    getButtonsMap(const OutlinedButtonView(), 'Outlined Button', 'outlined_button_view.dart'),
-    getButtonsMap(const IconButtonView(), 'Icon Button', 'icon_button_view.dart'),
-    getButtonsMap(const FloatingActionButtonView(), 'Floating Action Button', 'floating_action_button_view.dart'),
-    getButtonsMap(const MaterialButtonView(), 'Material Button', 'material_button_view.dart'),
-    getButtonsMap(const DropdownButtonView(), 'Dropdown Button', 'dropdown_button_view.dart'),
-    getButtonsMap(const PopupMenuButtonView(), 'Popup Menu Button', 'popup_menu_button_view.dart'),
+    getButtonsMap(const ElevatedButtonView(), 'Elevated Button', 'elevated_button_view.dart', null),
+    getButtonsMap(const TextButtonView(), 'Text Button', 'text_button_view.dart', null),
+    getButtonsMap(const OutlinedButtonView(), 'Outlined Button', 'outlined_button_view.dart', null),
+    getButtonsMap(const IconButtonView(), 'Icon Button', 'icon_button_view.dart', null),
+    getButtonsMap(const FloatingActionButtonView(), 'Floating Action Button', 'floating_action_button_view.dart', null),
+    getButtonsMap(const MaterialButtonView(), 'Material Button', 'material_button_view.dart', null),
+    getButtonsMap(const DropdownButtonView(), 'Dropdown Button', 'dropdown_button_view.dart', null),
+    getButtonsMap(const PopupMenuButtonView(), 'Popup Menu Button', 'popup_menu_button_view.dart', null),
   ];
 
-  static Map<String, dynamic> getSingleLayoutsMap(Widget child, String title, String fileName) {
+  static Map<String, dynamic> getSingleLayoutsMap(Widget child, String title, String fileName, String? videoUrl) {
     return {
       'child': child,
       'title': title,
       'sourceFilePath': '$singleLayoutsSourceFile$fileName',
       'codeLinkPrefix': gitHubPath,
+      'videoUrl': videoUrl,
     };
   }
 
   List<Map<String, dynamic>> singleLayoutWidgets = [
-    getSingleLayoutsMap(const CenterView(), 'Center', 'center_view.dart'),
-    getSingleLayoutsMap(const ConstrainedBoxView(), 'Constrained Box', 'constrained_box_view.dart'),
-    getSingleLayoutsMap(const AspectRatioView(), 'Aspect Ratio', 'aspect_ratio_view.dart'),
-    getSingleLayoutsMap(const FittedBoxView(), 'Fitted Box', 'fitted_box_view.dart'),
-    getSingleLayoutsMap(const ExpandedView(), 'Expanded', 'expanded_view.dart'),
-    getSingleLayoutsMap(const PaddingView(), 'Padding', 'padding_view.dart'),
-    getSingleLayoutsMap(const SizedBoxView(), 'Sized Box', 'sized_box_view.dart'),
-    getSingleLayoutsMap(const AlignView(), 'Align', 'align_view.dart'),
-    getSingleLayoutsMap(const TransformView(), 'Transform', 'transform_view.dart'),
+    getSingleLayoutsMap(const CenterView(), 'Center', 'center_view.dart', null),
+    getSingleLayoutsMap(const ConstrainedBoxView(), 'Constrained Box', 'constrained_box_view.dart', null),
+    getSingleLayoutsMap(const AspectRatioView(), 'Aspect Ratio', 'aspect_ratio_view.dart', null),
+    getSingleLayoutsMap(const FittedBoxView(), 'Fitted Box', 'fitted_box_view.dart', null),
+    getSingleLayoutsMap(const ExpandedView(), 'Expanded', 'expanded_view.dart', null),
+    getSingleLayoutsMap(const PaddingView(), 'Padding', 'padding_view.dart', null),
+    getSingleLayoutsMap(const SizedBoxView(), 'Sized Box', 'sized_box_view.dart', null),
+    getSingleLayoutsMap(const AlignView(), 'Align', 'align_view.dart', null),
+    getSingleLayoutsMap(const TransformView(), 'Transform', 'transform_view.dart', null),
   ];
 
-
-  static Map<String, dynamic> getMultiLayoutsMap(Widget child, String title, String fileName) {
+  static Map<String, dynamic> getMultiLayoutsMap(Widget child, String title, String fileName, String? videoUrl) {
     return {
       'child': child,
       'title': title,
       'sourceFilePath': '$multiLayoutsSourceFile$fileName',
       'codeLinkPrefix': gitHubPath,
+      'videoUrl': videoUrl,
     };
   }
 
   List<Map<String, dynamic>> multiLayoutWidgets = [
-    getMultiLayoutsMap(const ListViewView(), 'List View', 'list_view_view.dart'),
-    getMultiLayoutsMap(const GridViewView(), 'Grid View', 'grid_view_view.dart'),
-    getMultiLayoutsMap(const IndexedStackView(), 'Indexed Stack', 'indexed_stack_view.dart'),
-    getMultiLayoutsMap(const StackView(), 'Stack', 'stack_view.dart'),
-    getMultiLayoutsMap(const LayoutBuilderView(), 'Layout Builder', 'layout_builder_view.dart'),
-    getMultiLayoutsMap(const WrapView(), 'Wrap', 'wrap_view.dart'),
-    getMultiLayoutsMap(const TableView(), 'Table', 'table_view.dart'),
+    getMultiLayoutsMap(const ListViewView(), 'List View', 'list_view_view.dart', null),
+    getMultiLayoutsMap(const GridViewView(), 'Grid View', 'grid_view_view.dart', null),
+    getMultiLayoutsMap(const IndexedStackView(), 'Indexed Stack', 'indexed_stack_view.dart', null),
+    getMultiLayoutsMap(const StackView(), 'Stack', 'stack_view.dart', null),
+    getMultiLayoutsMap(const LayoutBuilderView(), 'Layout Builder', 'layout_builder_view.dart', null),
+    getMultiLayoutsMap(const WrapView(), 'Wrap', 'wrap_view.dart', null),
+    getMultiLayoutsMap(const TableView(), 'Table', 'table_view.dart', null),
   ];
 
+  static Map<String, dynamic> getInputsMap(Widget child, String title, String fileName, String? videoUrl) {
+    return {
+      'child': child,
+      'title': title,
+      'sourceFilePath': '$inputsSourceFile$fileName',
+      'codeLinkPrefix': gitHubPath,
+      'videoUrl': videoUrl,
+    };
+  }
 
+  List<Map<String, dynamic>> inputsWidgets = [
+    getInputsMap(const TextFieldView(), 'Text Field', 'text_field_view.dart', null),
+    getInputsMap(const AutoCompleteView(), 'Auto Complete', 'auto_complete_view.dart', 'https://www.youtube.com/watch?v=-Nny8kzW380'),
+    getInputsMap(const FormView(), 'Form', 'form_view.dart', null),
+    getInputsMap(const ExpansionTileView(), 'Expansion Tile', 'expansion_tile_view.dart', null),
+  ];
 
+  static Map<String, dynamic> getInteractionsMap(Widget child, String title, String fileName, String? videoUrl) {
+    return {
+      'child': child,
+      'title': title,
+      'sourceFilePath': '$interactionsSourceFile$fileName',
+      'codeLinkPrefix': gitHubPath,
+      'videoUrl': videoUrl,
+    };
+  }
+
+  List<Map<String, dynamic>> interactionWidgets = [
+    getInteractionsMap(const DismissibleView(), 'Dismissible', 'dismissible_view.dart', 'https://www.youtube.com/watch?v=iEMgjrfuc58'),
+    getInteractionsMap(const DraggableView(), 'Draggable', 'draggable_view.dart', 'https://www.youtube.com/watch?v=QzA4c4QHZCY'),
+    getInteractionsMap(const DraggableScrollableSheetView(), 'Draggable Scrollable Sheet', 'draggable_scrollable_sheet_view.dart', 'https://www.youtube.com/watch?v=Hgw819mL_78'),
+    getInteractionsMap(const GestureDetectorView(), 'Gesture Detector', 'gesture_detector_view.dart', 'https://www.youtube.com/watch?v=WhVXkCFPmK4'),
+    getInteractionsMap(const IgnorePointerView(), 'Ignore Pointer', 'ignore_pointer_view.dart', 'https://www.youtube.com/watch?v=qV9pqHWxYgI'),
+    getInteractionsMap(const InteractiveViewerView(), 'Interactive Viewer', 'interactive_viewer_view.dart', 'https://www.youtube.com/watch?v=zrn7V3bMJvg'),
+  ];
+
+  static Map<String, dynamic> getRoutingMap(Widget child, String title, String fileName, String? videoUrl) {
+    return {
+      'child': child,
+      'title': title,
+      'sourceFilePath': '$routingSourceFile$fileName',
+      'codeLinkPrefix': gitHubPath,
+      'videoUrl': videoUrl,
+    };
+  }
+
+  List<Map<String, dynamic>> routingWidgets = [
+    getRoutingMap(const NavigatorView(), 'Navigator', 'navigator_view.dart', null),
+    getRoutingMap(const HeroView(), 'Hero', 'hero_view.dart', 'https://www.youtube.com/watch?v=Be9UH1kXFDw'),
+  ];
+
+  static Map<String, dynamic> getScrollingMap(Widget child, String title, String fileName, String? videoUrl) {
+    return {
+      'child': child,
+      'title': title,
+      'sourceFilePath': '$scrollingSourceFile$fileName',
+      'codeLinkPrefix': gitHubPath,
+      'videoUrl': videoUrl,
+    };
+  }
+
+  List<Map<String, dynamic>> scrollingWidgets = [
+    getScrollingMap(const ReorderableListViewView(), 'Re-orderable List View', 're_orderable_list_view_view.dart', 'https://www.youtube.com/watch?v=3fB1mxOsqJE'),
+    getScrollingMap(const RefreshIndicatorView(), 'Refresh Indicator', 'refresh_indicator_view.dart', 'https://www.youtube.com/watch?v=ORApMlzwMdM'),
+    getScrollingMap(const PageViewView(), 'Page View', 'page_view_view.dart', 'https://www.youtube.com/watch?v=J1gE9xvph-A'),
+    getScrollingMap(const ScrollbarView(), 'Scrollbar', 'scrollbar_view.dart', 'https://www.youtube.com/watch?v=DbkIQSvwnZc'),
+  ];
 }

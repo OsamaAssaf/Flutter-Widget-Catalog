@@ -36,7 +36,7 @@ class _FormViewState extends State<FormView> {
                     }
                     return null;
                   },
-                  onSaved: (String? value){
+                  onSaved: (String? value) {
                     email = value;
                   },
                 ),
@@ -56,7 +56,7 @@ class _FormViewState extends State<FormView> {
                     }
                     return null;
                   },
-                  onSaved: (String? value){
+                  onSaved: (String? value) {
                     password = value;
                   },
                 ),
@@ -70,6 +70,7 @@ class _FormViewState extends State<FormView> {
                     if (_formKey.currentState!.validate()) {
                       /// Save will trigger onSaved inside TextFormField
                       _formKey.currentState!.save();
+
                       /// Now you can use email and password variable and check your database.
                     }
                   },
