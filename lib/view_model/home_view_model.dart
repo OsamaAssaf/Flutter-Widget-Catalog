@@ -33,6 +33,9 @@ import '../views/multi_child_layouts/stack_view.dart';
 import '../views/multi_child_layouts/layout_builder_view.dart';
 import '../views/multi_child_layouts/wrap_view.dart';
 import '../views/multi_child_layouts/table_view.dart';
+import '../views/inputs/text_field_view.dart';
+import '../views/inputs/auto_complete_view.dart';
+import '../views/inputs/form_view.dart';
 
 class HomeViewModel {
   static const String gitHubPath = 'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
@@ -40,15 +43,24 @@ class HomeViewModel {
   static const String buttonsSourceFile = 'lib/views/buttons/';
   static const String singleLayoutsSourceFile = 'lib/views/single_child_layouts/';
   static const String multiLayoutsSourceFile = 'lib/views/multi_child_layouts/';
+  static const String inputsSourceFile = 'lib/views/inputs/';
 
-  static Map<String, dynamic> getBasicsMap(Widget child, String title, String fileName) {
+
+
+  static Map<String, dynamic> getInputsMap(Widget child, String title, String fileName) {
     return {
       'child': child,
       'title': title,
-      'sourceFilePath': '$basicSourceFile$fileName',
+      'sourceFilePath': '$inputsSourceFile$fileName',
       'codeLinkPrefix': gitHubPath,
     };
   }
+
+  List<Map<String, dynamic>> inputsWidgets = [
+    getInputsMap(const TextFieldView(), 'Text Field', 'text_field_view.dart'),
+    getInputsMap(const AutoCompleteView(), 'Auto Complete', 'auto_complete_view.dart'),
+    getInputsMap(const FormView(), 'Form', 'form_view.dart'),
+  ];
 
   List<String> allWidgetsList = [
     'Scaffold',
@@ -84,7 +96,20 @@ class HomeViewModel {
     'Layout Builder',
     'Wrap',
     'Table',
+    'Text Field',
+    'Auto Complete',
+    'Form',
   ];
+
+
+  static Map<String, dynamic> getBasicsMap(Widget child, String title, String fileName) {
+    return {
+      'child': child,
+      'title': title,
+      'sourceFilePath': '$basicSourceFile$fileName',
+      'codeLinkPrefix': gitHubPath,
+    };
+  }
 
   List<Map<String, dynamic>> basicsWidgets = [
     getBasicsMap(const ScaffoldView(), 'Scaffold', 'scaffold_view.dart'),
@@ -157,6 +182,8 @@ class HomeViewModel {
     getMultiLayoutsMap(const LayoutBuilderView(), 'Layout Builder', 'layout_builder_view.dart'),
     getMultiLayoutsMap(const WrapView(), 'Wrap', 'wrap_view.dart'),
     getMultiLayoutsMap(const TableView(), 'Table', 'table_view.dart'),
-
   ];
+
+
+
 }

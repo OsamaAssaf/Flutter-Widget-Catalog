@@ -145,6 +145,37 @@ class HomeView extends StatelessWidget {
                 ))
                     .toList(),
               ),
+              ExpansionTile(
+                title: const Text('Input widgets'),
+                subtitle: const Text(
+                  'Take user input in addition to input widgets in Material Components and Cupertino.',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                children: _viewModel.inputsWidgets
+                    .map((item) => ListTile(
+                  title: Text(item['title']),
+                  trailing: const Icon(
+                    Icons.arrow_forward_ios,
+                    size: 18.0,
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        child: CodeView(
+                          child: item['child'],
+                          title: item['title'],
+                          sourceFilePath: item['sourceFilePath'],
+                          codeLinkPrefix: item['codeLinkPrefix'],
+                        ),
+                        type: PageTransitionType.leftToRight,
+                      ),
+                    );
+                  },
+                ))
+                    .toList(),
+              ),
             ],
           ),
         ));
