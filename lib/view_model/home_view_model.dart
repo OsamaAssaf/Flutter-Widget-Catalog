@@ -64,6 +64,14 @@ import '../views/animation/animated_list_view.dart';
 import '../views/animation/animated_opacity_view.dart';
 import '../views/animation/animated_physical_model_view.dart';
 import '../views/animation/animated_positioned_view.dart';
+import '../views/animation/animated_size_view.dart';
+import '../views/transition/decorated_box_transition_view.dart';
+import '../views/transition/fade_transition_view.dart';
+import '../views/transition/positioned_transition_view.dart';
+import '../views/transition/rotation_transition_view.dart';
+import '../views/transition/scale_transition_view.dart';
+import '../views/transition/size_transition_view.dart';
+import '../views/transition/slide_transition_view.dart';
 
 class HomeViewModel {
   static const String gitHubPath = 'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
@@ -77,26 +85,27 @@ class HomeViewModel {
   static const String scrollingSourceFile = 'lib/views/scrolling/';
   static const String paintingSourceFile = 'lib/views/painting/';
   static const String animationSourceFile = 'lib/views/animation/';
+  static const String transitionSourceFile = 'lib/views/transition/';
 
-  static Map<String, dynamic> getAnimationMap(Widget child, String title, String fileName, String? videoUrl) {
+
+  static Map<String, dynamic> getTransitionsMap(Widget child, String title, String fileName, String? videoUrl) {
     return {
       'child': child,
       'title': title,
-      'sourceFilePath': '$animationSourceFile$fileName',
+      'sourceFilePath': '$transitionSourceFile$fileName',
       'codeLinkPrefix': gitHubPath,
       'videoUrl': videoUrl,
     };
   }
 
-  List<Map<String, dynamic>> animationWidgets = [
-    getAnimationMap(const AnimatedAlignView(), 'Animated Align', 'animated_align_view.dart', null),
-    getAnimationMap(const AnimatedContainerView(), 'Animated Container', 'animated_container_view.dart', 'https://www.youtube.com/watch?v=yI-8QHpGIP4'),
-    getAnimationMap(const AnimatedCrossFadeView(), 'Animated Cross Fade', 'animated_cross_fade_view.dart', 'https://www.youtube.com/watch?v=PGK2UUAyE54'),
-    getAnimationMap(const AnimatedDefaultTextStyleView(), 'Animated Default Text Style', 'animated_default_text_style_view.dart', null),
-    getAnimationMap(const AnimatedListView(), 'Animated List', 'animated_list_view.dart', 'https://www.youtube.com/watch?v=ZtfItHwFlZ8'),
-    getAnimationMap(const AnimatedOpacityView(), 'Animated Opacity', 'animated_opacity_view.dart', 'https://www.youtube.com/watch?v=QZAvjqOqiLY'),
-    getAnimationMap(const AnimatedPhysicalModelView(), 'Animated Physical Model', 'animated_physical_model_view.dart', null),
-    getAnimationMap(const AnimatedPositionedView(), 'Animated Positioned', 'animated_positioned_view.dart', 'https://www.youtube.com/watch?v=hC3s2YdtWt8'),
+  List<Map<String, dynamic>> transitionsWidgets = [
+    getAnimationMap(const DecoratedBoxTransitionView(), 'Decorated Box Transition', 'decorated_box_transition_view.dart', null),
+    getAnimationMap(const FadeTransitionView(), 'Fade Transition', 'fade_transition_view.dart', 'https://www.youtube.com/watch?v=rLwWVbv3xDQ'),
+    getAnimationMap(const PositionedTransitionView(), 'Positioned Transition', 'positioned_transition_view.dart', null),
+    getAnimationMap(const RotationTransitionView(), 'Rotation Transition', 'rotation_transition_view.dart', null),
+    getAnimationMap(const ScaleTransitionView(), 'Scale Transition', 'scale_transition_view.dart', null),
+    getAnimationMap(const SizeTransitionView(), 'Size Transition', 'size_transition_view.dart', null),
+    getAnimationMap(const SlideTransitionView(), 'Slide Transition', 'slide_transition_view.dart', null),
   ];
 
   List<String> allWidgetsList = [
@@ -164,6 +173,14 @@ class HomeViewModel {
     'Animated Opacity',
     'Animated Physical Model',
     'Animated Positioned',
+    'Animated Size',
+    'Decorated Box Transition',
+    'Fade Transition',
+    'Positioned Transition',
+    'Rotation Transition',
+    'Scale Transition',
+    'Size Transition',
+    'Slide Transition',
   ];
 
   static Map<String, dynamic> getBasicsMap(Widget child, String title, String fileName, String? videoUrl) {
@@ -337,6 +354,28 @@ class HomeViewModel {
     getPaintingMap(const FractionalTranslationView(), 'Fractional Translation', 'fractional_translation_view.dart', null),
     getPaintingMap(const OpacityView(), 'Opacity', 'opacity_view.dart', 'https://www.youtube.com/watch?v=9hltevOHQBw'),
     getPaintingMap(const RotatedBoxView(), 'Rotated Box', 'rotated_box_view.dart', 'https://www.youtube.com/watch?v=BFE6_UglLfQ'),
+  ];
+
+  static Map<String, dynamic> getAnimationMap(Widget child, String title, String fileName, String? videoUrl) {
+    return {
+      'child': child,
+      'title': title,
+      'sourceFilePath': '$animationSourceFile$fileName',
+      'codeLinkPrefix': gitHubPath,
+      'videoUrl': videoUrl,
+    };
+  }
+
+  List<Map<String, dynamic>> animationWidgets = [
+    getAnimationMap(const AnimatedAlignView(), 'Animated Align', 'animated_align_view.dart', null),
+    getAnimationMap(const AnimatedContainerView(), 'Animated Container', 'animated_container_view.dart', 'https://www.youtube.com/watch?v=yI-8QHpGIP4'),
+    getAnimationMap(const AnimatedCrossFadeView(), 'Animated Cross Fade', 'animated_cross_fade_view.dart', 'https://www.youtube.com/watch?v=PGK2UUAyE54'),
+    getAnimationMap(const AnimatedDefaultTextStyleView(), 'Animated Default Text Style', 'animated_default_text_style_view.dart', null),
+    getAnimationMap(const AnimatedListView(), 'Animated List', 'animated_list_view.dart', 'https://www.youtube.com/watch?v=ZtfItHwFlZ8'),
+    getAnimationMap(const AnimatedOpacityView(), 'Animated Opacity', 'animated_opacity_view.dart', 'https://www.youtube.com/watch?v=QZAvjqOqiLY'),
+    getAnimationMap(const AnimatedPhysicalModelView(), 'Animated Physical Model', 'animated_physical_model_view.dart', null),
+    getAnimationMap(const AnimatedPositionedView(), 'Animated Positioned', 'animated_positioned_view.dart', 'https://www.youtube.com/watch?v=hC3s2YdtWt8'),
+    getAnimationMap(const AnimatedSizeView(), 'Animated Size', 'animated_size_view.dart', null),
   ];
 
 }
