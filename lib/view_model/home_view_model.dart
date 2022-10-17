@@ -87,26 +87,25 @@ class HomeViewModel {
   static const String animationSourceFile = 'lib/views/animation/';
   static const String transitionSourceFile = 'lib/views/transition/';
 
-
-  static Map<String, dynamic> getTransitionsMap(Widget child, String title, String fileName, String? videoUrl) {
-    return {
-      'child': child,
-      'title': title,
-      'sourceFilePath': '$transitionSourceFile$fileName',
-      'codeLinkPrefix': gitHubPath,
-      'videoUrl': videoUrl,
-    };
-  }
-
-  List<Map<String, dynamic>> transitionsWidgets = [
-    getAnimationMap(const DecoratedBoxTransitionView(), 'Decorated Box Transition', 'decorated_box_transition_view.dart', null),
-    getAnimationMap(const FadeTransitionView(), 'Fade Transition', 'fade_transition_view.dart', 'https://www.youtube.com/watch?v=rLwWVbv3xDQ'),
-    getAnimationMap(const PositionedTransitionView(), 'Positioned Transition', 'positioned_transition_view.dart', null),
-    getAnimationMap(const RotationTransitionView(), 'Rotation Transition', 'rotation_transition_view.dart', null),
-    getAnimationMap(const ScaleTransitionView(), 'Scale Transition', 'scale_transition_view.dart', null),
-    getAnimationMap(const SizeTransitionView(), 'Size Transition', 'size_transition_view.dart', null),
-    getAnimationMap(const SlideTransitionView(), 'Slide Transition', 'slide_transition_view.dart', null),
-  ];
+  // static Map<String, dynamic> getTransitionsMap(Widget child, String title, String fileName, String? videoUrl) {
+  //   return {
+  //     'child': child,
+  //     'title': title,
+  //     'sourceFilePath': '$transitionSourceFile$fileName',
+  //     'codeLinkPrefix': gitHubPath,
+  //     'videoUrl': videoUrl,
+  //   };
+  // }
+  //
+  // List<Map<String, dynamic>> transitionsWidgets = [
+  //   getTransitionsMap(const DecoratedBoxTransitionView(), 'Decorated Box Transition', 'decorated_box_transition_view.dart', null),
+  //   getTransitionsMap(const FadeTransitionView(), 'Fade Transition', 'fade_transition_view.dart', 'https://www.youtube.com/watch?v=rLwWVbv3xDQ'),
+  //   getTransitionsMap(const PositionedTransitionView(), 'Positioned Transition', 'positioned_transition_view.dart', null),
+  //   getTransitionsMap(const RotationTransitionView(), 'Rotation Transition', 'rotation_transition_view.dart', null),
+  //   getTransitionsMap(const ScaleTransitionView(), 'Scale Transition', 'scale_transition_view.dart', null),
+  //   getTransitionsMap(const SizeTransitionView(), 'Size Transition', 'size_transition_view.dart', null),
+  //   getTransitionsMap(const SlideTransitionView(), 'Slide Transition', 'slide_transition_view.dart', null),
+  // ];
 
   List<String> allWidgetsList = [
     'Scaffold',
@@ -193,7 +192,7 @@ class HomeViewModel {
     };
   }
 
-  List<Map<String, dynamic>> basicsWidgets = [
+  static List<Map<String, dynamic>> basicsWidgets = [
     getBasicsMap(const ScaffoldView(), 'Scaffold', 'scaffold_view.dart', null),
     getBasicsMap(const TextView(), 'Text', 'text_view.dart', null),
     getBasicsMap(const AppBarView(), 'AppBar', 'appbar_view.dart', null),
@@ -215,7 +214,7 @@ class HomeViewModel {
     };
   }
 
-  List<Map<String, dynamic>> buttonsWidgets = [
+  static List<Map<String, dynamic>> buttonsWidgets = [
     getButtonsMap(const ElevatedButtonView(), 'Elevated Button', 'elevated_button_view.dart', null),
     getButtonsMap(const TextButtonView(), 'Text Button', 'text_button_view.dart', null),
     getButtonsMap(const OutlinedButtonView(), 'Outlined Button', 'outlined_button_view.dart', null),
@@ -236,7 +235,7 @@ class HomeViewModel {
     };
   }
 
-  List<Map<String, dynamic>> singleLayoutWidgets = [
+  static List<Map<String, dynamic>> singleLayoutWidgets = [
     getSingleLayoutsMap(const CenterView(), 'Center', 'center_view.dart', null),
     getSingleLayoutsMap(const ConstrainedBoxView(), 'Constrained Box', 'constrained_box_view.dart', null),
     getSingleLayoutsMap(const AspectRatioView(), 'Aspect Ratio', 'aspect_ratio_view.dart', null),
@@ -245,7 +244,8 @@ class HomeViewModel {
     getSingleLayoutsMap(const PaddingView(), 'Padding', 'padding_view.dart', null),
     getSingleLayoutsMap(const SizedBoxView(), 'Sized Box', 'sized_box_view.dart', null),
     getSingleLayoutsMap(const AlignView(), 'Align', 'align_view.dart', null),
-    getSingleLayoutsMap(const TransformView(), 'Transform', 'transform_view.dart', 'https://www.youtube.com/watch?v=9z_YNlRlWfA'),
+    getSingleLayoutsMap(
+        const TransformView(), 'Transform', 'transform_view.dart', 'https://www.youtube.com/watch?v=9z_YNlRlWfA'),
   ];
 
   static Map<String, dynamic> getMultiLayoutsMap(Widget child, String title, String fileName, String? videoUrl) {
@@ -258,7 +258,7 @@ class HomeViewModel {
     };
   }
 
-  List<Map<String, dynamic>> multiLayoutWidgets = [
+  static List<Map<String, dynamic>> multiLayoutWidgets = [
     getMultiLayoutsMap(const ListViewView(), 'List View', 'list_view_view.dart', null),
     getMultiLayoutsMap(const GridViewView(), 'Grid View', 'grid_view_view.dart', null),
     getMultiLayoutsMap(const IndexedStackView(), 'Indexed Stack', 'indexed_stack_view.dart', null),
@@ -278,9 +278,10 @@ class HomeViewModel {
     };
   }
 
-  List<Map<String, dynamic>> inputsWidgets = [
+  static List<Map<String, dynamic>> inputsWidgets = [
     getInputsMap(const TextFieldView(), 'Text Field', 'text_field_view.dart', null),
-    getInputsMap(const AutoCompleteView(), 'Auto Complete', 'auto_complete_view.dart', 'https://www.youtube.com/watch?v=-Nny8kzW380'),
+    getInputsMap(const AutoCompleteView(), 'Auto Complete', 'auto_complete_view.dart',
+        'https://www.youtube.com/watch?v=-Nny8kzW380'),
     getInputsMap(const FormView(), 'Form', 'form_view.dart', null),
     getInputsMap(const ExpansionTileView(), 'Expansion Tile', 'expansion_tile_view.dart', null),
   ];
@@ -295,13 +296,19 @@ class HomeViewModel {
     };
   }
 
-  List<Map<String, dynamic>> interactionWidgets = [
-    getInteractionsMap(const DismissibleView(), 'Dismissible', 'dismissible_view.dart', 'https://www.youtube.com/watch?v=iEMgjrfuc58'),
-    getInteractionsMap(const DraggableView(), 'Draggable', 'draggable_view.dart', 'https://www.youtube.com/watch?v=QzA4c4QHZCY'),
-    getInteractionsMap(const DraggableScrollableSheetView(), 'Draggable Scrollable Sheet', 'draggable_scrollable_sheet_view.dart', 'https://www.youtube.com/watch?v=Hgw819mL_78'),
-    getInteractionsMap(const GestureDetectorView(), 'Gesture Detector', 'gesture_detector_view.dart', 'https://www.youtube.com/watch?v=WhVXkCFPmK4'),
-    getInteractionsMap(const IgnorePointerView(), 'Ignore Pointer', 'ignore_pointer_view.dart', 'https://www.youtube.com/watch?v=qV9pqHWxYgI'),
-    getInteractionsMap(const InteractiveViewerView(), 'Interactive Viewer', 'interactive_viewer_view.dart', 'https://www.youtube.com/watch?v=zrn7V3bMJvg'),
+  static List<Map<String, dynamic>> interactionWidgets = [
+    getInteractionsMap(
+        const DismissibleView(), 'Dismissible', 'dismissible_view.dart', 'https://www.youtube.com/watch?v=iEMgjrfuc58'),
+    getInteractionsMap(
+        const DraggableView(), 'Draggable', 'draggable_view.dart', 'https://www.youtube.com/watch?v=QzA4c4QHZCY'),
+    getInteractionsMap(const DraggableScrollableSheetView(), 'Draggable Scrollable Sheet',
+        'draggable_scrollable_sheet_view.dart', 'https://www.youtube.com/watch?v=Hgw819mL_78'),
+    getInteractionsMap(const GestureDetectorView(), 'Gesture Detector', 'gesture_detector_view.dart',
+        'https://www.youtube.com/watch?v=WhVXkCFPmK4'),
+    getInteractionsMap(const IgnorePointerView(), 'Ignore Pointer', 'ignore_pointer_view.dart',
+        'https://www.youtube.com/watch?v=qV9pqHWxYgI'),
+    getInteractionsMap(const InteractiveViewerView(), 'Interactive Viewer', 'interactive_viewer_view.dart',
+        'https://www.youtube.com/watch?v=zrn7V3bMJvg'),
   ];
 
   static Map<String, dynamic> getRoutingMap(Widget child, String title, String fileName, String? videoUrl) {
@@ -314,7 +321,7 @@ class HomeViewModel {
     };
   }
 
-  List<Map<String, dynamic>> routingWidgets = [
+  static List<Map<String, dynamic>> routingWidgets = [
     getRoutingMap(const NavigatorView(), 'Navigator', 'navigator_view.dart', null),
     getRoutingMap(const HeroView(), 'Hero', 'hero_view.dart', 'https://www.youtube.com/watch?v=Be9UH1kXFDw'),
   ];
@@ -329,11 +336,15 @@ class HomeViewModel {
     };
   }
 
-  List<Map<String, dynamic>> scrollingWidgets = [
-    getScrollingMap(const ReorderableListViewView(), 'Re-orderable List View', 're_orderable_list_view_view.dart', 'https://www.youtube.com/watch?v=3fB1mxOsqJE'),
-    getScrollingMap(const RefreshIndicatorView(), 'Refresh Indicator', 'refresh_indicator_view.dart', 'https://www.youtube.com/watch?v=ORApMlzwMdM'),
-    getScrollingMap(const PageViewView(), 'Page View', 'page_view_view.dart', 'https://www.youtube.com/watch?v=J1gE9xvph-A'),
-    getScrollingMap(const ScrollbarView(), 'Scrollbar', 'scrollbar_view.dart', 'https://www.youtube.com/watch?v=DbkIQSvwnZc'),
+  static List<Map<String, dynamic>> scrollingWidgets = [
+    getScrollingMap(const ReorderableListViewView(), 'Re-orderable List View', 're_orderable_list_view_view.dart',
+        'https://www.youtube.com/watch?v=3fB1mxOsqJE'),
+    getScrollingMap(const RefreshIndicatorView(), 'Refresh Indicator', 'refresh_indicator_view.dart',
+        'https://www.youtube.com/watch?v=ORApMlzwMdM'),
+    getScrollingMap(
+        const PageViewView(), 'Page View', 'page_view_view.dart', 'https://www.youtube.com/watch?v=J1gE9xvph-A'),
+    getScrollingMap(
+        const ScrollbarView(), 'Scrollbar', 'scrollbar_view.dart', 'https://www.youtube.com/watch?v=DbkIQSvwnZc'),
   ];
 
   static Map<String, dynamic> getPaintingMap(Widget child, String title, String fileName, String? videoUrl) {
@@ -346,14 +357,18 @@ class HomeViewModel {
     };
   }
 
-  List<Map<String, dynamic>> paintingWidgets = [
-    getPaintingMap(const BackdropFilterView(), 'Backdrop Filter', 'backdrop_filter_view.dart', 'https://www.youtube.com/watch?v=dYRs7Q1vfYI'),
-    getPaintingMap(const ClipOvalView(), 'Clip Oval', 'clip_oval_view.dart', 'https://www.youtube.com/watch?v=vzWWDO6whIM'),
+  static List<Map<String, dynamic>> paintingWidgets = [
+    getPaintingMap(const BackdropFilterView(), 'Backdrop Filter', 'backdrop_filter_view.dart',
+        'https://www.youtube.com/watch?v=dYRs7Q1vfYI'),
+    getPaintingMap(
+        const ClipOvalView(), 'Clip Oval', 'clip_oval_view.dart', 'https://www.youtube.com/watch?v=vzWWDO6whIM'),
     getPaintingMap(const ClipRectView(), 'Clip Rect', 'clip_rect_view.dart', null),
     getPaintingMap(const DecoratedBoxView(), 'Decorated Box', 'decorated_box_view.dart', null),
-    getPaintingMap(const FractionalTranslationView(), 'Fractional Translation', 'fractional_translation_view.dart', null),
+    getPaintingMap(
+        const FractionalTranslationView(), 'Fractional Translation', 'fractional_translation_view.dart', null),
     getPaintingMap(const OpacityView(), 'Opacity', 'opacity_view.dart', 'https://www.youtube.com/watch?v=9hltevOHQBw'),
-    getPaintingMap(const RotatedBoxView(), 'Rotated Box', 'rotated_box_view.dart', 'https://www.youtube.com/watch?v=BFE6_UglLfQ'),
+    getPaintingMap(
+        const RotatedBoxView(), 'Rotated Box', 'rotated_box_view.dart', 'https://www.youtube.com/watch?v=BFE6_UglLfQ'),
   ];
 
   static Map<String, dynamic> getAnimationMap(Widget child, String title, String fileName, String? videoUrl) {
@@ -366,16 +381,104 @@ class HomeViewModel {
     };
   }
 
-  List<Map<String, dynamic>> animationWidgets = [
+  static List<Map<String, dynamic>> animationWidgets = [
     getAnimationMap(const AnimatedAlignView(), 'Animated Align', 'animated_align_view.dart', null),
-    getAnimationMap(const AnimatedContainerView(), 'Animated Container', 'animated_container_view.dart', 'https://www.youtube.com/watch?v=yI-8QHpGIP4'),
-    getAnimationMap(const AnimatedCrossFadeView(), 'Animated Cross Fade', 'animated_cross_fade_view.dart', 'https://www.youtube.com/watch?v=PGK2UUAyE54'),
-    getAnimationMap(const AnimatedDefaultTextStyleView(), 'Animated Default Text Style', 'animated_default_text_style_view.dart', null),
-    getAnimationMap(const AnimatedListView(), 'Animated List', 'animated_list_view.dart', 'https://www.youtube.com/watch?v=ZtfItHwFlZ8'),
-    getAnimationMap(const AnimatedOpacityView(), 'Animated Opacity', 'animated_opacity_view.dart', 'https://www.youtube.com/watch?v=QZAvjqOqiLY'),
-    getAnimationMap(const AnimatedPhysicalModelView(), 'Animated Physical Model', 'animated_physical_model_view.dart', null),
-    getAnimationMap(const AnimatedPositionedView(), 'Animated Positioned', 'animated_positioned_view.dart', 'https://www.youtube.com/watch?v=hC3s2YdtWt8'),
+    getAnimationMap(const AnimatedContainerView(), 'Animated Container', 'animated_container_view.dart',
+        'https://www.youtube.com/watch?v=yI-8QHpGIP4'),
+    getAnimationMap(const AnimatedCrossFadeView(), 'Animated Cross Fade', 'animated_cross_fade_view.dart',
+        'https://www.youtube.com/watch?v=PGK2UUAyE54'),
+    getAnimationMap(const AnimatedDefaultTextStyleView(), 'Animated Default Text Style',
+        'animated_default_text_style_view.dart', null),
+    getAnimationMap(const AnimatedListView(), 'Animated List', 'animated_list_view.dart',
+        'https://www.youtube.com/watch?v=ZtfItHwFlZ8'),
+    getAnimationMap(const AnimatedOpacityView(), 'Animated Opacity', 'animated_opacity_view.dart',
+        'https://www.youtube.com/watch?v=QZAvjqOqiLY'),
+    getAnimationMap(
+        const AnimatedPhysicalModelView(), 'Animated Physical Model', 'animated_physical_model_view.dart', null),
+    getAnimationMap(const AnimatedPositionedView(), 'Animated Positioned', 'animated_positioned_view.dart',
+        'https://www.youtube.com/watch?v=hC3s2YdtWt8'),
     getAnimationMap(const AnimatedSizeView(), 'Animated Size', 'animated_size_view.dart', null),
   ];
 
+  static Map<String, dynamic> getTransitionsMap(Widget child, String title, String fileName, String? videoUrl) {
+    return {
+      'child': child,
+      'title': title,
+      'sourceFilePath': '$transitionSourceFile$fileName',
+      'codeLinkPrefix': gitHubPath,
+      'videoUrl': videoUrl,
+    };
+  }
+
+  static List<Map<String, dynamic>> transitionsWidgets = [
+    getTransitionsMap(
+        const DecoratedBoxTransitionView(), 'Decorated Box Transition', 'decorated_box_transition_view.dart', null),
+    getTransitionsMap(const FadeTransitionView(), 'Fade Transition', 'fade_transition_view.dart',
+        'https://www.youtube.com/watch?v=rLwWVbv3xDQ'),
+    getTransitionsMap(
+        const PositionedTransitionView(), 'Positioned Transition', 'positioned_transition_view.dart', null),
+    getTransitionsMap(const RotationTransitionView(), 'Rotation Transition', 'rotation_transition_view.dart', null),
+    getTransitionsMap(const ScaleTransitionView(), 'Scale Transition', 'scale_transition_view.dart', null),
+    getTransitionsMap(const SizeTransitionView(), 'Size Transition', 'size_transition_view.dart', null),
+    getTransitionsMap(const SlideTransitionView(), 'Slide Transition', 'slide_transition_view.dart', null),
+  ];
+
+  List<Map<String,dynamic>> homeExpansionTiles = [
+    {
+      'title': 'Basics',
+      'subtitle': 'Widgets you absolutely need to know before building your first Flutter app.',
+      'list': basicsWidgets,
+    },
+    {
+      'title': 'Buttons',
+      'subtitle': 'Clickable widgets.',
+      'list': buttonsWidgets,
+    },
+    {
+      'title': 'Single-child layout widgets',
+      'subtitle': 'Arrange other widgets columns, rows, grids, and many other single_child_layouts.',
+      'list': singleLayoutWidgets,
+    },
+    {
+      'title': 'Multi-child layout widgets',
+      'subtitle': 'Arrange other widgets columns, rows, grids, and many other single_child_layouts.',
+      'list': multiLayoutWidgets,
+    },
+    {
+      'title': 'Input widgets',
+      'subtitle': 'Take user input in addition to input widgets in Material Components and Cupertino.',
+      'list': inputsWidgets,
+    },
+    {
+      'title': 'Touch interactions',
+      'subtitle': 'Respond to touch events.',
+      'list': interactionWidgets,
+    },
+    {
+      'title': 'Routing',
+      'subtitle': 'Route users to different views.',
+      'list': routingWidgets,
+    },
+    {
+      'title': 'Scrolling widgets',
+      'subtitle': 'Scroll multiple widgets as children of the parent.',
+      'list': scrollingWidgets,
+    },
+    {
+      'title': 'Painting and effect widgets',
+      'subtitle':
+          'These widgets apply visual effects to the children without changing their layout, size, or position.',
+      'list': paintingWidgets,
+    },
+    {
+      'title': 'Animation and motion widgets',
+      'subtitle': 'Bring animations to your app.',
+      'list': animationWidgets,
+    },
+    {
+      'title': 'Transitions widgets',
+      'subtitle': 'Bring transitions to your app.',
+      'list': transitionsWidgets,
+    },
+  ];
 }

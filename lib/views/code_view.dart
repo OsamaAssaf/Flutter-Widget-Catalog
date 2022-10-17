@@ -8,7 +8,8 @@ class CodeView extends StatelessWidget {
       required this.title,
       required this.sourceFilePath,
       required this.codeLinkPrefix,
-      required this.videoUrl})
+      required this.videoUrl,
+      })
       : super(key: key);
 
   final String title;
@@ -16,6 +17,7 @@ class CodeView extends StatelessWidget {
   final String sourceFilePath;
   final String codeLinkPrefix;
   final String? videoUrl;
+
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +53,7 @@ class CodeView extends StatelessWidget {
         ],
       ),
       body: WidgetWithCodeView(
+        syntaxHighlighterStyle: SyntaxHighlighterStyle.darkThemeStyle(),
         sourceFilePath: sourceFilePath,
         codeLinkPrefix: codeLinkPrefix,
         child: child,
