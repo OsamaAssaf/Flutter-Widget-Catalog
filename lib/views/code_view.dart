@@ -31,7 +31,7 @@ class CodeView extends StatelessWidget {
             style: CustomTheme.headline1,
           ),
           elevation: 0,
-          backgroundColor: CustomTheme.primaryDarkColor,
+          backgroundColor: CustomTheme.primaryColor,
           actions: [
             if (videoUrl != null)
               TextButton.icon(
@@ -48,34 +48,34 @@ class CodeView extends StatelessWidget {
                 },
                 icon: const Icon(
                   Icons.video_library_outlined,
-                  color: CustomTheme.textPrimaryDarkColor,
+                  color: CustomTheme.textPrimaryColor,
                 ),
                 label: const Text(
                   'Watch Video',
                   style: TextStyle(
-                    color: CustomTheme.textPrimaryDarkColor,
+                    color: CustomTheme.textPrimaryColor,
                   ),
                 ),
               ),
           ],
           bottom: TabBar(
-            indicatorColor: CustomTheme.secondaryDarkColor,
+            indicatorColor: CustomTheme.secondaryColor,
             indicatorWeight: 3.0,
             tabs: <Tab>[
               Tab(
-                child:Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const[
-                     Icon(Icons.phone_android_outlined),
+                  children: const [
+                    Icon(Icons.phone_android_outlined),
                     SizedBox(width: 16.0),
                     Text('Preview'),
                   ],
                 ),
               ),
               Tab(
-                child:Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const[
+                  children: const [
                     Icon(Icons.code),
                     SizedBox(width: 16.0),
                     Text('Code'),

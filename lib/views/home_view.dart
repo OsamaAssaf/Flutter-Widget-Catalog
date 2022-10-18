@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:page_transition/page_transition.dart';
 
+import 'about_view.dart';
 import 'code_view.dart';
 import '../view_model/home_view_model.dart';
 import '../res/theme.dart';
@@ -15,14 +16,14 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> items = _viewModel.homeExpansionTiles;
     return Scaffold(
-      backgroundColor: CustomTheme.bgDarkColor,
+      backgroundColor: CustomTheme.bgColor,
       appBar: AppBar(
         title: const Text(
           'Flutter Catalog',
           style: CustomTheme.headline1,
         ),
         centerTitle: true,
-        backgroundColor: CustomTheme.primaryDarkColor,
+        backgroundColor: CustomTheme.primaryColor,
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -31,14 +32,14 @@ class HomeView extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             Map<String, dynamic> item = items[index];
             return Card(
-              color: CustomTheme.secondaryDarkColor,
+              color: CustomTheme.secondaryColor,
               elevation: 16.0,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16.0),
               ),
               child: ExpansionTile(
-                textColor: CustomTheme.primaryDarkColor,
-                iconColor: CustomTheme.primaryDarkColor,
+                textColor: CustomTheme.primaryColor,
+                iconColor: CustomTheme.primaryColor,
                 childrenPadding: const EdgeInsets.all(8.0),
                 title: Text(
                   item['title'],
@@ -83,11 +84,12 @@ class HomeView extends StatelessWidget {
         ),
       ),
       drawer: Drawer(
+        backgroundColor: CustomTheme.bgColor,
         child: Column(
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: CustomTheme.primaryDarkColor,
+                color: CustomTheme.primaryColor,
               ),
               child: Text(
                 'Flutter Widget Catalog',
@@ -95,9 +97,29 @@ class HomeView extends StatelessWidget {
               ),
             ),
             ListTile(
-              title: const Text('About'),
-              leading: const Icon(Icons.info_outlined),
-              onTap: () {},
+              title: const Text(
+                'About',
+                style: TextStyle(
+                  fontSize: 22.0,
+                ),
+              ),
+              leading: const Icon(
+                Icons.info_outlined,
+                size: 28.0,
+              ),
+              trailing: const Icon(
+                Icons.arrow_forward_ios,
+                size: 20.0,
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    child:const AboutView(),
+                    type: PageTransitionType.rightToLeft,
+                  ),
+                );
+              },
             ),
           ],
         ),
