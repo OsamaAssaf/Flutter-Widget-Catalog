@@ -106,9 +106,18 @@ class AboutView extends StatelessWidget {
                       ),
                       Row(
                         children: const [
-                          SocialMedia(url:'https://www.linkedin.com/in/osama-assaf-392820216/',icon: FontAwesomeIcons.linkedinIn,),
-                          SocialMedia(url:'https://github.com/OsamaAssaf',icon: FontAwesomeIcons.github,),
-                          SocialMedia(url:'https://www.facebook.com/osama.assaf.5',icon: FontAwesomeIcons.facebookF,),
+                          SocialMedia(
+                            url: 'https://www.linkedin.com/in/osama-assaf-392820216/',
+                            icon: FontAwesomeIcons.linkedinIn,
+                          ),
+                          SocialMedia(
+                            url: 'https://github.com/OsamaAssaf',
+                            icon: FontAwesomeIcons.github,
+                          ),
+                          SocialMedia(
+                            url: 'https://www.facebook.com/osama.assaf.5',
+                            icon: FontAwesomeIcons.facebookF,
+                          ),
                         ],
                       ),
                     ],
