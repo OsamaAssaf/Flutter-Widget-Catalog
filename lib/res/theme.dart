@@ -18,4 +18,19 @@ class CustomTheme {
   static const TextStyle headline3 = TextStyle(
     fontSize: 18.0,
   );
+  static const TextStyle headline4 = TextStyle(
+    fontSize: 22.0,
+    fontWeight: FontWeight.bold,
+    letterSpacing: 2.0,
+  );
+  static const TextStyle headline5 = TextStyle(
+    fontSize: 24.0,
+    fontStyle: FontStyle.italic,
+  );
+  static const TextStyle headline6 = TextStyle(
+    fontSize: 24.0,
+    fontStyle: FontStyle.italic,
+    decoration: TextDecoration.underline,
+    color: primaryColor,
+  );
 }

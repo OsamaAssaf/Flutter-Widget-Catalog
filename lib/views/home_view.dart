@@ -115,7 +115,7 @@ class HomeView extends StatelessWidget {
                 Navigator.push(
                   context,
                   PageTransition(
-                    child:const AboutView(),
+                    child: AboutView(),
                     type: PageTransitionType.rightToLeft,
                   ),
                 );
