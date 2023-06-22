@@ -1,28 +1,21 @@
 import 'package:flutter/material.dart';
-
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../components/components.dart';
 import '../components/social_media.dart';
-import '../res/theme.dart';
+import '../resources/widgets/main_app_bar.dart';
 
 class AboutView extends StatelessWidget {
-  AboutView({Key? key}) : super(key: key);
+  const AboutView({Key? key}) : super(key: key);
 
-  String developerEmail = 'osama.assaf.y@gmail.com';
+  final String developerEmail = 'osama.assaf.y@gmail.com';
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: CustomTheme.bgColor,
-      appBar: AppBar(
-        title: const Text(
-          'About',
-          style: CustomTheme.headline1,
-        ),
-        centerTitle: true,
-        backgroundColor: CustomTheme.primaryColor,
+      appBar: const MainAppBar(
+        title: 'About',
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -33,7 +26,7 @@ class AboutView extends StatelessWidget {
               width: double.infinity,
               child: Card(
                 elevation: 16.0,
-                color: CustomTheme.secondaryColor,
+                // color: CustomTheme.secondaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(32.0),
                 ),
@@ -41,17 +34,18 @@ class AboutView extends StatelessWidget {
                   padding: const EdgeInsets.all(16.0),
                   child: FittedBox(
                     child: Row(
-                      children: const [
-                        CircleAvatar(
+                      children: [
+                        const CircleAvatar(
                           radius: 60.0,
-                          backgroundImage: AssetImage('assets/icons/app_icon.png'),
+                          backgroundImage:
+                              AssetImage('assets/icons/app_icon.png'),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 16.0,
                         ),
                         Text(
                           'Flutter Widget Catalog',
-                          style: CustomTheme.headline4,
+                          style: theme.textTheme.headlineMedium,
                         ),
                       ],
                     ),
@@ -63,7 +57,7 @@ class AboutView extends StatelessWidget {
               width: double.infinity,
               child: Card(
                 elevation: 16.0,
-                color: CustomTheme.secondaryColor,
+                // color: CustomTheme.secondaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(32.0),
                 ),
@@ -72,31 +66,32 @@ class AboutView extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         'Developer Info:',
-                        style: CustomTheme.headline4,
+                        style: theme.textTheme.headlineMedium,
                       ),
                       const Divider(
-                        color: CustomTheme.bgColor,
+                        // color: CustomTheme.bgColor,
                         thickness: 4.0,
                       ),
-                      const Text(
+                      Text(
                         'Name: Osama Assaf',
-                        style: CustomTheme.headline5,
+                        style: theme.textTheme.headlineSmall,
                       ),
                       Row(
                         children: [
-                          const Text(
+                          Text(
                             'Email: ',
-                            style: CustomTheme.headline5,
+                            style: theme.textTheme.headlineSmall,
                           ),
                           GestureDetector(
                             onTap: () async {
-                              Components.openUrl('mailto:$developerEmail', context);
+                              Components.openUrl(
+                                  'mailto:$developerEmail', context);
                             },
                             child: Text(
                               developerEmail,
-                              style: CustomTheme.headline6,
+                              style: theme.textTheme.titleLarge,
                             ),
                           ),
                         ],
@@ -107,7 +102,8 @@ class AboutView extends StatelessWidget {
                       Row(
                         children: const [
                           SocialMedia(
-                            url: 'https://www.linkedin.com/in/osama-assaf-392820216/',
+                            url:
+                                'https://www.linkedin.com/in/osama-assaf-392820216/',
                             icon: FontAwesomeIcons.linkedinIn,
                           ),
                           SocialMedia(

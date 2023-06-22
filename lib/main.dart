@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widget_catalog/res/theme.dart';
+import 'package:flutter_widget_catalog/resources/colors_manager.dart';
 
+import 'resources/theme_manager.dart';
 import 'views/home_view.dart';
 
 void main() {
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Widget Catalog',
-      color: CustomTheme.primaryColor,
+      color: ColorsManager.primary,
+      theme: ThemeManager.lightTheme(),
       home: HomeView(),
     );
   }

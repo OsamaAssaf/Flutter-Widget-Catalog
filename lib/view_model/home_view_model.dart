@@ -1,61 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_widget_catalog/models/widget_model.dart';
 
-import '../views/basics/scaffold_view.dart';
-import '../views/basics/text_view.dart';
-import '../views/basics/appbar_view.dart';
-import '../views/basics/container_view.dart';
-import '../views/basics/column_view.dart';
-import '../views/basics/row_view.dart';
-import '../views/basics/icons_view.dart';
-import '../views/basics/images_view.dart';
-import '../views/basics/flutter_logo_view.dart';
-import '../views/buttons/elevated_button_view.dart';
-import '../views/buttons/text_button_view.dart';
-import '../views/buttons/outlined_button_view.dart';
-import '../views/buttons/icon_button_view.dart';
-import '../views/buttons/floating_action_button_view.dart';
-import '../views/buttons/material_button_view.dart';
-import '../views/buttons/dropdown_button_view.dart';
-import '../views/buttons/popup_menu_button_view.dart';
-import '../views/single_child_layouts/center_view.dart';
-import '../views/single_child_layouts/constrained_box_view.dart';
-import '../views/single_child_layouts/aspect_ratio_view.dart';
-import '../views/single_child_layouts/fitted_box_view.dart';
-import '../views/single_child_layouts/expanded_view.dart';
-import '../views/single_child_layouts/padding_view.dart';
-import '../views/single_child_layouts/sized_box_view.dart';
-import '../views/single_child_layouts/align_view.dart';
-import '../views/single_child_layouts/transform_view.dart';
-import '../views/multi_child_layouts/list_view_view.dart';
-import '../views/multi_child_layouts/grid_view_view.dart';
-import '../views/multi_child_layouts/indexed_stack_view.dart';
-import '../views/multi_child_layouts/stack_view.dart';
-import '../views/multi_child_layouts/layout_builder_view.dart';
-import '../views/multi_child_layouts/wrap_view.dart';
-import '../views/multi_child_layouts/table_view.dart';
-import '../views/inputs/text_field_view.dart';
-import '../views/inputs/auto_complete_view.dart';
-import '../views/inputs/form_view.dart';
-import '../views/inputs/expansion_tile_view.dart';
-import '../views/touch_interactions/dismissible_view.dart';
-import '../views/touch_interactions/draggable_view.dart';
-import '../views/touch_interactions/draggable_scrollable_sheet_view.dart';
-import '../views/touch_interactions/gesture_detector_view.dart';
-import '../views/touch_interactions/ignore_pointer_view.dart';
-import '../views/touch_interactions/interactive_viewer_view.dart';
-import '../views/routing/navigator_view.dart';
-import '../views/routing/hero_view.dart';
-import '../views/scrolling/re_orderable_list_view_view.dart';
-import '../views/scrolling/refresh_indicator_view.dart';
-import '../views/scrolling/page_view_view.dart';
-import '../views/scrolling/scrollbar_view.dart';
-import '../views/painting/backdrop_filter_view.dart';
-import '../views/painting/clip_oval_view.dart';
-import '../views/painting/clip_rect_view.dart';
-import '../views/painting/decorated_box_view.dart';
-import '../views/painting/fractional_translation_view.dart';
-import '../views/painting/opacity_view.dart';
-import '../views/painting/rotated_box_view.dart';
+import '../models/expansion_model.dart';
 import '../views/animation/animated_align_view.dart';
 import '../views/animation/animated_container_view.dart';
 import '../views/animation/animated_cross_fade_view.dart';
@@ -65,6 +11,62 @@ import '../views/animation/animated_opacity_view.dart';
 import '../views/animation/animated_physical_model_view.dart';
 import '../views/animation/animated_positioned_view.dart';
 import '../views/animation/animated_size_view.dart';
+import '../views/basics/appbar_view.dart';
+import '../views/basics/column_view.dart';
+import '../views/basics/container_view.dart';
+import '../views/basics/flutter_logo_view.dart';
+import '../views/basics/icons_view.dart';
+import '../views/basics/images_view.dart';
+import '../views/basics/row_view.dart';
+import '../views/basics/scaffold_view.dart';
+import '../views/basics/text_view.dart';
+import '../views/buttons/dropdown_button_view.dart';
+import '../views/buttons/elevated_button_view.dart';
+import '../views/buttons/floating_action_button_view.dart';
+import '../views/buttons/icon_button_view.dart';
+import '../views/buttons/material_button_view.dart';
+import '../views/buttons/outlined_button_view.dart';
+import '../views/buttons/popup_menu_button_view.dart';
+import '../views/buttons/text_button_view.dart';
+import '../views/inputs/auto_complete_view.dart';
+import '../views/inputs/expansion_tile_view.dart';
+import '../views/inputs/form_view.dart';
+import '../views/inputs/text_field_view.dart';
+import '../views/multi_child_layouts/grid_view_view.dart';
+import '../views/multi_child_layouts/indexed_stack_view.dart';
+import '../views/multi_child_layouts/layout_builder_view.dart';
+import '../views/multi_child_layouts/list_view_view.dart';
+import '../views/multi_child_layouts/stack_view.dart';
+import '../views/multi_child_layouts/table_view.dart';
+import '../views/multi_child_layouts/wrap_view.dart';
+import '../views/painting/backdrop_filter_view.dart';
+import '../views/painting/clip_oval_view.dart';
+import '../views/painting/clip_rect_view.dart';
+import '../views/painting/decorated_box_view.dart';
+import '../views/painting/fractional_translation_view.dart';
+import '../views/painting/opacity_view.dart';
+import '../views/painting/rotated_box_view.dart';
+import '../views/routing/hero_view.dart';
+import '../views/routing/navigator_view.dart';
+import '../views/scrolling/page_view_view.dart';
+import '../views/scrolling/re_orderable_list_view_view.dart';
+import '../views/scrolling/refresh_indicator_view.dart';
+import '../views/scrolling/scrollbar_view.dart';
+import '../views/single_child_layouts/align_view.dart';
+import '../views/single_child_layouts/aspect_ratio_view.dart';
+import '../views/single_child_layouts/center_view.dart';
+import '../views/single_child_layouts/constrained_box_view.dart';
+import '../views/single_child_layouts/expanded_view.dart';
+import '../views/single_child_layouts/fitted_box_view.dart';
+import '../views/single_child_layouts/padding_view.dart';
+import '../views/single_child_layouts/sized_box_view.dart';
+import '../views/single_child_layouts/transform_view.dart';
+import '../views/touch_interactions/dismissible_view.dart';
+import '../views/touch_interactions/draggable_scrollable_sheet_view.dart';
+import '../views/touch_interactions/draggable_view.dart';
+import '../views/touch_interactions/gesture_detector_view.dart';
+import '../views/touch_interactions/ignore_pointer_view.dart';
+import '../views/touch_interactions/interactive_viewer_view.dart';
 import '../views/transition/decorated_box_transition_view.dart';
 import '../views/transition/fade_transition_view.dart';
 import '../views/transition/positioned_transition_view.dart';
@@ -74,10 +76,12 @@ import '../views/transition/size_transition_view.dart';
 import '../views/transition/slide_transition_view.dart';
 
 class HomeViewModel {
-  static const String gitHubPath = 'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
+  static const String gitHubPath =
+      'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
   static const String basicSourceFile = 'lib/views/basics/';
   static const String buttonsSourceFile = 'lib/views/buttons/';
-  static const String singleLayoutsSourceFile = 'lib/views/single_child_layouts/';
+  static const String singleLayoutsSourceFile =
+      'lib/views/single_child_layouts/';
   static const String multiLayoutsSourceFile = 'lib/views/multi_child_layouts/';
   static const String inputsSourceFile = 'lib/views/inputs/';
   static const String interactionsSourceFile = 'lib/views/touch_interactions/';
@@ -86,26 +90,6 @@ class HomeViewModel {
   static const String paintingSourceFile = 'lib/views/painting/';
   static const String animationSourceFile = 'lib/views/animation/';
   static const String transitionSourceFile = 'lib/views/transition/';
-
-  // static Map<String, dynamic> getTransitionsMap(Widget child, String title, String fileName, String? videoUrl) {
-  //   return {
-  //     'child': child,
-  //     'title': title,
-  //     'sourceFilePath': '$transitionSourceFile$fileName',
-  //     'codeLinkPrefix': gitHubPath,
-  //     'videoUrl': videoUrl,
-  //   };
-  // }
-  //
-  // List<Map<String, dynamic>> transitionsWidgets = [
-  //   getTransitionsMap(const DecoratedBoxTransitionView(), 'Decorated Box Transition', 'decorated_box_transition_view.dart', null),
-  //   getTransitionsMap(const FadeTransitionView(), 'Fade Transition', 'fade_transition_view.dart', 'https://www.youtube.com/watch?v=rLwWVbv3xDQ'),
-  //   getTransitionsMap(const PositionedTransitionView(), 'Positioned Transition', 'positioned_transition_view.dart', null),
-  //   getTransitionsMap(const RotationTransitionView(), 'Rotation Transition', 'rotation_transition_view.dart', null),
-  //   getTransitionsMap(const ScaleTransitionView(), 'Scale Transition', 'scale_transition_view.dart', null),
-  //   getTransitionsMap(const SizeTransitionView(), 'Size Transition', 'size_transition_view.dart', null),
-  //   getTransitionsMap(const SlideTransitionView(), 'Slide Transition', 'slide_transition_view.dart', null),
-  // ];
 
   List<String> allWidgetsList = [
     'Scaffold',
@@ -182,225 +166,233 @@ class HomeViewModel {
     'Slide Transition',
   ];
 
-  static Map<String, dynamic> getBasicsMap(Widget child, String title, String fileName, String? videoUrl) {
-    return {
-      'child': child,
-      'title': title,
-      'sourceFilePath': '$basicSourceFile$fileName',
-      'codeLinkPrefix': gitHubPath,
-      'videoUrl': videoUrl,
-    };
+  static WidgetModel getWidgetModel(Widget child, String title, String fileName,
+      String? videoUrl, String sourceFolder) {
+    return WidgetModel(
+      child: child,
+      title: title,
+      sourceFilePath: '$sourceFolder$fileName',
+      videoUrl: videoUrl,
+    );
   }
 
-  static List<Map<String, dynamic>> basicsWidgets = [
-    getBasicsMap(const ScaffoldView(), 'Scaffold', 'scaffold_view.dart', null),
-    getBasicsMap(const TextView(), 'Text', 'text_view.dart', null),
-    getBasicsMap(const AppBarView(), 'AppBar', 'appbar_view.dart', null),
-    getBasicsMap(const ContainerView(), 'Container', 'container_view.dart', null),
-    getBasicsMap(const ColumnView(), 'Column', 'column_view.dart', null),
-    getBasicsMap(const RowView(), 'Row', 'row_view.dart', null),
-    getBasicsMap(const IconsView(), 'Icons', 'icons_view.dart', null),
-    getBasicsMap(const ImagesView(), 'Images', 'images_view.dart', null),
-    getBasicsMap(const FlutterLogoView(), 'Flutter Logo', 'flutter_logo_view.dart', null),
+  static List<WidgetModel> basicsWidgets = [
+    getWidgetModel(const ScaffoldView(), 'Scaffold', 'scaffold_view.dart', null,
+        basicSourceFile),
+    getWidgetModel(
+        const TextView(), 'Text', 'text_view.dart', null, basicSourceFile),
+    getWidgetModel(const AppBarView(), 'AppBar', 'appbar_view.dart', null,
+        basicSourceFile),
+    getWidgetModel(const ContainerView(), 'Container', 'container_view.dart',
+        null, basicSourceFile),
+    getWidgetModel(const ColumnView(), 'Column', 'column_view.dart', null,
+        basicSourceFile),
+    getWidgetModel(
+        const RowView(), 'Row', 'row_view.dart', null, basicSourceFile),
+    getWidgetModel(
+        const IconsView(), 'Icons', 'icons_view.dart', null, basicSourceFile),
+    getWidgetModel(const ImagesView(), 'Images', 'images_view.dart', null,
+        basicSourceFile),
+    getWidgetModel(const FlutterLogoView(), 'Flutter Logo',
+        'flutter_logo_view.dart', null, basicSourceFile),
+  ];
+  static List<WidgetModel> buttonsWidgets = [
+    getWidgetModel(const ElevatedButtonView(), 'Elevated Button',
+        'elevated_button_view.dart', null, buttonsSourceFile),
+    getWidgetModel(const TextButtonView(), 'Text Button',
+        'text_button_view.dart', null, buttonsSourceFile),
+    getWidgetModel(const OutlinedButtonView(), 'Outlined Button',
+        'outlined_button_view.dart', null, buttonsSourceFile),
+    getWidgetModel(const IconButtonView(), 'Icon Button',
+        'icon_button_view.dart', null, buttonsSourceFile),
+    getWidgetModel(const FloatingActionButtonView(), 'Floating Action Button',
+        'floating_action_button_view.dart', null, buttonsSourceFile),
+    getWidgetModel(const MaterialButtonView(), 'Material Button',
+        'material_button_view.dart', null, buttonsSourceFile),
+    getWidgetModel(const DropdownButtonView(), 'Dropdown Button',
+        'dropdown_button_view.dart', null, buttonsSourceFile),
+    getWidgetModel(const PopupMenuButtonView(), 'Popup Menu Button',
+        'popup_menu_button_view.dart', null, buttonsSourceFile),
+  ];
+  static List<WidgetModel> singleLayoutWidgets = [
+    getWidgetModel(const CenterView(), 'Center', 'center_view.dart', null,
+        singleLayoutsSourceFile),
+    getWidgetModel(const ConstrainedBoxView(), 'Constrained Box',
+        'constrained_box_view.dart', null, singleLayoutsSourceFile),
+    getWidgetModel(const AspectRatioView(), 'Aspect Ratio',
+        'aspect_ratio_view.dart', null, singleLayoutsSourceFile),
+    getWidgetModel(const FittedBoxView(), 'Fitted Box', 'fitted_box_view.dart',
+        null, singleLayoutsSourceFile),
+    getWidgetModel(const ExpandedView(), 'Expanded', 'expanded_view.dart', null,
+        singleLayoutsSourceFile),
+    getWidgetModel(const PaddingView(), 'Padding', 'padding_view.dart', null,
+        singleLayoutsSourceFile),
+    getWidgetModel(const SizedBoxView(), 'Sized Box', 'sized_box_view.dart',
+        null, singleLayoutsSourceFile),
+    getWidgetModel(const AlignView(), 'Align', 'align_view.dart', null,
+        singleLayoutsSourceFile),
+    getWidgetModel(const TransformView(), 'Transform', 'transform_view.dart',
+        'https://www.youtube.com/watch?v=9z_YNlRlWfA', singleLayoutsSourceFile),
+  ];
+  static List<WidgetModel> multiLayoutWidgets = [
+    getWidgetModel(const ListViewView(), 'List View', 'list_view_view.dart',
+        null, multiLayoutsSourceFile),
+    getWidgetModel(const GridViewView(), 'Grid View', 'grid_view_view.dart',
+        null, multiLayoutsSourceFile),
+    getWidgetModel(const IndexedStackView(), 'Indexed Stack',
+        'indexed_stack_view.dart', null, multiLayoutsSourceFile),
+    getWidgetModel(const StackView(), 'Stack', 'stack_view.dart', null,
+        multiLayoutsSourceFile),
+    getWidgetModel(const LayoutBuilderView(), 'Layout Builder',
+        'layout_builder_view.dart', null, multiLayoutsSourceFile),
+    getWidgetModel(const WrapView(), 'Wrap', 'wrap_view.dart', null,
+        multiLayoutsSourceFile),
+    getWidgetModel(const TableView(), 'Table', 'table_view.dart', null,
+        multiLayoutsSourceFile),
+  ];
+  static List<WidgetModel> inputsWidgets = [
+    getWidgetModel(const TextFieldView(), 'Text Field', 'text_field_view.dart',
+        null, inputsSourceFile),
+    getWidgetModel(
+        const AutoCompleteView(),
+        'Auto Complete',
+        'auto_complete_view.dart',
+        'https://www.youtube.com/watch?v=-Nny8kzW380',
+        inputsSourceFile),
+    getWidgetModel(
+        const FormView(), 'Form', 'form_view.dart', null, inputsSourceFile),
+    getWidgetModel(const ExpansionTileView(), 'Expansion Tile',
+        'expansion_tile_view.dart', null, inputsSourceFile),
+  ];
+  static List<WidgetModel> interactionWidgets = [
+    getWidgetModel(
+        const DismissibleView(),
+        'Dismissible',
+        'dismissible_view.dart',
+        'https://www.youtube.com/watch?v=iEMgjrfuc58',
+        interactionsSourceFile),
+    getWidgetModel(const DraggableView(), 'Draggable', 'draggable_view.dart',
+        'https://www.youtube.com/watch?v=QzA4c4QHZCY', interactionsSourceFile),
+    getWidgetModel(
+        const DraggableScrollableSheetView(),
+        'Draggable Scrollable Sheet',
+        'draggable_scrollable_sheet_view.dart',
+        'https://www.youtube.com/watch?v=Hgw819mL_78',
+        interactionsSourceFile),
+    getWidgetModel(
+        const GestureDetectorView(),
+        'Gesture Detector',
+        'gesture_detector_view.dart',
+        'https://www.youtube.com/watch?v=WhVXkCFPmK4',
+        interactionsSourceFile),
+    getWidgetModel(
+        const IgnorePointerView(),
+        'Ignore Pointer',
+        'ignore_pointer_view.dart',
+        'https://www.youtube.com/watch?v=qV9pqHWxYgI',
+        interactionsSourceFile),
+    getWidgetModel(
+        const InteractiveViewerView(),
+        'Interactive Viewer',
+        'interactive_viewer_view.dart',
+        'https://www.youtube.com/watch?v=zrn7V3bMJvg',
+        interactionsSourceFile),
+  ];
+  static List<WidgetModel> routingWidgets = [
+    getWidgetModel(const NavigatorView(), 'Navigator', 'navigator_view.dart',
+        null, routingSourceFile),
+    getWidgetModel(const HeroView(), 'Hero', 'hero_view.dart',
+        'https://www.youtube.com/watch?v=Be9UH1kXFDw', routingSourceFile),
+  ];
+  static List<WidgetModel> scrollingWidgets = [
+    getWidgetModel(
+        const ReorderableListViewView(),
+        'Re-orderable List View',
+        're_orderable_list_view_view.dart',
+        'https://www.youtube.com/watch?v=3fB1mxOsqJE',
+        scrollingSourceFile),
+    getWidgetModel(
+        const RefreshIndicatorView(),
+        'Refresh Indicator',
+        'refresh_indicator_view.dart',
+        'https://www.youtube.com/watch?v=ORApMlzwMdM',
+        scrollingSourceFile),
+    getWidgetModel(const PageViewView(), 'Page View', 'page_view_view.dart',
+        'https://www.youtube.com/watch?v=J1gE9xvph-A', scrollingSourceFile),
+    getWidgetModel(const ScrollbarView(), 'Scrollbar', 'scrollbar_view.dart',
+        'https://www.youtube.com/watch?v=DbkIQSvwnZc', scrollingSourceFile),
+  ];
+  static List<WidgetModel> paintingWidgets = [
+    getWidgetModel(
+        const BackdropFilterView(),
+        'Backdrop Filter',
+        'backdrop_filter_view.dart',
+        'https://www.youtube.com/watch?v=dYRs7Q1vfYI',
+        paintingSourceFile),
+    getWidgetModel(const ClipOvalView(), 'Clip Oval', 'clip_oval_view.dart',
+        'https://www.youtube.com/watch?v=vzWWDO6whIM', paintingSourceFile),
+    getWidgetModel(const ClipRectView(), 'Clip Rect', 'clip_rect_view.dart',
+        null, paintingSourceFile),
+    getWidgetModel(const DecoratedBoxView(), 'Decorated Box',
+        'decorated_box_view.dart', null, paintingSourceFile),
+    getWidgetModel(const FractionalTranslationView(), 'Fractional Translation',
+        'fractional_translation_view.dart', null, paintingSourceFile),
+    getWidgetModel(const OpacityView(), 'Opacity', 'opacity_view.dart',
+        'https://www.youtube.com/watch?v=9hltevOHQBw', paintingSourceFile),
+    getWidgetModel(
+        const RotatedBoxView(),
+        'Rotated Box',
+        'rotated_box_view.dart',
+        'https://www.youtube.com/watch?v=BFE6_UglLfQ',
+        paintingSourceFile),
+  ];
+  static List<WidgetModel> animationWidgets = [
+    getWidgetModel(const AnimatedAlignView(), 'Animated Align',
+        'animated_align_view.dart', null, animationSourceFile),
+    getWidgetModel(
+        const AnimatedContainerView(),
+        'Animated Container',
+        'animated_container_view.dart',
+        'https://www.youtube.com/watch?v=yI-8QHpGIP4',
+        animationSourceFile),
+    getWidgetModel(
+        const AnimatedCrossFadeView(),
+        'Animated Cross Fade',
+        'animated_cross_fade_view.dart',
+        'https://www.youtube.com/watch?v=PGK2UUAyE54',
+        animationSourceFile),
+    getWidgetModel(
+        const AnimatedDefaultTextStyleView(),
+        'Animated Default Text Style',
+        'animated_default_text_style_view.dart',
+        null,
+        animationSourceFile),
+    getWidgetModel(
+        const AnimatedListView(),
+        'Animated List',
+        'animated_list_view.dart',
+        'https://www.youtube.com/watch?v=ZtfItHwFlZ8',
+        animationSourceFile),
+    getWidgetModel(
+        const AnimatedOpacityView(),
+        'Animated Opacity',
+        'animated_opacity_view.dart',
+        'https://www.youtube.com/watch?v=QZAvjqOqiLY',
+        animationSourceFile),
+    getWidgetModel(const AnimatedPhysicalModelView(), 'Animated Physical Model',
+        'animated_physical_model_view.dart', null, animationSourceFile),
+    getWidgetModel(
+        const AnimatedPositionedView(),
+        'Animated Positioned',
+        'animated_positioned_view.dart',
+        'https://www.youtube.com/watch?v=hC3s2YdtWt8',
+        animationSourceFile),
+    getWidgetModel(const AnimatedSizeView(), 'Animated Size',
+        'animated_size_view.dart', null, animationSourceFile),
   ];
 
-  static Map<String, dynamic> getButtonsMap(Widget child, String title, String fileName, String? videoUrl) {
-    return {
-      'child': child,
-      'title': title,
-      'sourceFilePath': '$buttonsSourceFile$fileName',
-      'codeLinkPrefix': gitHubPath,
-      'videoUrl': videoUrl,
-    };
-  }
-
-  static List<Map<String, dynamic>> buttonsWidgets = [
-    getButtonsMap(const ElevatedButtonView(), 'Elevated Button', 'elevated_button_view.dart', null),
-    getButtonsMap(const TextButtonView(), 'Text Button', 'text_button_view.dart', null),
-    getButtonsMap(const OutlinedButtonView(), 'Outlined Button', 'outlined_button_view.dart', null),
-    getButtonsMap(const IconButtonView(), 'Icon Button', 'icon_button_view.dart', null),
-    getButtonsMap(const FloatingActionButtonView(), 'Floating Action Button', 'floating_action_button_view.dart', null),
-    getButtonsMap(const MaterialButtonView(), 'Material Button', 'material_button_view.dart', null),
-    getButtonsMap(const DropdownButtonView(), 'Dropdown Button', 'dropdown_button_view.dart', null),
-    getButtonsMap(const PopupMenuButtonView(), 'Popup Menu Button', 'popup_menu_button_view.dart', null),
-  ];
-
-  static Map<String, dynamic> getSingleLayoutsMap(Widget child, String title, String fileName, String? videoUrl) {
-    return {
-      'child': child,
-      'title': title,
-      'sourceFilePath': '$singleLayoutsSourceFile$fileName',
-      'codeLinkPrefix': gitHubPath,
-      'videoUrl': videoUrl,
-    };
-  }
-
-  static List<Map<String, dynamic>> singleLayoutWidgets = [
-    getSingleLayoutsMap(const CenterView(), 'Center', 'center_view.dart', null),
-    getSingleLayoutsMap(const ConstrainedBoxView(), 'Constrained Box', 'constrained_box_view.dart', null),
-    getSingleLayoutsMap(const AspectRatioView(), 'Aspect Ratio', 'aspect_ratio_view.dart', null),
-    getSingleLayoutsMap(const FittedBoxView(), 'Fitted Box', 'fitted_box_view.dart', null),
-    getSingleLayoutsMap(const ExpandedView(), 'Expanded', 'expanded_view.dart', null),
-    getSingleLayoutsMap(const PaddingView(), 'Padding', 'padding_view.dart', null),
-    getSingleLayoutsMap(const SizedBoxView(), 'Sized Box', 'sized_box_view.dart', null),
-    getSingleLayoutsMap(const AlignView(), 'Align', 'align_view.dart', null),
-    getSingleLayoutsMap(
-        const TransformView(), 'Transform', 'transform_view.dart', 'https://www.youtube.com/watch?v=9z_YNlRlWfA'),
-  ];
-
-  static Map<String, dynamic> getMultiLayoutsMap(Widget child, String title, String fileName, String? videoUrl) {
-    return {
-      'child': child,
-      'title': title,
-      'sourceFilePath': '$multiLayoutsSourceFile$fileName',
-      'codeLinkPrefix': gitHubPath,
-      'videoUrl': videoUrl,
-    };
-  }
-
-  static List<Map<String, dynamic>> multiLayoutWidgets = [
-    getMultiLayoutsMap(const ListViewView(), 'List View', 'list_view_view.dart', null),
-    getMultiLayoutsMap(const GridViewView(), 'Grid View', 'grid_view_view.dart', null),
-    getMultiLayoutsMap(const IndexedStackView(), 'Indexed Stack', 'indexed_stack_view.dart', null),
-    getMultiLayoutsMap(const StackView(), 'Stack', 'stack_view.dart', null),
-    getMultiLayoutsMap(const LayoutBuilderView(), 'Layout Builder', 'layout_builder_view.dart', null),
-    getMultiLayoutsMap(const WrapView(), 'Wrap', 'wrap_view.dart', null),
-    getMultiLayoutsMap(const TableView(), 'Table', 'table_view.dart', null),
-  ];
-
-  static Map<String, dynamic> getInputsMap(Widget child, String title, String fileName, String? videoUrl) {
-    return {
-      'child': child,
-      'title': title,
-      'sourceFilePath': '$inputsSourceFile$fileName',
-      'codeLinkPrefix': gitHubPath,
-      'videoUrl': videoUrl,
-    };
-  }
-
-  static List<Map<String, dynamic>> inputsWidgets = [
-    getInputsMap(const TextFieldView(), 'Text Field', 'text_field_view.dart', null),
-    getInputsMap(const AutoCompleteView(), 'Auto Complete', 'auto_complete_view.dart',
-        'https://www.youtube.com/watch?v=-Nny8kzW380'),
-    getInputsMap(const FormView(), 'Form', 'form_view.dart', null),
-    getInputsMap(const ExpansionTileView(), 'Expansion Tile', 'expansion_tile_view.dart', null),
-  ];
-
-  static Map<String, dynamic> getInteractionsMap(Widget child, String title, String fileName, String? videoUrl) {
-    return {
-      'child': child,
-      'title': title,
-      'sourceFilePath': '$interactionsSourceFile$fileName',
-      'codeLinkPrefix': gitHubPath,
-      'videoUrl': videoUrl,
-    };
-  }
-
-  static List<Map<String, dynamic>> interactionWidgets = [
-    getInteractionsMap(
-        const DismissibleView(), 'Dismissible', 'dismissible_view.dart', 'https://www.youtube.com/watch?v=iEMgjrfuc58'),
-    getInteractionsMap(
-        const DraggableView(), 'Draggable', 'draggable_view.dart', 'https://www.youtube.com/watch?v=QzA4c4QHZCY'),
-    getInteractionsMap(const DraggableScrollableSheetView(), 'Draggable Scrollable Sheet',
-        'draggable_scrollable_sheet_view.dart', 'https://www.youtube.com/watch?v=Hgw819mL_78'),
-    getInteractionsMap(const GestureDetectorView(), 'Gesture Detector', 'gesture_detector_view.dart',
-        'https://www.youtube.com/watch?v=WhVXkCFPmK4'),
-    getInteractionsMap(const IgnorePointerView(), 'Ignore Pointer', 'ignore_pointer_view.dart',
-        'https://www.youtube.com/watch?v=qV9pqHWxYgI'),
-    getInteractionsMap(const InteractiveViewerView(), 'Interactive Viewer', 'interactive_viewer_view.dart',
-        'https://www.youtube.com/watch?v=zrn7V3bMJvg'),
-  ];
-
-  static Map<String, dynamic> getRoutingMap(Widget child, String title, String fileName, String? videoUrl) {
-    return {
-      'child': child,
-      'title': title,
-      'sourceFilePath': '$routingSourceFile$fileName',
-      'codeLinkPrefix': gitHubPath,
-      'videoUrl': videoUrl,
-    };
-  }
-
-  static List<Map<String, dynamic>> routingWidgets = [
-    getRoutingMap(const NavigatorView(), 'Navigator', 'navigator_view.dart', null),
-    getRoutingMap(const HeroView(), 'Hero', 'hero_view.dart', 'https://www.youtube.com/watch?v=Be9UH1kXFDw'),
-  ];
-
-  static Map<String, dynamic> getScrollingMap(Widget child, String title, String fileName, String? videoUrl) {
-    return {
-      'child': child,
-      'title': title,
-      'sourceFilePath': '$scrollingSourceFile$fileName',
-      'codeLinkPrefix': gitHubPath,
-      'videoUrl': videoUrl,
-    };
-  }
-
-  static List<Map<String, dynamic>> scrollingWidgets = [
-    getScrollingMap(const ReorderableListViewView(), 'Re-orderable List View', 're_orderable_list_view_view.dart',
-        'https://www.youtube.com/watch?v=3fB1mxOsqJE'),
-    getScrollingMap(const RefreshIndicatorView(), 'Refresh Indicator', 'refresh_indicator_view.dart',
-        'https://www.youtube.com/watch?v=ORApMlzwMdM'),
-    getScrollingMap(
-        const PageViewView(), 'Page View', 'page_view_view.dart', 'https://www.youtube.com/watch?v=J1gE9xvph-A'),
-    getScrollingMap(
-        const ScrollbarView(), 'Scrollbar', 'scrollbar_view.dart', 'https://www.youtube.com/watch?v=DbkIQSvwnZc'),
-  ];
-
-  static Map<String, dynamic> getPaintingMap(Widget child, String title, String fileName, String? videoUrl) {
-    return {
-      'child': child,
-      'title': title,
-      'sourceFilePath': '$paintingSourceFile$fileName',
-      'codeLinkPrefix': gitHubPath,
-      'videoUrl': videoUrl,
-    };
-  }
-
-  static List<Map<String, dynamic>> paintingWidgets = [
-    getPaintingMap(const BackdropFilterView(), 'Backdrop Filter', 'backdrop_filter_view.dart',
-        'https://www.youtube.com/watch?v=dYRs7Q1vfYI'),
-    getPaintingMap(
-        const ClipOvalView(), 'Clip Oval', 'clip_oval_view.dart', 'https://www.youtube.com/watch?v=vzWWDO6whIM'),
-    getPaintingMap(const ClipRectView(), 'Clip Rect', 'clip_rect_view.dart', null),
-    getPaintingMap(const DecoratedBoxView(), 'Decorated Box', 'decorated_box_view.dart', null),
-    getPaintingMap(
-        const FractionalTranslationView(), 'Fractional Translation', 'fractional_translation_view.dart', null),
-    getPaintingMap(const OpacityView(), 'Opacity', 'opacity_view.dart', 'https://www.youtube.com/watch?v=9hltevOHQBw'),
-    getPaintingMap(
-        const RotatedBoxView(), 'Rotated Box', 'rotated_box_view.dart', 'https://www.youtube.com/watch?v=BFE6_UglLfQ'),
-  ];
-
-  static Map<String, dynamic> getAnimationMap(Widget child, String title, String fileName, String? videoUrl) {
-    return {
-      'child': child,
-      'title': title,
-      'sourceFilePath': '$animationSourceFile$fileName',
-      'codeLinkPrefix': gitHubPath,
-      'videoUrl': videoUrl,
-    };
-  }
-
-  static List<Map<String, dynamic>> animationWidgets = [
-    getAnimationMap(const AnimatedAlignView(), 'Animated Align', 'animated_align_view.dart', null),
-    getAnimationMap(const AnimatedContainerView(), 'Animated Container', 'animated_container_view.dart',
-        'https://www.youtube.com/watch?v=yI-8QHpGIP4'),
-    getAnimationMap(const AnimatedCrossFadeView(), 'Animated Cross Fade', 'animated_cross_fade_view.dart',
-        'https://www.youtube.com/watch?v=PGK2UUAyE54'),
-    getAnimationMap(const AnimatedDefaultTextStyleView(), 'Animated Default Text Style',
-        'animated_default_text_style_view.dart', null),
-    getAnimationMap(const AnimatedListView(), 'Animated List', 'animated_list_view.dart',
-        'https://www.youtube.com/watch?v=ZtfItHwFlZ8'),
-    getAnimationMap(const AnimatedOpacityView(), 'Animated Opacity', 'animated_opacity_view.dart',
-        'https://www.youtube.com/watch?v=QZAvjqOqiLY'),
-    getAnimationMap(
-        const AnimatedPhysicalModelView(), 'Animated Physical Model', 'animated_physical_model_view.dart', null),
-    getAnimationMap(const AnimatedPositionedView(), 'Animated Positioned', 'animated_positioned_view.dart',
-        'https://www.youtube.com/watch?v=hC3s2YdtWt8'),
-    getAnimationMap(const AnimatedSizeView(), 'Animated Size', 'animated_size_view.dart', null),
-  ];
-
-  static Map<String, dynamic> getTransitionsMap(Widget child, String title, String fileName, String? videoUrl) {
+  static Map<String, dynamic> getTransitionsMap(
+      Widget child, String title, String fileName, String? videoUrl) {
     return {
       'child': child,
       'title': title,
@@ -410,75 +402,91 @@ class HomeViewModel {
     };
   }
 
-  static List<Map<String, dynamic>> transitionsWidgets = [
-    getTransitionsMap(
-        const DecoratedBoxTransitionView(), 'Decorated Box Transition', 'decorated_box_transition_view.dart', null),
-    getTransitionsMap(const FadeTransitionView(), 'Fade Transition', 'fade_transition_view.dart',
-        'https://www.youtube.com/watch?v=rLwWVbv3xDQ'),
-    getTransitionsMap(
-        const PositionedTransitionView(), 'Positioned Transition', 'positioned_transition_view.dart', null),
-    getTransitionsMap(const RotationTransitionView(), 'Rotation Transition', 'rotation_transition_view.dart', null),
-    getTransitionsMap(const ScaleTransitionView(), 'Scale Transition', 'scale_transition_view.dart', null),
-    getTransitionsMap(const SizeTransitionView(), 'Size Transition', 'size_transition_view.dart', null),
-    getTransitionsMap(const SlideTransitionView(), 'Slide Transition', 'slide_transition_view.dart', null),
+  static List<WidgetModel> transitionsWidgets = [
+    getWidgetModel(
+        const DecoratedBoxTransitionView(),
+        'Decorated Box Transition',
+        'decorated_box_transition_view.dart',
+        null,
+        transitionSourceFile),
+    getWidgetModel(
+        const FadeTransitionView(),
+        'Fade Transition',
+        'fade_transition_view.dart',
+        'https://www.youtube.com/watch?v=rLwWVbv3xDQ',
+        transitionSourceFile),
+    getWidgetModel(const PositionedTransitionView(), 'Positioned Transition',
+        'positioned_transition_view.dart', null, transitionSourceFile),
+    getWidgetModel(const RotationTransitionView(), 'Rotation Transition',
+        'rotation_transition_view.dart', null, transitionSourceFile),
+    getWidgetModel(const ScaleTransitionView(), 'Scale Transition',
+        'scale_transition_view.dart', null, transitionSourceFile),
+    getWidgetModel(const SizeTransitionView(), 'Size Transition',
+        'size_transition_view.dart', null, transitionSourceFile),
+    getWidgetModel(const SlideTransitionView(), 'Slide Transition',
+        'slide_transition_view.dart', null, transitionSourceFile),
   ];
 
-  List<Map<String,dynamic>> homeExpansionTiles = [
-    {
-      'title': 'Basics',
-      'subtitle': 'Widgets you absolutely need to know before building your first Flutter app.',
-      'list': basicsWidgets,
-    },
-    {
-      'title': 'Buttons',
-      'subtitle': 'Clickable widgets.',
-      'list': buttonsWidgets,
-    },
-    {
-      'title': 'Single-child layout widgets',
-      'subtitle': 'Arrange other widgets columns, rows, grids, and many other single_child_layouts.',
-      'list': singleLayoutWidgets,
-    },
-    {
-      'title': 'Multi-child layout widgets',
-      'subtitle': 'Arrange other widgets columns, rows, grids, and many other single_child_layouts.',
-      'list': multiLayoutWidgets,
-    },
-    {
-      'title': 'Input widgets',
-      'subtitle': 'Take user input in addition to input widgets in Material Components and Cupertino.',
-      'list': inputsWidgets,
-    },
-    {
-      'title': 'Touch interactions',
-      'subtitle': 'Respond to touch events.',
-      'list': interactionWidgets,
-    },
-    {
-      'title': 'Routing',
-      'subtitle': 'Route users to different views.',
-      'list': routingWidgets,
-    },
-    {
-      'title': 'Scrolling widgets',
-      'subtitle': 'Scroll multiple widgets as children of the parent.',
-      'list': scrollingWidgets,
-    },
-    {
-      'title': 'Painting and effect widgets',
-      'subtitle':
+  List<ExpansionModel> homeExpansionTiles = [
+    ExpansionModel(
+      title: 'Basics',
+      subtitle:
+          'Widgets you absolutely need to know before building your first Flutter app.',
+      widgets: basicsWidgets,
+    ),
+    ExpansionModel(
+      title: 'Buttons',
+      subtitle: 'Clickable widgets.',
+      widgets: buttonsWidgets,
+    ),
+    ExpansionModel(
+      title: 'Single-child layout widgets',
+      subtitle:
+          'Arrange other widgets columns, rows, grids, and many other single_child_layouts.',
+      widgets: singleLayoutWidgets,
+    ),
+    ExpansionModel(
+      title: 'Multi-child layout widgets',
+      subtitle:
+          'Arrange other widgets columns, rows, grids, and many other single_child_layouts.',
+      widgets: multiLayoutWidgets,
+    ),
+    ExpansionModel(
+      title: 'Input widgets',
+      subtitle:
+          'Take user input in addition to input widgets in Material Components and Cupertino.',
+      widgets: inputsWidgets,
+    ),
+    ExpansionModel(
+      title: 'Touch interactions',
+      subtitle: 'Respond to touch events.',
+      widgets: interactionWidgets,
+    ),
+    ExpansionModel(
+      title: 'Routing',
+      subtitle: 'Route users to different views.',
+      widgets: routingWidgets,
+    ),
+    ExpansionModel(
+      title: 'Scrolling widgets',
+      subtitle: 'Scroll multiple widgets as children of the parent.',
+      widgets: scrollingWidgets,
+    ),
+    ExpansionModel(
+      title: 'Painting and effect widgets',
+      subtitle:
           'These widgets apply visual effects to the children without changing their layout, size, or position.',
-      'list': paintingWidgets,
-    },
-    {
-      'title': 'Animation and motion widgets',
-      'subtitle': 'Bring animations to your app.',
-      'list': animationWidgets,
-    },
-    {
-      'title': 'Transitions widgets',
-      'subtitle': 'Bring transitions to your app.',
-      'list': transitionsWidgets,
-    },
+      widgets: paintingWidgets,
+    ),
+    ExpansionModel(
+      title: 'Animation and motion widgets',
+      subtitle: 'Bring animations to your app.',
+      widgets: animationWidgets,
+    ),
+    ExpansionModel(
+      title: 'Transitions widgets',
+      subtitle: 'Bring transitions to your app.',
+      widgets: transitionsWidgets,
+    ),
   ];
 }
