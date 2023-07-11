@@ -14,7 +14,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   final PreferredSizeWidget? bottom;
 
   @override
-  Size get preferredSize => Size.fromHeight(bottom == null ? 40.0 : 80.0);
+  Size get preferredSize => Size.fromHeight(bottom == null ? 40.0 : 90.0);
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +25,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
         style: theme.textTheme.displayLarge,
       ),
       backgroundColor: theme.colorScheme.primary,
+      foregroundColor: theme.colorScheme.background,
       centerTitle: true,
       actions: actions,
       bottom: bottom,

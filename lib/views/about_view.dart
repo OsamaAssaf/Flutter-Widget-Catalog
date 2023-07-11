@@ -7,12 +7,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // Project imports:
 import '../components/components.dart';
 import '../components/social_media.dart';
+import '../resources/constants_manager.dart';
 import '../resources/widgets/main_app_bar.dart';
 
 class AboutView extends StatelessWidget {
   const AboutView({Key? key}) : super(key: key);
-
-  final String developerEmail = 'osama.assaf.y@gmail.com';
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +28,9 @@ class AboutView extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: Card(
-                elevation: 16.0,
-                // color: CustomTheme.secondaryColor,
+                elevation: 2.0,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(32.0),
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -43,6 +41,7 @@ class AboutView extends StatelessWidget {
                           radius: 60.0,
                           backgroundImage:
                               AssetImage('assets/icons/app_icon.png'),
+                          backgroundColor: Colors.transparent,
                         ),
                         const SizedBox(
                           width: 16.0,
@@ -60,10 +59,9 @@ class AboutView extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: Card(
-                elevation: 16.0,
-                // color: CustomTheme.secondaryColor,
+                elevation: 2.0,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(32.0),
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -78,44 +76,49 @@ class AboutView extends StatelessWidget {
                         // color: CustomTheme.bgColor,
                         thickness: 4.0,
                       ),
-                      Text(
-                        'Name: Osama Assaf',
-                        style: theme.textTheme.headlineSmall,
+                      FittedBox(
+                        child: Text(
+                          'Name: Osama Assaf',
+                          style: theme.textTheme.headlineSmall,
+                        ),
                       ),
-                      Row(
-                        children: [
-                          Text(
-                            'Email: ',
-                            style: theme.textTheme.headlineSmall,
-                          ),
-                          GestureDetector(
-                            onTap: () async {
-                              Components.openUrl(
-                                  'mailto:$developerEmail', context);
-                            },
-                            child: Text(
-                              developerEmail,
-                              style: theme.textTheme.titleLarge,
+                      FittedBox(
+                        child: Row(
+                          children: [
+                            Text(
+                              'Email: ',
+                              style: theme.textTheme.headlineSmall,
                             ),
-                          ),
-                        ],
+                            GestureDetector(
+                              onTap: () async {
+                                Components.openUrl(
+                                    'mailto:${ConstantsManager.developerEmail}',
+                                    context);
+                              },
+                              child: Text(
+                                ConstantsManager.developerEmail,
+                                style: theme.textTheme.bodySmall,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         height: 8.0,
                       ),
                       const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SocialMedia(
-                            url:
-                                'https://www.linkedin.com/in/osama-assaf-392820216/',
+                            url: ConstantsManager.linkedinLink,
                             icon: FontAwesomeIcons.linkedinIn,
                           ),
                           SocialMedia(
-                            url: 'https://github.com/OsamaAssaf',
+                            url: ConstantsManager.githubLink,
                             icon: FontAwesomeIcons.github,
                           ),
                           SocialMedia(
-                            url: 'https://www.facebook.com/osama.assaf.5',
+                            url: ConstantsManager.facebookLink,
                             icon: FontAwesomeIcons.facebookF,
                           ),
                         ],

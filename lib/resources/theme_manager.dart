@@ -16,14 +16,16 @@ class ThemeManager {
       textTheme: const TextTheme(
         displayLarge: TextStyle(
           color: ColorsManager.neutralWhite,
-          fontSize: 24.0,
+          fontSize: 20.0,
           letterSpacing: 2.0,
         ),
         displayMedium: TextStyle(
-          fontSize: 20.0,
+          fontSize: 18.0,
+          color: ColorsManager.primary,
         ),
         displaySmall: TextStyle(
-          fontSize: 18.0,
+          fontSize: 16.0,
+          color: ColorsManager.primary,
         ),
         headlineMedium: TextStyle(
           fontSize: 22.0,
@@ -31,11 +33,17 @@ class ThemeManager {
           letterSpacing: 2.0,
         ),
         headlineSmall: TextStyle(
-          fontSize: 24.0,
+          fontSize: 18.0,
           fontStyle: FontStyle.italic,
         ),
-        titleLarge: TextStyle(
-          fontSize: 24.0,
+        // titleLarge: TextStyle(
+        //   fontSize: 24.0,
+        //   fontStyle: FontStyle.italic,
+        //   decoration: TextDecoration.underline,
+        //   color: ColorsManager.primary,
+        // ),
+        bodySmall: TextStyle(
+          fontSize: 18.0,
           fontStyle: FontStyle.italic,
           decoration: TextDecoration.underline,
           color: ColorsManager.primary,

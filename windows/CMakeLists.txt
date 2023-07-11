@@ -4,7 +4,7 @@ project(flutter_widget_catalog LANGUAGES CXX)
 
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
-set(BINARY_NAME "flutter_widget_catalog")
+set(BINARY_NAME "Flutter Widget Catalog")
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.

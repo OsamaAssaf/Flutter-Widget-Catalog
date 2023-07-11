@@ -1,3 +1,5 @@
 {
-  "appName": "Flutter Widget Catalog"
+  "@@locale": "en",
+  "appName": "Flutter Widget Catalog",
+  "version": "Version"
 }

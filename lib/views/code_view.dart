@@ -30,6 +30,7 @@ class CodeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -41,30 +42,33 @@ class CodeView extends StatelessWidget {
                 onPressed: () async {
                   try {
                     Uri url = Uri.parse(widgetModel.videoUrl!);
-                    if (!await launchUrl(url)) {
-                      throw 'Could not launch $url';
-                    }
+                    await launchUrl(
+                      url,
+                      mode: LaunchMode.externalApplication,
+                    );
                   } catch (_) {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text('Can\'t open the video, try again.')));
                   }
                 },
-                icon: const Icon(
+                icon: Icon(
                   Icons.video_library_outlined,
-                  // color: CustomTheme.textPrimaryColor,
+                  color: theme.colorScheme.background,
+                  size: 18.0,
                 ),
-                label: const Text(
+                label: Text(
                   'Watch Video',
                   style: TextStyle(
-                      // color: CustomTheme.textPrimaryColor,
-                      ),
+                    color: theme.colorScheme.background,
+                    fontSize: 14.0,
+                  ),
                 ),
               ),
           ],
-          bottom: const TabBar(
-            // indicatorColor: CustomTheme.secondaryColor,
-            indicatorWeight: 3.0,
-            tabs: <Tab>[
+          bottom: TabBar(
+            indicatorColor: theme.colorScheme.background,
+            labelColor: theme.colorScheme.background,
+            tabs: const <Tab>[
               Tab(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
