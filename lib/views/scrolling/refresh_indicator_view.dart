@@ -1,3 +1,4 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
 class RefreshIndicatorView extends StatefulWidget {
@@ -9,7 +10,7 @@ class RefreshIndicatorView extends StatefulWidget {
 
 class _RefreshIndicatorViewState extends State<RefreshIndicatorView> {
 
-  List<int> _items = List.generate(25, (index) => index);
+  final List<int> _items = List.generate(25, (index) => index);
 
   @override
   Widget build(BuildContext context) {

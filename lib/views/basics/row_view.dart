@@ -1,3 +1,4 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
 class RowView extends StatelessWidget {
@@ -5,9 +6,9 @@ class RowView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: const [
+      children: [
         Text('First Child'),
         Text('Second Child'),
         Text('Third Child'),

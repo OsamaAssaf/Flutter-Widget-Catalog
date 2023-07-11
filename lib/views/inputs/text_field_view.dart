@@ -1,3 +1,4 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
 class TextFieldView extends StatefulWidget {
@@ -8,9 +9,9 @@ class TextFieldView extends StatefulWidget {
 }
 
 class _TextFieldViewState extends State<TextFieldView> {
-  TextEditingController _controller1 = TextEditingController();
+  final TextEditingController _controller1 = TextEditingController();
 
-  TextEditingController _controller2 = TextEditingController();
+  final TextEditingController _controller2 = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,10 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+// Project imports:
 import '../components/components.dart';
 import '../components/social_media.dart';
 import '../resources/widgets/main_app_bar.dart';
@@ -99,8 +103,8 @@ class AboutView extends StatelessWidget {
                       const SizedBox(
                         height: 8.0,
                       ),
-                      Row(
-                        children: const [
+                      const Row(
+                        children: [
                           SocialMedia(
                             url:
                                 'https://www.linkedin.com/in/osama-assaf-392820216/',

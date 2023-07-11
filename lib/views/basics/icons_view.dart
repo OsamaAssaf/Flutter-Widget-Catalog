@@ -1,3 +1,4 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
 class IconsView extends StatelessWidget {
@@ -5,9 +6,9 @@ class IconsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: const <Widget>[
+      children: <Widget>[
         Icon(
           Icons.favorite,
           color: Colors.pink,

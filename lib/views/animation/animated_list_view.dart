@@ -1,5 +1,5 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-
 
 class AnimatedListView extends StatefulWidget {
   const AnimatedListView({super.key});
@@ -175,7 +175,7 @@ class CardItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle textStyle = Theme.of(context).textTheme.headline4!;
+    TextStyle textStyle = Theme.of(context).textTheme.headlineMedium!;
     if (selected) {
       textStyle = textStyle.copyWith(color: Colors.lightGreenAccent[400]);
     }

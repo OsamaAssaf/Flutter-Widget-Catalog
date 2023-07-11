@@ -1,6 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_widget_catalog/resources/colors_manager.dart';
 
+// Package imports:
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+// Project imports:
+import 'package:flutter_widget_catalog/resources/colors_manager.dart';
 import 'resources/theme_manager.dart';
 import 'views/home_view.dart';
 
@@ -17,6 +22,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Widget Catalog',
       color: ColorsManager.primary,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeManager.lightTheme(),
       home: HomeView(),
     );

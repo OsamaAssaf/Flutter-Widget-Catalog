@@ -1,5 +1,5 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-
 
 class FractionalTranslationView extends StatelessWidget {
   const FractionalTranslationView({Key? key}) : super(key: key);

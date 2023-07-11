@@ -1,8 +1,12 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_widget_catalog/models/widget_model.dart';
+
+// Package imports:
 import 'package:url_launcher/url_launcher.dart';
 import 'package:widget_with_codeview/widget_with_codeview.dart';
 
+// Project imports:
+import 'package:flutter_widget_catalog/models/widget_model.dart';
 import '../resources/widgets/main_app_bar.dart';
 
 class CodeView extends StatelessWidget {
@@ -57,14 +61,14 @@ class CodeView extends StatelessWidget {
                 ),
               ),
           ],
-          bottom: TabBar(
+          bottom: const TabBar(
             // indicatorColor: CustomTheme.secondaryColor,
             indicatorWeight: 3.0,
             tabs: <Tab>[
               Tab(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Icon(Icons.phone_android_outlined),
                     SizedBox(width: 16.0),
                     Text('Preview'),
@@ -74,7 +78,7 @@ class CodeView extends StatelessWidget {
               Tab(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Icon(Icons.code),
                     SizedBox(width: 16.0),
                     Text('Code'),
@@ -87,7 +91,7 @@ class CodeView extends StatelessWidget {
         body: TabBarView(
           children: [
             widgetModel.child,
-            SourceCodeView(
+            WidgetWithCodeView(
               filePath: widgetModel.sourceFilePath,
               codeLinkPrefix: widgetModel.codeLinkPrefix,
             ),

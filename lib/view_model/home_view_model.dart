@@ -1,6 +1,8 @@
+// Flutter imports:
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_widget_catalog/models/widget_model.dart';
 
+// Project imports:
+import 'package:flutter_widget_catalog/models/widget_model.dart';
 import '../models/expansion_model.dart';
 import '../views/animation/animated_align_view.dart';
 import '../views/animation/animated_container_view.dart';

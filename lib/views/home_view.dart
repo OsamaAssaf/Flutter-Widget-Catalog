@@ -1,8 +1,12 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_widget_catalog/models/expansion_model.dart';
-import 'package:flutter_widget_catalog/resources/widgets/main_app_bar.dart';
+
+// Package imports:
 import 'package:page_transition/page_transition.dart';
 
+// Project imports:
+import 'package:flutter_widget_catalog/models/expansion_model.dart';
+import 'package:flutter_widget_catalog/resources/widgets/main_app_bar.dart';
 import '../view_model/home_view_model.dart';
 import 'about_view.dart';
 import 'code_view.dart';

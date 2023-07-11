@@ -1,5 +1,5 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-
 
 class IgnorePointerView extends StatefulWidget {
   const IgnorePointerView({Key? key}) : super(key: key);
