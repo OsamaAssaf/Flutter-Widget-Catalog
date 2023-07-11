@@ -1,16 +1,17 @@
-// Flutter imports:
+// ignore_for_file: unused_local_variable
 import 'package:flutter/material.dart';
 
 class PositionedTransitionView extends StatefulWidget {
   const PositionedTransitionView({Key? key}) : super(key: key);
 
   @override
-  State<PositionedTransitionView> createState() => _PositionedTransitionViewState();
+  State<PositionedTransitionView> createState() =>
+      _PositionedTransitionViewState();
 }
 
 /// AnimationControllers can be created with `vsync: this` because of TickerProviderStateMixin.
-class _PositionedTransitionViewState extends State<PositionedTransitionView> with TickerProviderStateMixin{
-
+class _PositionedTransitionViewState extends State<PositionedTransitionView>
+    with TickerProviderStateMixin {
   late final AnimationController _controller;
   late final Animation<double> _animation;
 
@@ -39,7 +40,7 @@ class _PositionedTransitionViewState extends State<PositionedTransitionView> wit
     const double bigLogo = 200;
 
     return Scaffold(
-      body:LayoutBuilder(
+      body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           final Size biggest = constraints.biggest;
           return Stack(
