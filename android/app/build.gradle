@@ -32,7 +32,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 33
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -50,8 +50,8 @@ android {
 
     defaultConfig {
         applicationId "com.assaf.flutter_widget_catalog"
-        minSdkVersion 23
-        targetSdkVersion 23
+        minSdkVersion 20
+        targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
