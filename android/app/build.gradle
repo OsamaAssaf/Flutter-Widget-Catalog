@@ -43,7 +43,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.flutter_widget_catalog"
+        applicationId "com.assaf.flutter_widget_catalog"
         minSdkVersion 19
         targetSdkVersion 20
         versionCode flutterVersionCode.toInteger()

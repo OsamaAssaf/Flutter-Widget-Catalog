@@ -1,4 +1,4 @@
-package com.example.flutter_widget_catalog
+package com.assaf.flutter_widget_catalog
 
 import io.flutter.embedding.android.FlutterActivity
 
