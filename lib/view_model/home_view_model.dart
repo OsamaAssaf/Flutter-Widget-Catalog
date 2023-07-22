@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 
 // Project imports:
 import 'package:flutter_widget_catalog/models/widget_model.dart';
+import 'package:flutter_widget_catalog/resources/constants_manager.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../models/expansion_model.dart';
 import '../views/animation/animated_align_view.dart';
 import '../views/animation/animated_container_view.dart';
@@ -77,7 +79,27 @@ import '../views/transition/scale_transition_view.dart';
 import '../views/transition/size_transition_view.dart';
 import '../views/transition/slide_transition_view.dart';
 
-class HomeViewModel {
+class HomeViewModel with ChangeNotifier {
+  BannerAd? bannerAd;
+  Future<void> loadBannerAd() async {
+    bannerAd = BannerAd(
+      adUnitId: ConstantsManager.homeBannerAdIdAndroid,
+      request: const AdRequest(),
+      size: AdSize.banner,
+      listener: BannerAdListener(
+        onAdLoaded: (ad) {
+          debugPrint('$ad loaded.');
+        },
+        onAdFailedToLoad: (ad, err) {
+          debugPrint('BannerAd failed to load: $err');
+          ad.dispose();
+        },
+      ),
+    );
+    await bannerAd!.load();
+    notifyListeners();
+  }
+
   static const String gitHubPath =
       'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
   static const String basicSourceFile = 'lib/views/basics/';

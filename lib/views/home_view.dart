@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_catalog/resources/colors_manager.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 // Package imports:
 import 'package:page_transition/page_transition.dart';
@@ -10,6 +11,7 @@ import 'package:page_transition/page_transition.dart';
 // Project imports:
 import 'package:flutter_widget_catalog/models/expansion_model.dart';
 import 'package:flutter_widget_catalog/resources/widgets/main_app_bar.dart';
+import 'package:provider/provider.dart';
 import 'package:upgrader/upgrader.dart';
 import '../main.dart';
 import '../view_model/home_view_model.dart';
@@ -17,10 +19,23 @@ import 'about_view.dart';
 import 'code_view.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class HomeView extends StatelessWidget {
-  HomeView({Key? key}) : super(key: key);
+class HomeView extends StatefulWidget {
+  const HomeView({Key? key}) : super(key: key);
 
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
   final HomeViewModel _viewModel = HomeViewModel();
+
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<HomeViewModel>(context, listen: false).loadBannerAd();
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,55 +55,73 @@ class HomeView extends StatelessWidget {
         appBar: const MainAppBar(
           title: 'Flutter Catalog',
         ),
-        body: ListView.separated(
-          itemCount: items.length,
-          itemBuilder: (BuildContext context, int index) {
-            ExpansionModel item = items[index];
-            return ExpansionTile(
-              backgroundColor: ColorsManager.neutralGrey,
-              // collapsedBackgroundColor: ColorsManager.neutralGrey,
-              collapsedTextColor: theme.colorScheme.primary,
-              collapsedIconColor: theme.colorScheme.primary,
-              textColor: theme.colorScheme.primary,
-              iconColor: theme.colorScheme.primary,
-              childrenPadding: const EdgeInsets.all(8.0),
-              title: Text(
-                item.title,
-                style: theme.textTheme.displayMedium,
-              ),
-              subtitle: Text(
-                item.subtitle,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.displaySmall,
-              ),
-              children: item.widgets
-                  .map<Widget>(
-                    (item) => ListTile(
-                      title: Text(item.title),
-                      trailing: const Icon(
-                        Icons.arrow_forward_ios,
-                        size: 18.0,
-                      ),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          PageTransition(
-                            child: CodeView(
-                              widgetModel: item,
-                            ),
-                            type: PageTransitionType.leftToRight,
-                          ),
-                        );
-                      },
+        body: Column(
+          children: [
+            Expanded(
+              child: ListView.separated(
+                itemCount: items.length,
+                itemBuilder: (BuildContext context, int index) {
+                  ExpansionModel item = items[index];
+                  return ExpansionTile(
+                    backgroundColor: ColorsManager.neutralGrey,
+                    // collapsedBackgroundColor: ColorsManager.neutralGrey,
+                    collapsedTextColor: theme.colorScheme.primary,
+                    collapsedIconColor: theme.colorScheme.primary,
+                    textColor: theme.colorScheme.primary,
+                    iconColor: theme.colorScheme.primary,
+                    childrenPadding: const EdgeInsets.all(8.0),
+                    title: Text(
+                      item.title,
+                      style: theme.textTheme.displayMedium,
                     ),
-                  )
-                  .toList(),
-            );
-          },
-          separatorBuilder: (BuildContext context, int index) {
-            return Divider(color: theme.colorScheme.secondary);
-          },
+                    subtitle: Text(
+                      item.subtitle,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: theme.textTheme.displaySmall,
+                    ),
+                    children: item.widgets
+                        .map<Widget>(
+                          (item) => ListTile(
+                            title: Text(item.title),
+                            trailing: const Icon(
+                              Icons.arrow_forward_ios,
+                              size: 18.0,
+                            ),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                PageTransition(
+                                  child: CodeView(
+                                    widgetModel: item,
+                                  ),
+                                  type: PageTransitionType.leftToRight,
+                                ),
+                              );
+                            },
+                          ),
+                        )
+                        .toList(),
+                  );
+                },
+                separatorBuilder: (BuildContext context, int index) {
+                  return Divider(color: theme.colorScheme.secondary);
+                },
+              ),
+            ),
+            Consumer<HomeViewModel>(
+              builder: (BuildContext context, HomeViewModel provider, _) {
+                if (provider.bannerAd == null) {
+                  return const SizedBox.shrink();
+                }
+                return SizedBox(
+                  width: provider.bannerAd!.size.width.toDouble(),
+                  height: provider.bannerAd!.size.height.toDouble(),
+                  child: AdWidget(ad: provider.bannerAd!),
+                );
+              },
+            ),
+          ],
         ),
         drawer: Drawer(
           child: Column(
