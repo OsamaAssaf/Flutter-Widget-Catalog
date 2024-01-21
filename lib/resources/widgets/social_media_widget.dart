@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../main.dart';
 import '../components.dart';
 
 class SocialMediaWidget extends StatelessWidget {
@@ -12,7 +13,6 @@ class SocialMediaWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: CircleAvatar(

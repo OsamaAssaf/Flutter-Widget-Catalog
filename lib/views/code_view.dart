@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:widget_with_codeview/widget_with_codeview.dart';
 
+import '../main.dart';
 import '../models/widget_model.dart';
 import '../resources/widgets/main_app_bar.dart';
 
@@ -16,7 +17,6 @@ class CodeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
     return DefaultTabController(
       length: 2,
       child: Scaffold(

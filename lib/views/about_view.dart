@@ -3,6 +3,7 @@ import 'package:flutter_widget_catalog/resources/managers/assets_manager.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../main.dart';
 import '../resources/components.dart';
 import '../resources/widgets/social_media_widget.dart';
 import '../resources/managers/constants_manager.dart';
@@ -13,7 +14,6 @@ class AboutView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
     return Scaffold(
       appBar: const MainAppBar(
         title: 'About',
