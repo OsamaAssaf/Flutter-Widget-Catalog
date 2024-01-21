@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class FlutterLogoView extends StatelessWidget {
-  const FlutterLogoView({Key? key}) : super(key: key);
+  const FlutterLogoView({super.key});
 
   @override
   Widget build(BuildContext context) {

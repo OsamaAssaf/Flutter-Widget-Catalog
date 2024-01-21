@@ -1,14 +1,15 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class DecoratedBoxTransitionView extends StatefulWidget {
-  const DecoratedBoxTransitionView({Key? key}) : super(key: key);
+  const DecoratedBoxTransitionView({super.key});
 
   @override
   State<DecoratedBoxTransitionView> createState() => _DecoratedBoxTransitionViewState();
 }
+
 /// AnimationControllers can be created with `vsync: this` because of TickerProviderStateMixin.
-class _DecoratedBoxTransitionViewState extends State<DecoratedBoxTransitionView> with TickerProviderStateMixin {
+class _DecoratedBoxTransitionViewState extends State<DecoratedBoxTransitionView>
+    with TickerProviderStateMixin {
   late AnimationController _controller;
 
   @override

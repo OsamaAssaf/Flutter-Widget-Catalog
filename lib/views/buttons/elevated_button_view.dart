@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class ElevatedButtonView extends StatelessWidget {
-  const ElevatedButtonView({Key? key}) : super(key: key);
+  const ElevatedButtonView({super.key});
 
   @override
   Widget build(BuildContext context) {

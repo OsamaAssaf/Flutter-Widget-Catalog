@@ -1,15 +1,13 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class DismissibleView extends StatefulWidget {
-  const DismissibleView({Key? key}) : super(key: key);
+  const DismissibleView({super.key});
 
   @override
   State<DismissibleView> createState() => _DismissibleViewState();
 }
 
 class _DismissibleViewState extends State<DismissibleView> {
-
   List<int> items = List<int>.generate(100, (int index) => index);
 
   @override

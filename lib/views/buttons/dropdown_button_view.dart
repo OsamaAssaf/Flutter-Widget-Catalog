@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class DropdownButtonView extends StatefulWidget {
-  const DropdownButtonView({Key? key}) : super(key: key);
+  const DropdownButtonView({super.key});
 
   @override
   State<DropdownButtonView> createState() => _DropdownButtonViewState();
@@ -37,7 +36,6 @@ class _DropdownButtonViewState extends State<DropdownButtonView> {
               ),
             )
             .toList(),
-
       ),
     );
   }

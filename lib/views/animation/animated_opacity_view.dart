@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class AnimatedOpacityView extends StatefulWidget {
-  const AnimatedOpacityView({Key? key}) : super(key: key);
+  const AnimatedOpacityView({super.key});
 
   @override
   State<AnimatedOpacityView> createState() => _AnimatedOpacityViewState();

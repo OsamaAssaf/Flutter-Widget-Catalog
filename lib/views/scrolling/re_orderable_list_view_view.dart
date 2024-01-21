@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class ReorderableListViewView extends StatefulWidget {
-  const ReorderableListViewView({Key? key}) : super(key: key);
+  const ReorderableListViewView({super.key});
 
   @override
   State<ReorderableListViewView> createState() => _ReorderableListViewViewState();

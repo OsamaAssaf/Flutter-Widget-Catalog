@@ -1,17 +1,15 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_catalog/resources/managers/assets_manager.dart';
 
-// Package imports:
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-// Project imports:
-import '../components/components.dart';
-import '../components/social_media.dart';
-import '../resources/constants_manager.dart';
+import '../resources/components.dart';
+import '../resources/widgets/social_media_widget.dart';
+import '../resources/managers/constants_manager.dart';
 import '../resources/widgets/main_app_bar.dart';
 
 class AboutView extends StatelessWidget {
-  const AboutView({Key? key}) : super(key: key);
+  const AboutView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +35,9 @@ class AboutView extends StatelessWidget {
                   child: FittedBox(
                     child: Row(
                       children: [
-                        const CircleAvatar(
+                        CircleAvatar(
                           radius: 60.0,
-                          backgroundImage:
-                              AssetImage('assets/icons/app_icon.png'),
+                          backgroundImage: AssetImage(IconsAssets().appIcon),
                           backgroundColor: Colors.transparent,
                         ),
                         const SizedBox(
@@ -92,8 +89,7 @@ class AboutView extends StatelessWidget {
                             GestureDetector(
                               onTap: () async {
                                 Components.openUrl(
-                                    'mailto:${ConstantsManager.developerEmail}',
-                                    context);
+                                    'mailto:${ConstantsManager.developerEmail}', context);
                               },
                               child: Text(
                                 ConstantsManager.developerEmail,
@@ -109,15 +105,15 @@ class AboutView extends StatelessWidget {
                       const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SocialMedia(
+                          SocialMediaWidget(
                             url: ConstantsManager.linkedinLink,
                             icon: FontAwesomeIcons.linkedinIn,
                           ),
-                          SocialMedia(
+                          SocialMediaWidget(
                             url: ConstantsManager.githubLink,
                             icon: FontAwesomeIcons.github,
                           ),
-                          SocialMedia(
+                          SocialMediaWidget(
                             url: ConstantsManager.facebookLink,
                             icon: FontAwesomeIcons.facebookF,
                           ),

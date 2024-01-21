@@ -1,16 +1,14 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class FadeTransitionView extends StatefulWidget {
-  const FadeTransitionView({Key? key}) : super(key: key);
+  const FadeTransitionView({super.key});
 
   @override
   State<FadeTransitionView> createState() => _FadeTransitionViewState();
 }
 
 /// AnimationControllers can be created with `vsync: this` because of TickerProviderStateMixin.
-class _FadeTransitionViewState extends State<FadeTransitionView> with TickerProviderStateMixin{
-
+class _FadeTransitionViewState extends State<FadeTransitionView> with TickerProviderStateMixin {
   late final AnimationController _controller;
   late final Animation<double> _animation;
 
@@ -39,7 +37,12 @@ class _FadeTransitionViewState extends State<FadeTransitionView> with TickerProv
       body: Center(
         child: FadeTransition(
           opacity: _animation,
-          child: const Padding(padding: EdgeInsets.all(8), child: FlutterLogo(size: 120.0,),),
+          child: const Padding(
+            padding: EdgeInsets.all(8),
+            child: FlutterLogo(
+              size: 120.0,
+            ),
+          ),
         ),
       ),
     );

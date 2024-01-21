@@ -1,19 +1,19 @@
 // ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 
 class PositionedTransitionView extends StatefulWidget {
-  const PositionedTransitionView({Key? key}) : super(key: key);
+  const PositionedTransitionView({super.key});
 
   @override
-  State<PositionedTransitionView> createState() =>
-      _PositionedTransitionViewState();
+  State<PositionedTransitionView> createState() => _PositionedTransitionViewState();
 }
 
 /// AnimationControllers can be created with `vsync: this` because of TickerProviderStateMixin.
 class _PositionedTransitionViewState extends State<PositionedTransitionView>
     with TickerProviderStateMixin {
   late final AnimationController _controller;
-  late final Animation<double> _animation;
+  late final Animation<double> animation;
 
   @override
   void initState() {
@@ -21,7 +21,7 @@ class _PositionedTransitionViewState extends State<PositionedTransitionView>
       duration: const Duration(seconds: 2),
       vsync: this,
     )..repeat(reverse: true);
-    _animation = CurvedAnimation(
+    animation = CurvedAnimation(
       parent: _controller,
       curve: Curves.easeIn,
     );
@@ -50,15 +50,14 @@ class _PositionedTransitionViewState extends State<PositionedTransitionView>
                   begin: RelativeRect.fromSize(
                       const Rect.fromLTWH(0, 0, smallLogo, smallLogo), biggest),
                   end: RelativeRect.fromSize(
-                      Rect.fromLTWH(biggest.width - bigLogo,
-                          biggest.height - bigLogo, bigLogo, bigLogo),
+                      Rect.fromLTWH(
+                          biggest.width - bigLogo, biggest.height - bigLogo, bigLogo, bigLogo),
                       biggest),
                 ).animate(CurvedAnimation(
                   parent: _controller,
                   curve: Curves.elasticInOut,
                 )),
-                child: const Padding(
-                    padding: EdgeInsets.all(8), child: FlutterLogo()),
+                child: const Padding(padding: EdgeInsets.all(8), child: FlutterLogo()),
               ),
             ],
           );

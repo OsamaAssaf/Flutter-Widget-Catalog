@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class SizeTransitionView extends StatefulWidget {
-  const SizeTransitionView({Key? key}) : super(key: key);
+  const SizeTransitionView({super.key});
 
   @override
   State<SizeTransitionView> createState() => _SizeTransitionViewState();

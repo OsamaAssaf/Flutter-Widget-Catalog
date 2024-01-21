@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class AspectRatioView extends StatelessWidget {
-  const AspectRatioView({Key? key}) : super(key: key);
+  const AspectRatioView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +12,7 @@ class AspectRatioView extends StatelessWidget {
           alignment: Alignment.center,
           width: double.infinity,
           height: 100.0,
+
           /// A widget that attempts to size the child to a specific aspect ratio.
           child: AspectRatio(
             aspectRatio: 16 / 9,

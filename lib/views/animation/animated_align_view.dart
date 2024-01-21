@@ -1,11 +1,9 @@
-// Dart imports:
 import 'dart:math';
 
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class AnimatedAlignView extends StatefulWidget {
-  const AnimatedAlignView({Key? key}) : super(key: key);
+  const AnimatedAlignView({super.key});
 
   @override
   State<AnimatedAlignView> createState() => _AnimatedAlignViewState();

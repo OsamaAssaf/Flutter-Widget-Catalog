@@ -1,15 +1,11 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
-// Package imports:
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-// Project imports:
-import 'components.dart';
+import '../components.dart';
 
-class SocialMedia extends StatelessWidget {
-  const SocialMedia({Key? key, required this.url, required this.icon})
-      : super(key: key);
+class SocialMediaWidget extends StatelessWidget {
+  const SocialMediaWidget({super.key, required this.url, required this.icon});
 
   final String url;
   final IconData icon;

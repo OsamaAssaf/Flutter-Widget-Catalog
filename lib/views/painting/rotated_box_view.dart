@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class RotatedBoxView extends StatefulWidget {
-  const RotatedBoxView({Key? key}) : super(key: key);
+  const RotatedBoxView({super.key});
 
   @override
   State<RotatedBoxView> createState() => _RotatedBoxViewState();

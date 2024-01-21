@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class AnimatedPhysicalModelView extends StatefulWidget {
-  const AnimatedPhysicalModelView({Key? key}) : super(key: key);
+  const AnimatedPhysicalModelView({super.key});
 
   @override
   State<AnimatedPhysicalModelView> createState() => _AnimatedPhysicalModelViewState();
@@ -21,7 +20,8 @@ class _AnimatedPhysicalModelViewState extends State<AnimatedPhysicalModelView> {
             /// The borderRadius and elevation and more are animated.
             AnimatedPhysicalModel(
               shape: BoxShape.rectangle,
-              borderRadius: _isSelection ? BorderRadius.circular(48.0) : BorderRadius.circular(24.0),
+              borderRadius:
+                  _isSelection ? BorderRadius.circular(48.0) : BorderRadius.circular(24.0),
               elevation: _isSelection ? 0.0 : 24.0,
               color: Colors.red,
               shadowColor: Colors.black,

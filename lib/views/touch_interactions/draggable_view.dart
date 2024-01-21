@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class DraggableView extends StatefulWidget {
-  const DraggableView({Key? key}) : super(key: key);
+  const DraggableView({super.key});
 
   @override
   State<DraggableView> createState() => _DraggableViewState();
@@ -44,6 +43,7 @@ class _DraggableViewState extends State<DraggableView> {
               ),
             ),
           ),
+
           /// A widget that receives data when a Draggable widget is dropped.
           DragTarget<int>(
             builder: (BuildContext context, List<dynamic> accepted, List<dynamic> rejected) {

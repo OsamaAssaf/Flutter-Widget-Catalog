@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class AppBarView extends StatelessWidget {
-  const AppBarView({Key? key}) : super(key: key);
+  const AppBarView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +12,7 @@ class AppBarView extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {},
-            child:const Text('Press Me'),
+            child: const Text('Press Me'),
           ),
         ],
       ),

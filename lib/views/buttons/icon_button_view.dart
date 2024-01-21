@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class IconButtonView extends StatelessWidget {
-  const IconButtonView({Key? key}) : super(key: key);
+  const IconButtonView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,14 +11,14 @@ class IconButtonView extends StatelessWidget {
         children: <Widget>[
           const IconButton(
             onPressed: null,
-            icon:  Icon(Icons.home),
+            icon: Icon(Icons.home),
           ),
           const SizedBox(height: 32),
           IconButton(
             onPressed: () {
               // TODO: write your code here
             },
-            icon:const Icon(Icons.home),
+            icon: const Icon(Icons.home),
           ),
         ],
       ),

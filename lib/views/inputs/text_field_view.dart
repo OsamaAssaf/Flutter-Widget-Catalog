@@ -1,8 +1,9 @@
 // ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 
 class TextFieldView extends StatefulWidget {
-  const TextFieldView({Key? key}) : super(key: key);
+  const TextFieldView({super.key});
 
   @override
   State<TextFieldView> createState() => _TextFieldViewState();

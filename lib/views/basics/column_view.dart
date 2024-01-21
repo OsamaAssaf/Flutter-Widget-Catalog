@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class ColumnView extends StatelessWidget {
-  const ColumnView({Key? key}) : super(key: key);
+  const ColumnView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +13,8 @@ class ColumnView extends StatelessWidget {
         Container(
           height: 40.0,
           color: Colors.blue,
-          child:const Text('Column can take any type of widgets, this is a Container with Text as child'),
+          child: const Text(
+              'Column can take any type of widgets, this is a Container with Text as child'),
         ),
       ],
     );

@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class LayoutBuilderView extends StatelessWidget {
-  const LayoutBuilderView({Key? key}) : super(key: key);
+  const LayoutBuilderView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class AnimatedDefaultTextStyleView extends StatefulWidget {
-  const AnimatedDefaultTextStyleView({Key? key}) : super(key: key);
+  const AnimatedDefaultTextStyleView({super.key});
 
   @override
   State<AnimatedDefaultTextStyleView> createState() => _AnimatedDefaultTextStyleViewState();
@@ -20,7 +19,8 @@ class _AnimatedDefaultTextStyleViewState extends State<AnimatedDefaultTextStyleV
           children: [
             AnimatedDefaultTextStyle(
               style: _isSelected
-                  ? const TextStyle(color: Colors.blue, fontSize: 40.0, fontWeight: FontWeight.normal)
+                  ? const TextStyle(
+                      color: Colors.blue, fontSize: 40.0, fontWeight: FontWeight.normal)
                   : const TextStyle(color: Colors.red, fontSize: 64.0, fontWeight: FontWeight.bold),
               duration: const Duration(seconds: 1),
               child: const Text('Flutter'),

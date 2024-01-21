@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class SizedBoxView extends StatelessWidget {
-  const SizedBoxView({Key? key}) : super(key: key);
+  const SizedBoxView({super.key});
 
   @override
   Widget build(BuildContext context) {

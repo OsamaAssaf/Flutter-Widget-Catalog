@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class AnimatedContainerView extends StatefulWidget {
-  const AnimatedContainerView({Key? key}) : super(key: key);
+  const AnimatedContainerView({super.key});
 
   @override
   State<AnimatedContainerView> createState() => _AnimatedContainerViewState();

@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class FormView extends StatefulWidget {
-  const FormView({Key? key}) : super(key: key);
+  const FormView({super.key});
 
   @override
   State<FormView> createState() => _FormViewState();

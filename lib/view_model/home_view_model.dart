@@ -1,11 +1,10 @@
-// Flutter imports:
 import 'package:flutter/cupertino.dart';
 
-// Project imports:
-import 'package:flutter_widget_catalog/models/widget_model.dart';
-import 'package:flutter_widget_catalog/resources/constants_manager.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+
 import '../models/expansion_model.dart';
+import '../models/widget_model.dart';
+import '../resources/managers/constants_manager.dart';
 import '../views/animation/animated_align_view.dart';
 import '../views/animation/animated_container_view.dart';
 import '../views/animation/animated_cross_fade_view.dart';
@@ -100,12 +99,9 @@ class HomeViewModel with ChangeNotifier {
     notifyListeners();
   }
 
-  static const String gitHubPath =
-      'https://github.com/OsamaAssaf/Flutter-Widget-Catalog/blob/main/';
   static const String basicSourceFile = 'lib/views/basics/';
   static const String buttonsSourceFile = 'lib/views/buttons/';
-  static const String singleLayoutsSourceFile =
-      'lib/views/single_child_layouts/';
+  static const String singleLayoutsSourceFile = 'lib/views/single_child_layouts/';
   static const String multiLayoutsSourceFile = 'lib/views/multi_child_layouts/';
   static const String inputsSourceFile = 'lib/views/inputs/';
   static const String interactionsSourceFile = 'lib/views/touch_interactions/';
@@ -190,8 +186,8 @@ class HomeViewModel with ChangeNotifier {
     'Slide Transition',
   ];
 
-  static WidgetModel getWidgetModel(Widget child, String title, String fileName,
-      String? videoUrl, String sourceFolder) {
+  static WidgetModel getWidgetModel(
+      Widget child, String title, String fileName, String? videoUrl, String sourceFolder) {
     return WidgetModel(
       child: child,
       title: title,
@@ -201,100 +197,79 @@ class HomeViewModel with ChangeNotifier {
   }
 
   static List<WidgetModel> basicsWidgets = [
-    getWidgetModel(const ScaffoldView(), 'Scaffold', 'scaffold_view.dart', null,
-        basicSourceFile),
+    getWidgetModel(const ScaffoldView(), 'Scaffold', 'scaffold_view.dart', null, basicSourceFile),
+    getWidgetModel(const TextView(), 'Text', 'text_view.dart', null, basicSourceFile),
+    getWidgetModel(const AppBarView(), 'AppBar', 'appbar_view.dart', null, basicSourceFile),
     getWidgetModel(
-        const TextView(), 'Text', 'text_view.dart', null, basicSourceFile),
-    getWidgetModel(const AppBarView(), 'AppBar', 'appbar_view.dart', null,
-        basicSourceFile),
-    getWidgetModel(const ContainerView(), 'Container', 'container_view.dart',
-        null, basicSourceFile),
-    getWidgetModel(const ColumnView(), 'Column', 'column_view.dart', null,
-        basicSourceFile),
+        const ContainerView(), 'Container', 'container_view.dart', null, basicSourceFile),
+    getWidgetModel(const ColumnView(), 'Column', 'column_view.dart', null, basicSourceFile),
+    getWidgetModel(const RowView(), 'Row', 'row_view.dart', null, basicSourceFile),
+    getWidgetModel(const IconsView(), 'Icons', 'icons_view.dart', null, basicSourceFile),
+    getWidgetModel(const ImagesView(), 'Images', 'images_view.dart', null, basicSourceFile),
     getWidgetModel(
-        const RowView(), 'Row', 'row_view.dart', null, basicSourceFile),
-    getWidgetModel(
-        const IconsView(), 'Icons', 'icons_view.dart', null, basicSourceFile),
-    getWidgetModel(const ImagesView(), 'Images', 'images_view.dart', null,
-        basicSourceFile),
-    getWidgetModel(const FlutterLogoView(), 'Flutter Logo',
-        'flutter_logo_view.dart', null, basicSourceFile),
+        const FlutterLogoView(), 'Flutter Logo', 'flutter_logo_view.dart', null, basicSourceFile),
   ];
   static List<WidgetModel> buttonsWidgets = [
-    getWidgetModel(const ElevatedButtonView(), 'Elevated Button',
-        'elevated_button_view.dart', null, buttonsSourceFile),
-    getWidgetModel(const TextButtonView(), 'Text Button',
-        'text_button_view.dart', null, buttonsSourceFile),
-    getWidgetModel(const OutlinedButtonView(), 'Outlined Button',
-        'outlined_button_view.dart', null, buttonsSourceFile),
-    getWidgetModel(const IconButtonView(), 'Icon Button',
-        'icon_button_view.dart', null, buttonsSourceFile),
+    getWidgetModel(const ElevatedButtonView(), 'Elevated Button', 'elevated_button_view.dart', null,
+        buttonsSourceFile),
+    getWidgetModel(
+        const TextButtonView(), 'Text Button', 'text_button_view.dart', null, buttonsSourceFile),
+    getWidgetModel(const OutlinedButtonView(), 'Outlined Button', 'outlined_button_view.dart', null,
+        buttonsSourceFile),
+    getWidgetModel(
+        const IconButtonView(), 'Icon Button', 'icon_button_view.dart', null, buttonsSourceFile),
     getWidgetModel(const FloatingActionButtonView(), 'Floating Action Button',
         'floating_action_button_view.dart', null, buttonsSourceFile),
-    getWidgetModel(const MaterialButtonView(), 'Material Button',
-        'material_button_view.dart', null, buttonsSourceFile),
-    getWidgetModel(const DropdownButtonView(), 'Dropdown Button',
-        'dropdown_button_view.dart', null, buttonsSourceFile),
-    getWidgetModel(const PopupMenuButtonView(), 'Popup Menu Button',
-        'popup_menu_button_view.dart', null, buttonsSourceFile),
+    getWidgetModel(const MaterialButtonView(), 'Material Button', 'material_button_view.dart', null,
+        buttonsSourceFile),
+    getWidgetModel(const DropdownButtonView(), 'Dropdown Button', 'dropdown_button_view.dart', null,
+        buttonsSourceFile),
+    getWidgetModel(const PopupMenuButtonView(), 'Popup Menu Button', 'popup_menu_button_view.dart',
+        null, buttonsSourceFile),
   ];
   static List<WidgetModel> singleLayoutWidgets = [
-    getWidgetModel(const CenterView(), 'Center', 'center_view.dart', null,
+    getWidgetModel(const CenterView(), 'Center', 'center_view.dart', null, singleLayoutsSourceFile),
+    getWidgetModel(const ConstrainedBoxView(), 'Constrained Box', 'constrained_box_view.dart', null,
         singleLayoutsSourceFile),
-    getWidgetModel(const ConstrainedBoxView(), 'Constrained Box',
-        'constrained_box_view.dart', null, singleLayoutsSourceFile),
-    getWidgetModel(const AspectRatioView(), 'Aspect Ratio',
-        'aspect_ratio_view.dart', null, singleLayoutsSourceFile),
-    getWidgetModel(const FittedBoxView(), 'Fitted Box', 'fitted_box_view.dart',
-        null, singleLayoutsSourceFile),
-    getWidgetModel(const ExpandedView(), 'Expanded', 'expanded_view.dart', null,
+    getWidgetModel(const AspectRatioView(), 'Aspect Ratio', 'aspect_ratio_view.dart', null,
         singleLayoutsSourceFile),
-    getWidgetModel(const PaddingView(), 'Padding', 'padding_view.dart', null,
-        singleLayoutsSourceFile),
-    getWidgetModel(const SizedBoxView(), 'Sized Box', 'sized_box_view.dart',
-        null, singleLayoutsSourceFile),
-    getWidgetModel(const AlignView(), 'Align', 'align_view.dart', null,
-        singleLayoutsSourceFile),
+    getWidgetModel(
+        const FittedBoxView(), 'Fitted Box', 'fitted_box_view.dart', null, singleLayoutsSourceFile),
+    getWidgetModel(
+        const ExpandedView(), 'Expanded', 'expanded_view.dart', null, singleLayoutsSourceFile),
+    getWidgetModel(
+        const PaddingView(), 'Padding', 'padding_view.dart', null, singleLayoutsSourceFile),
+    getWidgetModel(
+        const SizedBoxView(), 'Sized Box', 'sized_box_view.dart', null, singleLayoutsSourceFile),
+    getWidgetModel(const AlignView(), 'Align', 'align_view.dart', null, singleLayoutsSourceFile),
     getWidgetModel(const TransformView(), 'Transform', 'transform_view.dart',
         'https://www.youtube.com/watch?v=9z_YNlRlWfA', singleLayoutsSourceFile),
   ];
   static List<WidgetModel> multiLayoutWidgets = [
-    getWidgetModel(const ListViewView(), 'List View', 'list_view_view.dart',
-        null, multiLayoutsSourceFile),
-    getWidgetModel(const GridViewView(), 'Grid View', 'grid_view_view.dart',
-        null, multiLayoutsSourceFile),
-    getWidgetModel(const IndexedStackView(), 'Indexed Stack',
-        'indexed_stack_view.dart', null, multiLayoutsSourceFile),
-    getWidgetModel(const StackView(), 'Stack', 'stack_view.dart', null,
+    getWidgetModel(
+        const ListViewView(), 'List View', 'list_view_view.dart', null, multiLayoutsSourceFile),
+    getWidgetModel(
+        const GridViewView(), 'Grid View', 'grid_view_view.dart', null, multiLayoutsSourceFile),
+    getWidgetModel(const IndexedStackView(), 'Indexed Stack', 'indexed_stack_view.dart', null,
         multiLayoutsSourceFile),
-    getWidgetModel(const LayoutBuilderView(), 'Layout Builder',
-        'layout_builder_view.dart', null, multiLayoutsSourceFile),
-    getWidgetModel(const WrapView(), 'Wrap', 'wrap_view.dart', null,
+    getWidgetModel(const StackView(), 'Stack', 'stack_view.dart', null, multiLayoutsSourceFile),
+    getWidgetModel(const LayoutBuilderView(), 'Layout Builder', 'layout_builder_view.dart', null,
         multiLayoutsSourceFile),
-    getWidgetModel(const TableView(), 'Table', 'table_view.dart', null,
-        multiLayoutsSourceFile),
+    getWidgetModel(const WrapView(), 'Wrap', 'wrap_view.dart', null, multiLayoutsSourceFile),
+    getWidgetModel(const TableView(), 'Table', 'table_view.dart', null, multiLayoutsSourceFile),
   ];
   static List<WidgetModel> inputsWidgets = [
-    getWidgetModel(const TextFieldView(), 'Text Field', 'text_field_view.dart',
-        null, inputsSourceFile),
     getWidgetModel(
-        const AutoCompleteView(),
-        'Auto Complete',
-        'auto_complete_view.dart',
-        'https://www.youtube.com/watch?v=-Nny8kzW380',
+        const TextFieldView(), 'Text Field', 'text_field_view.dart', null, inputsSourceFile),
+    getWidgetModel(const AutoCompleteView(), 'Auto Complete', 'auto_complete_view.dart',
+        'https://www.youtube.com/watch?v=-Nny8kzW380', inputsSourceFile),
+    getWidgetModel(const FormView(), 'Form', 'form_view.dart', null, inputsSourceFile),
+    getWidgetModel(const ExpansionTileView(), 'Expansion Tile', 'expansion_tile_view.dart', null,
         inputsSourceFile),
-    getWidgetModel(
-        const FormView(), 'Form', 'form_view.dart', null, inputsSourceFile),
-    getWidgetModel(const ExpansionTileView(), 'Expansion Tile',
-        'expansion_tile_view.dart', null, inputsSourceFile),
   ];
   static List<WidgetModel> interactionWidgets = [
-    getWidgetModel(
-        const DismissibleView(),
-        'Dismissible',
-        'dismissible_view.dart',
-        'https://www.youtube.com/watch?v=iEMgjrfuc58',
-        interactionsSourceFile),
+    getWidgetModel(const DismissibleView(), 'Dismissible', 'dismissible_view.dart',
+        'https://www.youtube.com/watch?v=iEMgjrfuc58', interactionsSourceFile),
     getWidgetModel(const DraggableView(), 'Draggable', 'draggable_view.dart',
         'https://www.youtube.com/watch?v=QzA4c4QHZCY', interactionsSourceFile),
     getWidgetModel(
@@ -303,18 +278,10 @@ class HomeViewModel with ChangeNotifier {
         'draggable_scrollable_sheet_view.dart',
         'https://www.youtube.com/watch?v=Hgw819mL_78',
         interactionsSourceFile),
-    getWidgetModel(
-        const GestureDetectorView(),
-        'Gesture Detector',
-        'gesture_detector_view.dart',
-        'https://www.youtube.com/watch?v=WhVXkCFPmK4',
-        interactionsSourceFile),
-    getWidgetModel(
-        const IgnorePointerView(),
-        'Ignore Pointer',
-        'ignore_pointer_view.dart',
-        'https://www.youtube.com/watch?v=qV9pqHWxYgI',
-        interactionsSourceFile),
+    getWidgetModel(const GestureDetectorView(), 'Gesture Detector', 'gesture_detector_view.dart',
+        'https://www.youtube.com/watch?v=WhVXkCFPmK4', interactionsSourceFile),
+    getWidgetModel(const IgnorePointerView(), 'Ignore Pointer', 'ignore_pointer_view.dart',
+        'https://www.youtube.com/watch?v=qV9pqHWxYgI', interactionsSourceFile),
     getWidgetModel(
         const InteractiveViewerView(),
         'Interactive Viewer',
@@ -323,8 +290,8 @@ class HomeViewModel with ChangeNotifier {
         interactionsSourceFile),
   ];
   static List<WidgetModel> routingWidgets = [
-    getWidgetModel(const NavigatorView(), 'Navigator', 'navigator_view.dart',
-        null, routingSourceFile),
+    getWidgetModel(
+        const NavigatorView(), 'Navigator', 'navigator_view.dart', null, routingSourceFile),
     getWidgetModel(const HeroView(), 'Hero', 'hero_view.dart',
         'https://www.youtube.com/watch?v=Be9UH1kXFDw', routingSourceFile),
   ];
@@ -335,44 +302,32 @@ class HomeViewModel with ChangeNotifier {
         're_orderable_list_view_view.dart',
         'https://www.youtube.com/watch?v=3fB1mxOsqJE',
         scrollingSourceFile),
-    getWidgetModel(
-        const RefreshIndicatorView(),
-        'Refresh Indicator',
-        'refresh_indicator_view.dart',
-        'https://www.youtube.com/watch?v=ORApMlzwMdM',
-        scrollingSourceFile),
+    getWidgetModel(const RefreshIndicatorView(), 'Refresh Indicator', 'refresh_indicator_view.dart',
+        'https://www.youtube.com/watch?v=ORApMlzwMdM', scrollingSourceFile),
     getWidgetModel(const PageViewView(), 'Page View', 'page_view_view.dart',
         'https://www.youtube.com/watch?v=J1gE9xvph-A', scrollingSourceFile),
     getWidgetModel(const ScrollbarView(), 'Scrollbar', 'scrollbar_view.dart',
         'https://www.youtube.com/watch?v=DbkIQSvwnZc', scrollingSourceFile),
   ];
   static List<WidgetModel> paintingWidgets = [
-    getWidgetModel(
-        const BackdropFilterView(),
-        'Backdrop Filter',
-        'backdrop_filter_view.dart',
-        'https://www.youtube.com/watch?v=dYRs7Q1vfYI',
-        paintingSourceFile),
+    getWidgetModel(const BackdropFilterView(), 'Backdrop Filter', 'backdrop_filter_view.dart',
+        'https://www.youtube.com/watch?v=dYRs7Q1vfYI', paintingSourceFile),
     getWidgetModel(const ClipOvalView(), 'Clip Oval', 'clip_oval_view.dart',
         'https://www.youtube.com/watch?v=vzWWDO6whIM', paintingSourceFile),
-    getWidgetModel(const ClipRectView(), 'Clip Rect', 'clip_rect_view.dart',
-        null, paintingSourceFile),
-    getWidgetModel(const DecoratedBoxView(), 'Decorated Box',
-        'decorated_box_view.dart', null, paintingSourceFile),
+    getWidgetModel(
+        const ClipRectView(), 'Clip Rect', 'clip_rect_view.dart', null, paintingSourceFile),
+    getWidgetModel(const DecoratedBoxView(), 'Decorated Box', 'decorated_box_view.dart', null,
+        paintingSourceFile),
     getWidgetModel(const FractionalTranslationView(), 'Fractional Translation',
         'fractional_translation_view.dart', null, paintingSourceFile),
     getWidgetModel(const OpacityView(), 'Opacity', 'opacity_view.dart',
         'https://www.youtube.com/watch?v=9hltevOHQBw', paintingSourceFile),
-    getWidgetModel(
-        const RotatedBoxView(),
-        'Rotated Box',
-        'rotated_box_view.dart',
-        'https://www.youtube.com/watch?v=BFE6_UglLfQ',
-        paintingSourceFile),
+    getWidgetModel(const RotatedBoxView(), 'Rotated Box', 'rotated_box_view.dart',
+        'https://www.youtube.com/watch?v=BFE6_UglLfQ', paintingSourceFile),
   ];
   static List<WidgetModel> animationWidgets = [
-    getWidgetModel(const AnimatedAlignView(), 'Animated Align',
-        'animated_align_view.dart', null, animationSourceFile),
+    getWidgetModel(const AnimatedAlignView(), 'Animated Align', 'animated_align_view.dart', null,
+        animationSourceFile),
     getWidgetModel(
         const AnimatedContainerView(),
         'Animated Container',
@@ -385,24 +340,12 @@ class HomeViewModel with ChangeNotifier {
         'animated_cross_fade_view.dart',
         'https://www.youtube.com/watch?v=PGK2UUAyE54',
         animationSourceFile),
-    getWidgetModel(
-        const AnimatedDefaultTextStyleView(),
-        'Animated Default Text Style',
-        'animated_default_text_style_view.dart',
-        null,
-        animationSourceFile),
-    getWidgetModel(
-        const AnimatedListView(),
-        'Animated List',
-        'animated_list_view.dart',
-        'https://www.youtube.com/watch?v=ZtfItHwFlZ8',
-        animationSourceFile),
-    getWidgetModel(
-        const AnimatedOpacityView(),
-        'Animated Opacity',
-        'animated_opacity_view.dart',
-        'https://www.youtube.com/watch?v=QZAvjqOqiLY',
-        animationSourceFile),
+    getWidgetModel(const AnimatedDefaultTextStyleView(), 'Animated Default Text Style',
+        'animated_default_text_style_view.dart', null, animationSourceFile),
+    getWidgetModel(const AnimatedListView(), 'Animated List', 'animated_list_view.dart',
+        'https://www.youtube.com/watch?v=ZtfItHwFlZ8', animationSourceFile),
+    getWidgetModel(const AnimatedOpacityView(), 'Animated Opacity', 'animated_opacity_view.dart',
+        'https://www.youtube.com/watch?v=QZAvjqOqiLY', animationSourceFile),
     getWidgetModel(const AnimatedPhysicalModelView(), 'Animated Physical Model',
         'animated_physical_model_view.dart', null, animationSourceFile),
     getWidgetModel(
@@ -411,8 +354,8 @@ class HomeViewModel with ChangeNotifier {
         'animated_positioned_view.dart',
         'https://www.youtube.com/watch?v=hC3s2YdtWt8',
         animationSourceFile),
-    getWidgetModel(const AnimatedSizeView(), 'Animated Size',
-        'animated_size_view.dart', null, animationSourceFile),
+    getWidgetModel(const AnimatedSizeView(), 'Animated Size', 'animated_size_view.dart', null,
+        animationSourceFile),
   ];
 
   static Map<String, dynamic> getTransitionsMap(
@@ -421,41 +364,32 @@ class HomeViewModel with ChangeNotifier {
       'child': child,
       'title': title,
       'sourceFilePath': '$transitionSourceFile$fileName',
-      'codeLinkPrefix': gitHubPath,
+      'codeLinkPrefix': ConstantsManager.gitHubPath,
       'videoUrl': videoUrl,
     };
   }
 
   static List<WidgetModel> transitionsWidgets = [
-    getWidgetModel(
-        const DecoratedBoxTransitionView(),
-        'Decorated Box Transition',
-        'decorated_box_transition_view.dart',
-        null,
-        transitionSourceFile),
-    getWidgetModel(
-        const FadeTransitionView(),
-        'Fade Transition',
-        'fade_transition_view.dart',
-        'https://www.youtube.com/watch?v=rLwWVbv3xDQ',
-        transitionSourceFile),
+    getWidgetModel(const DecoratedBoxTransitionView(), 'Decorated Box Transition',
+        'decorated_box_transition_view.dart', null, transitionSourceFile),
+    getWidgetModel(const FadeTransitionView(), 'Fade Transition', 'fade_transition_view.dart',
+        'https://www.youtube.com/watch?v=rLwWVbv3xDQ', transitionSourceFile),
     getWidgetModel(const PositionedTransitionView(), 'Positioned Transition',
         'positioned_transition_view.dart', null, transitionSourceFile),
     getWidgetModel(const RotationTransitionView(), 'Rotation Transition',
         'rotation_transition_view.dart', null, transitionSourceFile),
-    getWidgetModel(const ScaleTransitionView(), 'Scale Transition',
-        'scale_transition_view.dart', null, transitionSourceFile),
-    getWidgetModel(const SizeTransitionView(), 'Size Transition',
-        'size_transition_view.dart', null, transitionSourceFile),
-    getWidgetModel(const SlideTransitionView(), 'Slide Transition',
-        'slide_transition_view.dart', null, transitionSourceFile),
+    getWidgetModel(const ScaleTransitionView(), 'Scale Transition', 'scale_transition_view.dart',
+        null, transitionSourceFile),
+    getWidgetModel(const SizeTransitionView(), 'Size Transition', 'size_transition_view.dart', null,
+        transitionSourceFile),
+    getWidgetModel(const SlideTransitionView(), 'Slide Transition', 'slide_transition_view.dart',
+        null, transitionSourceFile),
   ];
 
   List<ExpansionModel> homeExpansionTiles = [
     ExpansionModel(
       title: 'Basics',
-      subtitle:
-          'Widgets you absolutely need to know before building your first Flutter app.',
+      subtitle: 'Widgets you absolutely need to know before building your first Flutter app.',
       widgets: basicsWidgets,
     ),
     ExpansionModel(
@@ -465,14 +399,12 @@ class HomeViewModel with ChangeNotifier {
     ),
     ExpansionModel(
       title: 'Single-child layout widgets',
-      subtitle:
-          'Arrange other widgets columns, rows, grids, and many other single_child_layouts.',
+      subtitle: 'Arrange other widgets columns, rows, grids, and many other single_child_layouts.',
       widgets: singleLayoutWidgets,
     ),
     ExpansionModel(
       title: 'Multi-child layout widgets',
-      subtitle:
-          'Arrange other widgets columns, rows, grids, and many other single_child_layouts.',
+      subtitle: 'Arrange other widgets columns, rows, grids, and many other single_child_layouts.',
       widgets: multiLayoutWidgets,
     ),
     ExpansionModel(

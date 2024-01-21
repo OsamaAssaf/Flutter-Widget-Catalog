@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class DraggableScrollableSheetView extends StatelessWidget {
-  const DraggableScrollableSheetView({Key? key}) : super(key: key);
+  const DraggableScrollableSheetView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +25,3 @@ class DraggableScrollableSheetView extends StatelessWidget {
     );
   }
 }
-
-
-

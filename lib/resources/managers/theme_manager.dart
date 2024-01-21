@@ -1,7 +1,5 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
-// Project imports:
 import 'colors_manager.dart';
 
 class ThemeManager {
@@ -36,12 +34,6 @@ class ThemeManager {
           fontSize: 18.0,
           fontStyle: FontStyle.italic,
         ),
-        // titleLarge: TextStyle(
-        //   fontSize: 24.0,
-        //   fontStyle: FontStyle.italic,
-        //   decoration: TextDecoration.underline,
-        //   color: ColorsManager.primary,
-        // ),
         bodySmall: TextStyle(
           fontSize: 18.0,
           fontStyle: FontStyle.italic,

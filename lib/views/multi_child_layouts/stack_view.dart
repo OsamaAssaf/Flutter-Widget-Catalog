@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class StackView extends StatelessWidget {
-  const StackView({Key? key}) : super(key: key);
+  const StackView({super.key});
 
   @override
   Widget build(BuildContext context) {

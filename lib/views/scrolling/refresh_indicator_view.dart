@@ -1,15 +1,13 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class RefreshIndicatorView extends StatefulWidget {
-  const RefreshIndicatorView({Key? key}) : super(key: key);
+  const RefreshIndicatorView({super.key});
 
   @override
   State<RefreshIndicatorView> createState() => _RefreshIndicatorViewState();
 }
 
 class _RefreshIndicatorViewState extends State<RefreshIndicatorView> {
-
   final List<int> _items = List.generate(25, (index) => index);
 
   @override

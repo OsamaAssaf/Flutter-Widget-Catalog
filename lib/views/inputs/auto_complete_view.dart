@@ -1,8 +1,9 @@
 // ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 
 class AutoCompleteView extends StatefulWidget {
-  const AutoCompleteView({Key? key}) : super(key: key);
+  const AutoCompleteView({super.key});
 
   @override
   State<AutoCompleteView> createState() => _AutoCompleteViewState();
@@ -30,8 +31,8 @@ class _AutoCompleteViewState extends State<AutoCompleteView> {
               if (inputValue.isEmpty) {
                 return const Iterable<String>.empty();
               }
-              return _fruitsList.where(
-                  (String option) => option.contains(inputValue.toLowerCase()));
+              return _fruitsList
+                  .where((String option) => option.contains(inputValue.toLowerCase()));
             },
             onSelected: (String selection) {
               /// To get selected item.

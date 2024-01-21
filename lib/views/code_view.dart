@@ -1,30 +1,16 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
-// Package imports:
 import 'package:url_launcher/url_launcher.dart';
 import 'package:widget_with_codeview/widget_with_codeview.dart';
 
-// Project imports:
-import 'package:flutter_widget_catalog/models/widget_model.dart';
+import '../models/widget_model.dart';
 import '../resources/widgets/main_app_bar.dart';
 
 class CodeView extends StatelessWidget {
   const CodeView({
-    Key? key,
-    // required this.child,
-    // required this.title,
-    // required this.sourceFilePath,
-    // required this.codeLinkPrefix,
-    // required this.videoUrl,
+    super.key,
     required this.widgetModel,
-  }) : super(key: key);
-
-  // final String title;
-  // final Widget child;
-  // final String sourceFilePath;
-  // final String codeLinkPrefix;
-  // final String? videoUrl;
+  });
 
   final WidgetModel widgetModel;
 
@@ -47,8 +33,13 @@ class CodeView extends StatelessWidget {
                       mode: LaunchMode.externalApplication,
                     );
                   } catch (_) {
-                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                        content: Text('Can\'t open the video, try again.')));
+                    if (context.mounted) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Can\'t open the video, try again.'),
+                        ),
+                      );
+                    }
                   }
                 },
                 icon: Icon(

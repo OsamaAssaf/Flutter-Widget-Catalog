@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class OutlinedButtonView extends StatelessWidget {
-  const OutlinedButtonView({Key? key}) : super(key: key);
+  const OutlinedButtonView({super.key});
 
   @override
   Widget build(BuildContext context) {

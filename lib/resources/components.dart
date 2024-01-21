@@ -1,7 +1,5 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
-// Package imports:
 import 'package:url_launcher/url_launcher.dart';
 
 class Components {
@@ -13,8 +11,15 @@ class Components {
         mode: LaunchMode.externalApplication,
       );
     } catch (_) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Something wrong, try again.')));
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text(
+              'Something wrong, try again.',
+            ),
+          ),
+        );
+      }
     }
   }
 }

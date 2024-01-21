@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class ScrollbarView extends StatefulWidget {
-  const ScrollbarView({Key? key}) : super(key: key);
+  const ScrollbarView({super.key});
 
   @override
   State<ScrollbarView> createState() => _ScrollbarViewState();

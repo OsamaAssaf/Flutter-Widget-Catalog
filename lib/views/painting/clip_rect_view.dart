@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class ClipRectView extends StatelessWidget {
-  const ClipRectView({Key? key}) : super(key: key);
+  const ClipRectView({super.key});
 
   @override
   Widget build(BuildContext context) {

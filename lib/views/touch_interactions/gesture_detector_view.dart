@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class GestureDetectorView extends StatefulWidget {
-  const GestureDetectorView({Key? key}) : super(key: key);
+  const GestureDetectorView({super.key});
 
   @override
   State<GestureDetectorView> createState() => _GestureDetectorViewState();
@@ -25,9 +24,10 @@ class _GestureDetectorViewState extends State<GestureDetectorView> {
             const SizedBox(
               height: 16.0,
             ),
+
             /// A widget that detects gestures.
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 setState(() {
                   isLightOn = !isLightOn;
                 });
@@ -35,7 +35,12 @@ class _GestureDetectorViewState extends State<GestureDetectorView> {
               child: Container(
                 padding: const EdgeInsets.all(8.0),
                 color: Colors.yellow,
-                child: Text('Turn Light ${isLightOn ? 'OFF' : 'ON'}',style: const TextStyle(fontSize: 32.0,),),
+                child: Text(
+                  'Turn Light ${isLightOn ? 'OFF' : 'ON'}',
+                  style: const TextStyle(
+                    fontSize: 32.0,
+                  ),
+                ),
               ),
             ),
           ],

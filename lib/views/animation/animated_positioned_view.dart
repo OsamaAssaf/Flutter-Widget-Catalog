@@ -1,15 +1,13 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class AnimatedPositionedView extends StatefulWidget {
-  const AnimatedPositionedView({Key? key}) : super(key: key);
+  const AnimatedPositionedView({super.key});
 
   @override
   State<AnimatedPositionedView> createState() => _AnimatedPositionedViewState();
 }
 
 class _AnimatedPositionedViewState extends State<AnimatedPositionedView> {
-
   bool _isSelection = false;
 
   @override
@@ -18,11 +16,11 @@ class _AnimatedPositionedViewState extends State<AnimatedPositionedView> {
       body: Stack(
         children: [
           AnimatedPositioned(
-            left:_isSelection? 200.0:60.0,
-            top: _isSelection? 150.0:60.0,
+            left: _isSelection ? 200.0 : 60.0,
+            top: _isSelection ? 150.0 : 60.0,
             duration: const Duration(seconds: 1),
-            child:  GestureDetector(
-              onTap: (){
+            child: GestureDetector(
+              onTap: () {
                 setState(() {
                   _isSelection = !_isSelection;
                 });
@@ -32,7 +30,7 @@ class _AnimatedPositionedViewState extends State<AnimatedPositionedView> {
                 width: 120.0,
                 height: 120.0,
                 alignment: Alignment.center,
-                child:const Text('Tap Me!'),
+                child: const Text('Tap Me!'),
               ),
             ),
           ),

@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class CenterView extends StatelessWidget {
-  const CenterView({Key? key}) : super(key: key);
+  const CenterView({super.key});
 
   @override
   Widget build(BuildContext context) {

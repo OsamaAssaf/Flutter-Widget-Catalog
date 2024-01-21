@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class IndexedStackView extends StatefulWidget {
-  const IndexedStackView({Key? key}) : super(key: key);
+  const IndexedStackView({super.key});
 
   @override
   State<IndexedStackView> createState() => _IndexedStackViewState();
@@ -20,15 +19,18 @@ class _IndexedStackViewState extends State<IndexedStackView> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            IconButton(onPressed: () {
-              setState(() {
-                if(_currentIndex == 0){
-                  _currentIndex = names.length - 1;
-                }else{
-                  _currentIndex --;
-                }
-              });
-            }, icon: const Icon(Icons.arrow_back_ios),),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  if (_currentIndex == 0) {
+                    _currentIndex = names.length - 1;
+                  } else {
+                    _currentIndex--;
+                  }
+                });
+              },
+              icon: const Icon(Icons.arrow_back_ios),
+            ),
             Container(
               width: 200.0,
               height: 140.0,
@@ -51,15 +53,18 @@ class _IndexedStackViewState extends State<IndexedStackView> {
                     .toList(),
               ),
             ),
-            IconButton(onPressed: () {
-              setState(() {
-                if(_currentIndex == names.length - 1){
-                  _currentIndex = 0;
-                }else{
-                  _currentIndex ++;
-                }
-              });
-            }, icon: const Icon(Icons.arrow_forward_ios),),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  if (_currentIndex == names.length - 1) {
+                    _currentIndex = 0;
+                  } else {
+                    _currentIndex++;
+                  }
+                });
+              },
+              icon: const Icon(Icons.arrow_forward_ios),
+            ),
           ],
         ),
       ),

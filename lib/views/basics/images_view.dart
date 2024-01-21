@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class ImagesView extends StatelessWidget {
-  const ImagesView({Key? key}) : super(key: key);
+  const ImagesView({super.key});
 
   @override
   Widget build(BuildContext context) {

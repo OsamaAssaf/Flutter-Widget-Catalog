@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class PageViewView extends StatefulWidget {
-  const PageViewView({Key? key}) : super(key: key);
+  const PageViewView({super.key});
 
   @override
   State<PageViewView> createState() => _PageViewViewState();

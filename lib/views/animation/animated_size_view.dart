@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class AnimatedSizeView extends StatefulWidget {
-  const AnimatedSizeView({Key? key}) : super(key: key);
+  const AnimatedSizeView({super.key});
 
   @override
   State<AnimatedSizeView> createState() => _AnimatedSizeViewState();

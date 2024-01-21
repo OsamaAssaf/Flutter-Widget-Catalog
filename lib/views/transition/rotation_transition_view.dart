@@ -1,15 +1,15 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class RotationTransitionView extends StatefulWidget {
-  const RotationTransitionView({Key? key}) : super(key: key);
+  const RotationTransitionView({super.key});
 
   @override
   State<RotationTransitionView> createState() => _RotationTransitionViewState();
 }
 
 /// AnimationControllers can be created with `vsync: this` because of TickerProviderStateMixin.
-class _RotationTransitionViewState extends State<RotationTransitionView> with TickerProviderStateMixin {
+class _RotationTransitionViewState extends State<RotationTransitionView>
+    with TickerProviderStateMixin {
   late final AnimationController _controller;
   late final Animation<double> _animation;
 

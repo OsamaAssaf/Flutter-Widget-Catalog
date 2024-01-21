@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class HeroView extends StatelessWidget {
-  const HeroView({Key? key}) : super(key: key);
+  const HeroView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,7 @@ class HeroView extends StatelessWidget {
         children: <Widget>[
           const SizedBox(height: 20.0),
           ListTile(
-            leading:  Hero(
+            leading: Hero(
               tag: 'hero-rectangle',
               child: Container(
                 width: 50.0,
@@ -24,7 +23,7 @@ class HeroView extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (_) =>const SecondScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (_) => const SecondScreen()));
             },
             title: const Text(
               'Tap on the icon to view hero animation transition.',
@@ -37,7 +36,7 @@ class HeroView extends StatelessWidget {
 }
 
 class SecondScreen extends StatelessWidget {
-  const SecondScreen({Key? key}) : super(key: key);
+  const SecondScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +45,7 @@ class SecondScreen extends StatelessWidget {
         title: const Text('Second Screen'),
       ),
       body: Center(
-        child:  Hero(
+        child: Hero(
           tag: 'hero-rectangle',
           child: Container(
             width: 250.0,

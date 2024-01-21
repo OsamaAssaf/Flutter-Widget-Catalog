@@ -1,10 +1,9 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 enum Menu { itemOne, itemTwo, itemThree, itemFour }
 
 class PopupMenuButtonView extends StatefulWidget {
-  const PopupMenuButtonView({Key? key}) : super(key: key);
+  const PopupMenuButtonView({super.key});
 
   @override
   State<PopupMenuButtonView> createState() => _PopupMenuButtonViewState();
@@ -20,13 +19,15 @@ class _PopupMenuButtonViewState extends State<PopupMenuButtonView> {
       appBar: AppBar(
         actions: [
           PopupMenuButton<String>(
-            onSelected: (String value){
+            onSelected: (String value) {
               setState(() {
                 _selectedItem = value.toString();
               });
             },
             itemBuilder: (BuildContext context) {
-              return popupMenuItems.map((item) => PopupMenuItem<String>(value: item,child: Text(item))).toList();
+              return popupMenuItems
+                  .map((item) => PopupMenuItem<String>(value: item, child: Text(item)))
+                  .toList();
             },
           ),
         ],

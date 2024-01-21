@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class WrapView extends StatelessWidget {
-  const WrapView({Key? key}) : super(key: key);
+  const WrapView({super.key});
 
   @override
   Widget build(BuildContext context) {

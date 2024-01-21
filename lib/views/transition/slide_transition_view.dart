@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class SlideTransitionView extends StatefulWidget {
-  const SlideTransitionView({Key? key}) : super(key: key);
+  const SlideTransitionView({super.key});
 
   @override
   State<SlideTransitionView> createState() => _SlideTransitionViewState();

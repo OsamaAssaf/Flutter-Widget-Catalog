@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class ListViewView extends StatelessWidget {
-  const ListViewView({Key? key}) : super(key: key);
+  const ListViewView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,40 +13,47 @@ class ListViewView extends StatelessWidget {
           Container(
             height: 150,
             color: Colors.amber[600],
-            child: const Center(child: Text('Entry A'),),
+            child: const Center(
+              child: Text('Entry A'),
+            ),
           ),
           Container(
             height: 150,
             color: Colors.amber[500],
-            child: const Center(child: Text('Entry B'),),
+            child: const Center(
+              child: Text('Entry B'),
+            ),
           ),
           Container(
             height: 150,
             color: Colors.amber[100],
-            child: const Center(child: Text('Entry C'),),
+            child: const Center(
+              child: Text('Entry C'),
+            ),
           ),
           Container(
             height: 150,
             color: Colors.amber[600],
-            child: const Center(child: Text('Entry D'),),
+            child: const Center(
+              child: Text('Entry D'),
+            ),
           ),
           Container(
             height: 150,
             color: Colors.amber[500],
-            child: const Center(child: Text('Entry E'),),
+            child: const Center(
+              child: Text('Entry E'),
+            ),
           ),
           Container(
             height: 150,
             color: Colors.amber[100],
-            child: const Center(child: Text('Entry F'),),
+            child: const Center(
+              child: Text('Entry F'),
+            ),
           ),
-
         ],
       ),
     );
   }
 }
-
-
-
-

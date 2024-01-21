@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class NavigatorView extends StatelessWidget {
-  const NavigatorView({Key? key}) : super(key: key);
+  const NavigatorView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,7 @@ class NavigatorView extends StatelessWidget {
 }
 
 class SecondScreen extends StatelessWidget {
-  const SecondScreen({Key? key}) : super(key: key);
+  const SecondScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

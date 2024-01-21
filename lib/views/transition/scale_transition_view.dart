@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class ScaleTransitionView extends StatefulWidget {
-  const ScaleTransitionView({Key? key}) : super(key: key);
+  const ScaleTransitionView({super.key});
 
   @override
   State<ScaleTransitionView> createState() => _ScaleTransitionViewState();

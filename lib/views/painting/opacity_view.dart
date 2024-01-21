@@ -1,15 +1,13 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class OpacityView extends StatefulWidget {
-  const OpacityView({Key? key}) : super(key: key);
+  const OpacityView({super.key});
 
   @override
   State<OpacityView> createState() => _OpacityViewState();
 }
 
 class _OpacityViewState extends State<OpacityView> {
-
   bool _visible = true;
 
   @override
@@ -21,7 +19,10 @@ class _OpacityViewState extends State<OpacityView> {
           children: [
             Opacity(
               opacity: _visible ? 1.0 : 0.0,
-              child: const Text("Now you see me, now you don't!",style: TextStyle(fontSize: 32.0),),
+              child: const Text(
+                "Now you see me, now you don't!",
+                style: TextStyle(fontSize: 32.0),
+              ),
             ),
             const SizedBox(
               height: 32.0,

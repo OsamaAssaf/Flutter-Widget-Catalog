@@ -1,8 +1,7 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class TableView extends StatelessWidget {
-  const TableView({Key? key}) : super(key: key);
+  const TableView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,13 +1,12 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 class PaddingView extends StatelessWidget {
-  const PaddingView({Key? key}) : super(key: key);
+  const PaddingView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:  Container(
+      body: Container(
         color: Colors.purple,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
