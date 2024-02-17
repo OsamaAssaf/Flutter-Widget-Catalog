@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
@@ -44,13 +43,16 @@ class _HomeViewState extends State<HomeView> {
         durationUntilAlertAgain: const Duration(days: 1),
       ),
       dialogStyle: Platform.isIOS ? UpgradeDialogStyle.cupertino : UpgradeDialogStyle.material,
-      child: Scaffold(
-        appBar: const MainAppBar(
-          title: 'Flutter Catalog',
-        ),
-        body: Column(
-          children: [
-            Expanded(
+      child: Stack(
+        children: [
+          Scaffold(
+            appBar: const MainAppBar(
+              title: 'Flutter Catalog',
+            ),
+            body: Padding(
+              padding: EdgeInsets.only(
+                bottom: AdSize.banner.height.toDouble() + 8.0,
+              ),
               child: ListView.separated(
                 itemCount: items.length,
                 itemBuilder: (BuildContext context, int index) {
@@ -101,7 +103,73 @@ class _HomeViewState extends State<HomeView> {
                 },
               ),
             ),
-            Consumer<HomeViewModel>(
+            // bottomSheet: Consumer<HomeViewModel>(
+            //   builder: (BuildContext context, HomeViewModel provider, _) {
+            //     if (provider.bannerAd == null) {
+            //       return const SizedBox.shrink();
+            //     }
+            //     return SizedBox(
+            //       width: provider.bannerAd!.size.width.toDouble(),
+            //       height: provider.bannerAd!.size.height.toDouble(),
+            //       child: AdWidget(ad: provider.bannerAd!),
+            //     );
+            //   },
+            // ),
+            drawer: Drawer(
+              child: Column(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    height: height * 0.20,
+                    color: theme.colorScheme.primary,
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Flutter Widget Catalog',
+                      style: theme.textTheme.displayLarge,
+                    ),
+                  ),
+                  const SizedBox(height: 8.0),
+                  ListTile(
+                    title: const Text(
+                      'About',
+                      style: TextStyle(
+                        fontSize: 22.0,
+                      ),
+                    ),
+                    leading: const Icon(
+                      Icons.info_outlined,
+                      size: 28.0,
+                    ),
+                    trailing: const Icon(
+                      Icons.arrow_forward_ios,
+                      size: 20.0,
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          child: const AboutView(),
+                          type: PageTransitionType.rightToLeft,
+                        ),
+                      );
+                    },
+                  ),
+                  const Spacer(),
+                  Center(
+                    child: Text(
+                      '${localizations.version}: ${packageInfo.version}',
+                    ),
+                  ),
+                  SizedBox(height: AdSize.banner.height.toDouble() + 8.0),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 0.0,
+            left: 0.0,
+            right: 0.0,
+            child: Consumer<HomeViewModel>(
               builder: (BuildContext context, HomeViewModel provider, _) {
                 if (provider.bannerAd == null) {
                   return const SizedBox.shrink();
@@ -113,57 +181,8 @@ class _HomeViewState extends State<HomeView> {
                 );
               },
             ),
-          ],
-        ),
-        drawer: Drawer(
-          child: Column(
-            children: [
-              Container(
-                width: double.infinity,
-                height: height * 0.20,
-                color: theme.colorScheme.primary,
-                alignment: Alignment.center,
-                child: Text(
-                  'Flutter Widget Catalog',
-                  style: theme.textTheme.displayLarge,
-                ),
-              ),
-              const SizedBox(height: 8.0),
-              ListTile(
-                title: const Text(
-                  'About',
-                  style: TextStyle(
-                    fontSize: 22.0,
-                  ),
-                ),
-                leading: const Icon(
-                  Icons.info_outlined,
-                  size: 28.0,
-                ),
-                trailing: const Icon(
-                  Icons.arrow_forward_ios,
-                  size: 20.0,
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    PageTransition(
-                      child: const AboutView(),
-                      type: PageTransitionType.rightToLeft,
-                    ),
-                  );
-                },
-              ),
-              const Spacer(),
-              Center(
-                child: Text(
-                  '${localizations.version}: ${packageInfo.version}',
-                ),
-              ),
-              const SizedBox(height: 8.0),
-            ],
           ),
-        ),
+        ],
       ),
     );
   }
