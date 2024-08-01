@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import '../../resources/all_imports.dart';
 
 class OpacityView extends StatefulWidget {
   const OpacityView({super.key});

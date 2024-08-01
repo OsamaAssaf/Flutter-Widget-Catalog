@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import '../../resources/all_imports.dart';
 
 class IgnorePointerView extends StatefulWidget {
   const IgnorePointerView({super.key});

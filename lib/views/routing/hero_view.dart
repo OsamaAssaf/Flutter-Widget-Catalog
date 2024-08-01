@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import '../../resources/all_imports.dart';
 
 class HeroView extends StatelessWidget {
   const HeroView({super.key});

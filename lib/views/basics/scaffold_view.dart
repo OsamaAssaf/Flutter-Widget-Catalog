@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import '../../resources/all_imports.dart';
 
 class ScaffoldView extends StatefulWidget {
   const ScaffoldView({super.key});

@@ -1,15 +1,14 @@
-import 'package:flutter/material.dart';
-
-import 'colors_manager.dart';
+import '../../resources/all_imports.dart';
 
 class ThemeManager {
   static ThemeData lightTheme() {
     return ThemeData(
       useMaterial3: true,
+      scaffoldBackgroundColor: ColorsManager.neutralWhite,
       colorScheme: ColorScheme.fromSwatch().copyWith(
         primary: ColorsManager.primary,
         secondary: ColorsManager.secondary,
-        background: ColorsManager.neutralWhite,
+        surface: ColorsManager.neutralWhite,
       ),
       textTheme: const TextTheme(
         displayLarge: TextStyle(

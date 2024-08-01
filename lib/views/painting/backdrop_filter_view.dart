@@ -1,7 +1,6 @@
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
-import 'package:flutter_widget_catalog/resources/managers/assets_manager.dart';
+import '../../resources/all_imports.dart';
 
 class BackdropFilterView extends StatelessWidget {
   const BackdropFilterView({super.key});

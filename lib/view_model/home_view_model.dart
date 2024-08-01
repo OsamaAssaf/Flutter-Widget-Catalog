@@ -1,85 +1,9 @@
-import 'package:flutter/cupertino.dart';
-
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-
-import '../models/expansion_model.dart';
-import '../models/widget_model.dart';
-import '../resources/managers/constants_manager.dart';
-import '../views/animation/animated_align_view.dart';
-import '../views/animation/animated_container_view.dart';
-import '../views/animation/animated_cross_fade_view.dart';
-import '../views/animation/animated_default_text_style_view.dart';
-import '../views/animation/animated_list_view.dart';
-import '../views/animation/animated_opacity_view.dart';
-import '../views/animation/animated_physical_model_view.dart';
-import '../views/animation/animated_positioned_view.dart';
-import '../views/animation/animated_size_view.dart';
-import '../views/basics/appbar_view.dart';
-import '../views/basics/column_view.dart';
-import '../views/basics/container_view.dart';
-import '../views/basics/flutter_logo_view.dart';
-import '../views/basics/icons_view.dart';
-import '../views/basics/images_view.dart';
-import '../views/basics/row_view.dart';
-import '../views/basics/scaffold_view.dart';
-import '../views/basics/text_view.dart';
-import '../views/buttons/dropdown_button_view.dart';
-import '../views/buttons/elevated_button_view.dart';
-import '../views/buttons/floating_action_button_view.dart';
-import '../views/buttons/icon_button_view.dart';
-import '../views/buttons/material_button_view.dart';
-import '../views/buttons/outlined_button_view.dart';
-import '../views/buttons/popup_menu_button_view.dart';
-import '../views/buttons/text_button_view.dart';
-import '../views/inputs/auto_complete_view.dart';
-import '../views/inputs/expansion_tile_view.dart';
-import '../views/inputs/form_view.dart';
-import '../views/inputs/text_field_view.dart';
-import '../views/multi_child_layouts/grid_view_view.dart';
-import '../views/multi_child_layouts/indexed_stack_view.dart';
-import '../views/multi_child_layouts/layout_builder_view.dart';
-import '../views/multi_child_layouts/list_view_view.dart';
-import '../views/multi_child_layouts/stack_view.dart';
-import '../views/multi_child_layouts/table_view.dart';
-import '../views/multi_child_layouts/wrap_view.dart';
-import '../views/painting/backdrop_filter_view.dart';
-import '../views/painting/clip_oval_view.dart';
-import '../views/painting/clip_rect_view.dart';
-import '../views/painting/decorated_box_view.dart';
-import '../views/painting/fractional_translation_view.dart';
-import '../views/painting/opacity_view.dart';
-import '../views/painting/rotated_box_view.dart';
-import '../views/routing/hero_view.dart';
+import '../resources/all_imports.dart';
 import '../views/routing/navigator_view.dart';
-import '../views/scrolling/page_view_view.dart';
-import '../views/scrolling/re_orderable_list_view_view.dart';
-import '../views/scrolling/refresh_indicator_view.dart';
-import '../views/scrolling/scrollbar_view.dart';
-import '../views/single_child_layouts/align_view.dart';
-import '../views/single_child_layouts/aspect_ratio_view.dart';
-import '../views/single_child_layouts/center_view.dart';
-import '../views/single_child_layouts/constrained_box_view.dart';
-import '../views/single_child_layouts/expanded_view.dart';
-import '../views/single_child_layouts/fitted_box_view.dart';
-import '../views/single_child_layouts/padding_view.dart';
-import '../views/single_child_layouts/sized_box_view.dart';
-import '../views/single_child_layouts/transform_view.dart';
-import '../views/touch_interactions/dismissible_view.dart';
-import '../views/touch_interactions/draggable_scrollable_sheet_view.dart';
-import '../views/touch_interactions/draggable_view.dart';
-import '../views/touch_interactions/gesture_detector_view.dart';
-import '../views/touch_interactions/ignore_pointer_view.dart';
-import '../views/touch_interactions/interactive_viewer_view.dart';
-import '../views/transition/decorated_box_transition_view.dart';
-import '../views/transition/fade_transition_view.dart';
-import '../views/transition/positioned_transition_view.dart';
-import '../views/transition/rotation_transition_view.dart';
-import '../views/transition/scale_transition_view.dart';
-import '../views/transition/size_transition_view.dart';
-import '../views/transition/slide_transition_view.dart';
 
 class HomeViewModel with ChangeNotifier {
   BannerAd? bannerAd;
+
   Future<void> loadBannerAd() async {
     bannerAd = BannerAd(
       adUnitId: ConstantsManager.homeBannerAdIdAndroid,

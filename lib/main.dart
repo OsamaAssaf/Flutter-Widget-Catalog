@@ -1,14 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:package_info_plus/package_info_plus.dart';
-import 'package:provider/provider.dart';
-
-import 'resources/managers/colors_manager.dart';
-import 'resources/managers/theme_manager.dart';
-import 'view_model/home_view_model.dart';
-import 'views/home_view.dart';
+import 'resources/all_imports.dart';
 
 late PackageInfo packageInfo;
 late AppLocalizations localizations;

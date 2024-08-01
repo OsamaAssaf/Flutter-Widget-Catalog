@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import '../../resources/all_imports.dart';
 
 class FittedBoxView extends StatelessWidget {
   const FittedBoxView({super.key});

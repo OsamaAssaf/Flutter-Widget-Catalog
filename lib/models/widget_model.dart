@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../resources/managers/constants_manager.dart';
+import '../resources/all_imports.dart';
 
 class WidgetModel {
   final Widget child;

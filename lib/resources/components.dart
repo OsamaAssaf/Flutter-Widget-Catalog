@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'package:url_launcher/url_launcher.dart';
+import 'all_imports.dart';
 
 class Components {
   static Future<void> openUrl(String url, BuildContext context) async {

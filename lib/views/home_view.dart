@@ -1,19 +1,4 @@
-import 'dart:io';
-
-import 'package:flutter/material.dart';
-
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:provider/provider.dart';
-import 'package:upgrader/upgrader.dart';
-
-import '../main.dart';
-import '../models/expansion_model.dart';
-import '../resources/managers/colors_manager.dart';
-import '../resources/widgets/main_app_bar.dart';
-import '../view_model/home_view_model.dart';
-import 'about_view.dart';
-import 'code_view.dart';
+import '../resources/all_imports.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

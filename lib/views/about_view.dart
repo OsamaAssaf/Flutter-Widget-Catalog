@@ -1,13 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_widget_catalog/resources/managers/assets_manager.dart';
-
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import '../main.dart';
-import '../resources/components.dart';
-import '../resources/widgets/social_media_widget.dart';
-import '../resources/managers/constants_manager.dart';
-import '../resources/widgets/main_app_bar.dart';
+import '../resources/all_imports.dart';
 
 class AboutView extends StatelessWidget {
   const AboutView({super.key});

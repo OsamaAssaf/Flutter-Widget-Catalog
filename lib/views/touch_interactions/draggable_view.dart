@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import '../../resources/all_imports.dart';
 
 class DraggableView extends StatefulWidget {
   const DraggableView({super.key});
@@ -56,9 +56,9 @@ class _DraggableViewState extends State<DraggableView> {
                 ),
               );
             },
-            onAccept: (int data) {
+            onAcceptWithDetails: (DragTargetDetails<int> details) {
               setState(() {
-                acceptedData += data;
+                acceptedData += details.data;
               });
             },
           ),

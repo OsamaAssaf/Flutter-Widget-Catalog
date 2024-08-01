@@ -1,6 +1,6 @@
 // ignore_for_file: unused_local_variable
 
-import 'package:flutter/material.dart';
+import '../../resources/all_imports.dart';
 
 class TextFieldView extends StatefulWidget {
   const TextFieldView({super.key});

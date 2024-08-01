@@ -1,6 +1,4 @@
-import 'dart:math';
-
-import 'package:flutter/material.dart';
+import '../../resources/all_imports.dart';
 
 class TransformView extends StatelessWidget {
   const TransformView({super.key});

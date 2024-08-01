@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../../main.dart';
+import '../all_imports.dart';
 
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MainAppBar({
@@ -25,7 +23,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
         style: theme.textTheme.displayLarge,
       ),
       backgroundColor: theme.colorScheme.primary,
-      foregroundColor: theme.colorScheme.background,
+      foregroundColor: theme.colorScheme.surface,
       centerTitle: true,
       actions: actions,
       bottom: bottom,

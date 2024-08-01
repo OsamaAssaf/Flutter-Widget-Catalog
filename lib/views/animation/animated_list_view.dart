@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../../main.dart';
+import '../../resources/all_imports.dart';
 
 class AnimatedListView extends StatefulWidget {
   const AnimatedListView({super.key});

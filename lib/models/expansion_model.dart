@@ -1,4 +1,4 @@
-import 'widget_model.dart';
+import '../resources/all_imports.dart';
 
 class ExpansionModel {
   final String title;

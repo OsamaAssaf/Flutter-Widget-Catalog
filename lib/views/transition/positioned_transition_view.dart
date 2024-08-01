@@ -1,6 +1,6 @@
 // ignore_for_file: unused_local_variable
 
-import 'package:flutter/material.dart';
+import '../../resources/all_imports.dart';
 
 class PositionedTransitionView extends StatefulWidget {
   const PositionedTransitionView({super.key});

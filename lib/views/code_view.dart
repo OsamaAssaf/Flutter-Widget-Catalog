@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'package:url_launcher/url_launcher.dart';
-import 'package:widget_with_codeview/widget_with_codeview.dart';
-
-import '../main.dart';
-import '../models/widget_model.dart';
-import '../resources/widgets/main_app_bar.dart';
+import '../resources/all_imports.dart';
 
 class CodeView extends StatelessWidget {
   const CodeView({
@@ -44,21 +37,21 @@ class CodeView extends StatelessWidget {
                 },
                 icon: Icon(
                   Icons.video_library_outlined,
-                  color: theme.colorScheme.background,
+                  color: theme.colorScheme.surface,
                   size: 18.0,
                 ),
                 label: Text(
                   'Watch Video',
                   style: TextStyle(
-                    color: theme.colorScheme.background,
+                    color: theme.colorScheme.surface,
                     fontSize: 14.0,
                   ),
                 ),
               ),
           ],
           bottom: TabBar(
-            indicatorColor: theme.colorScheme.background,
-            labelColor: theme.colorScheme.background,
+            indicatorColor: theme.colorScheme.surface,
+            labelColor: theme.colorScheme.surface,
             tabs: const <Tab>[
               Tab(
                 child: Row(
